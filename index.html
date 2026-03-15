@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiran Bora - Finance Transformation & Techno-Functional Consultant</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1e35;--navy2:#1a2f4a;--blue:#1a5fa8;--blue2:#2a7fd4;--gold:#c8960c;--gold2:#e8b84b;--cream:#f8f5f0;--white:#ffffff;--gray:#64748b;--light:#e8edf3;--text:#1e293b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,30,53,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,150,12,0.2);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'DM Serif Display',serif;color:var(--white);font-size:1.2rem}
+.nav-logo span{color:var(--gold2)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold2)}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* HERO */
+#hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:80px 5% 60px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 50%,rgba(26,95,168,0.15) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 20% 80%,rgba(200,150,12,0.08) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(var(--blue2) 1px,transparent 1px),linear-gradient(90deg,var(--blue2) 1px,transparent 1px);background-size:60px 60px}
+.hero-content{position:relative;z-index:2;max-width:820px}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,150,12,0.12);border:1px solid rgba(200,150,12,0.3);color:var(--gold2);padding:0.35rem 1rem;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp 0.6s ease both}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+h1.hero-name{font-family:'DM Serif Display',serif;font-size:clamp(3rem,7vw,5.5rem);color:var(--white);line-height:1.05;margin-bottom:0.5rem;animation:fadeUp 0.6s 0.1s ease both}
+h1.hero-name em{color:var(--gold2);font-style:italic}
+.hero-title{font-size:1rem;color:rgba(255,255,255,0.45);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.8rem;font-weight:400;animation:fadeUp 0.6s 0.2s ease both}
+.hero-summary{font-size:1.05rem;color:rgba(255,255,255,0.7);line-height:1.75;max-width:680px;margin-bottom:3rem;animation:fadeUp 0.6s 0.3s ease both}
+.hero-summary strong{color:var(--white);font-weight:600}
+.counters{display:flex;flex-wrap:wrap;gap:2.5rem;margin-bottom:3rem;animation:fadeUp 0.6s 0.4s ease both}
+.counter-item{text-align:left}
+.counter-num{font-family:'DM Serif Display',serif;font-size:2.8rem;color:var(--gold2);line-height:1;display:block}
+.counter-label{font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.3rem}
+.counter-divider{width:1px;background:rgba(255,255,255,0.1);height:50px;align-self:center}
+@media(max-width:600px){.counter-divider{display:none}}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.5s ease both}
+.btn-gold{background:var(--gold);color:var(--navy);padding:0.85rem 2rem;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.88rem;letter-spacing:0.05em;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:background 0.2s,transform 0.2s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--white);padding:0.85rem 2rem;border:1px solid rgba(255,255,255,0.25);cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.88rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:border-color 0.2s,color 0.2s}
+.btn-outline:hover{border-color:var(--gold2);color:var(--gold2)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+section{padding:90px 5%}
+.section-label{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue2);font-weight:600;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.75rem}
+.section-label::after{content:'';flex:0 0 40px;height:1px;background:var(--blue2)}
+h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--navy);line-height:1.15;margin-bottom:1rem}
+.section-sub{font-size:1.05rem;color:var(--gray);max-width:600px;line-height:1.7}
+
+/* WHAT I DO */
+#what{background:var(--white)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;margin-top:3rem;border:1.5px solid var(--light)}
+.svc-card{background:var(--white);padding:2.5rem;border-right:1.5px solid var(--light);border-bottom:1.5px solid var(--light);transition:background 0.3s;cursor:default}
+.svc-card:hover{background:var(--navy)}
+.svc-card:hover .svc-num{color:rgba(200,150,12,0.3)}
+.svc-card:hover .svc-title,.svc-card:hover .svc-txt{color:var(--white)}
+.svc-card:hover .svc-txt{color:rgba(255,255,255,0.55)}
+.svc-card:hover .tag{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)}
+.svc-num{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--light);line-height:1;margin-bottom:1rem;transition:color 0.3s}
+.svc-title{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:0.7rem;transition:color 0.3s}
+.svc-txt{font-size:0.88rem;color:var(--gray);line-height:1.65;transition:color 0.3s}
+.tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.2rem}
+.tag{font-size:0.7rem;padding:0.22rem 0.6rem;background:var(--light);color:var(--gray);font-weight:500;letter-spacing:0.04em;transition:all 0.3s}
+
+/* IMPACT */
+#impact{background:var(--cream)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.5rem;margin-top:3rem}
+.proj-card{background:var(--white);border:1px solid var(--light);overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;display:flex;flex-direction:column;height:100%}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(15,30,53,0.1)}
+.proj-top{background:var(--navy);padding:1.4rem;display:flex;align-items:flex-start;gap:1rem}
+.proj-icon{width:40px;height:40px;background:rgba(200,150,12,0.15);border:1px solid rgba(200,150,12,0.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.proj-title{color:var(--white);font-weight:600;font-size:0.95rem}
+.proj-sector{color:rgba(255,255,255,0.4);font-size:0.75rem;margin-top:0.2rem}
+.proj-body{padding:1.4rem}
+.proj-row{display:flex;gap:0.75rem;margin-bottom:0.9rem;align-items:flex-start}
+.proj-row:last-child{margin-bottom:0}
+.lbl{font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.18rem 0.5rem;flex-shrink:0;margin-top:0.15rem;width:68px;text-align:center}
+.lbl-p{background:#fef2f2;color:#dc2626}
+.lbl-s{background:#eff6ff;color:#1d4ed8}
+.lbl-o{background:#f0fdf4;color:#16a34a}
+.proj-txt{font-size:0.85rem;color:var(--text);line-height:1.6}
+.proj-txt strong{color:var(--navy)}
+
+/* TIMELINE */
+#career{background:var(--navy)}
+#career .section-label{color:var(--gold2)}
+#career .section-label::after{background:var(--gold2)}
+#career h2.section-title{color:var(--white)}
+#career .section-sub{color:rgba(255,255,255,0.45)}
+.timeline{margin-top:3.5rem;position:relative}
+.tl-line{position:absolute;left:20px;top:0;bottom:0;width:1px;background:rgba(255,255,255,0.1)}
+.tl-item{display:flex;gap:2rem;margin-bottom:1.5rem;padding-left:58px;position:relative;cursor:pointer}
+.tl-dot{position:absolute;left:12px;top:8px;width:17px;height:17px;border-radius:50%;background:var(--navy2);border:2px solid rgba(255,255,255,0.2);z-index:2;transition:all 0.3s}
+.tl-item.open .tl-dot,.tl-item:hover .tl-dot{background:var(--gold);border-color:var(--gold2);box-shadow:0 0 12px rgba(200,150,12,0.4)}
+.tl-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);padding:1.4rem 1.8rem;flex:1;transition:all 0.3s}
+.tl-item.open .tl-card,.tl-item:hover .tl-card{background:rgba(200,150,12,0.06);border-color:rgba(200,150,12,0.2)}
+.tl-period{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold2);letter-spacing:0.08em;margin-bottom:0.35rem}
+.tl-role{font-weight:600;color:var(--white);margin-bottom:0.2rem}
+.tl-org{font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:0}
+.tl-detail{font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.65;max-height:0;overflow:hidden;transition:max-height 0.4s ease,margin-top 0.3s}
+.tl-item.open .tl-detail{max-height:300px;margin-top:0.8rem}
+.tl-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.75rem}
+.tl-tag{font-size:0.68rem;padding:0.18rem 0.55rem;background:rgba(200,150,12,0.1);color:var(--gold2);border:1px solid rgba(200,150,12,0.2)}
+
+/* BEYOND */
+#beyond{background:var(--cream)}
+.beyond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;margin-top:3rem}
+.beyond-card{padding:2rem;border:1px solid var(--light);background:var(--white);transition:border-color 0.3s,transform 0.3s}
+.beyond-card:hover{border-color:var(--blue2);transform:translateY(-3px)}
+.beyond-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.beyond-title{font-weight:600;font-size:0.98rem;color:var(--navy);margin-bottom:0.55rem}
+.beyond-txt{font-size:0.87rem;color:var(--gray);line-height:1.65}
+
+/* RESUME */
+#resume{background:var(--white)}
+.resume-center{display:flex;flex-direction:column;align-items:center;max-width:900px;margin:3rem auto 0;text-align:center}
+.resume-center p{font-size:1.05rem;color:var(--gray);line-height:1.7;margin-bottom:2rem}
+.resume-iframe-box{width:100%;height:600px;background:var(--light);border:1px solid rgba(15,30,53,0.1);margin-bottom:2.5rem;border-radius:4px;overflow:hidden}
+.dl-btn{display:inline-flex;align-items:center;gap:0.75rem;background:var(--navy);color:var(--white);padding:1rem 2.5rem;text-decoration:none;font-weight:600;font-size:0.9rem;transition:background 0.2s}
+.dl-btn:hover{background:var(--blue)}
+@media(max-width:768px){.resume-iframe-box{height:450px}}
+
+/* CONNECT */
+#connect{background:var(--navy)}
+#connect .section-label{color:var(--gold2)}
+#connect .section-label::after{background:var(--gold2)}
+#connect h2.section-title{color:var(--white)}
+.connect-center{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:680px;margin:3rem auto 0}
+.connect-center p{font-size:1.05rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:2.5rem}
+.c-links-row{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center;width:100%}
+.c-link{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.6rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:var(--white);transition:all 0.2s;flex:1;min-width:260px;justify-content:center}
+.c-link:hover{background:rgba(200,150,12,0.1);border-color:rgba(200,150,12,0.3);transform:translateY(-3px)}
+.c-icon{font-size:1.2rem;color:var(--gold2);width:28px;}
+.c-info{text-align:left}
+.c-label{font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:0.05em;margin-bottom:2px}
+.c-val{font-weight:500;font-size:0.92rem}
+
+/* CHAT */
+#chat-bubble{position:fixed;bottom:28px;right:28px;z-index:999}
+#chat-toggle{width:56px;height:56px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 20px rgba(200,150,12,0.4);transition:transform 0.2s,background 0.2s}
+#chat-toggle:hover{transform:scale(1.08);background:var(--gold2)}
+#chat-win{position:absolute;bottom:68px;right:0;width:340px;background:var(--navy);border:1px solid rgba(200,150,12,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.5);display:none;flex-direction:column;overflow:hidden}
+#chat-win.open{display:flex}
+@media(max-width:500px){#chat-win{width:300px;right:-8px}}
+.ch-head{background:rgba(200,150,12,0.1);border-bottom:1px solid rgba(200,150,12,0.2);padding:0.85rem 1.2rem;display:flex;align-items:center;justify-content:space-between}
+.ch-title{font-weight:600;color:var(--white);font-size:0.87rem}
+.ch-sub{font-size:0.7rem;color:var(--gold2)}
+.ch-x{background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:1.1rem;padding:0.2rem;line-height:1}
+.ch-x:hover{color:var(--white)}
+#chat-msgs{padding:1rem;height:260px;overflow-y:auto;display:flex;flex-direction:column;gap:0.7rem;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.1) transparent}
+.msg{max-width:88%;padding:0.6rem 0.85rem;font-size:0.82rem;line-height:1.55;white-space:pre-wrap}
+.msg.bot{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.85);align-self:flex-start;border-left:2px solid var(--gold2)}
+.msg.user{background:rgba(26,95,168,0.35);color:var(--white);align-self:flex-end}
+.msg.typing{opacity:0.6;font-style:italic}
+.ch-sugg{padding:0.4rem 1rem 0.65rem;display:flex;flex-wrap:wrap;gap:0.35rem}
+.sugg{font-size:0.7rem;padding:0.25rem 0.6rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.55);cursor:pointer;transition:all 0.2s}
+.sugg:hover{background:rgba(200,150,12,0.15);border-color:rgba(200,150,12,0.3);color:var(--gold2)}
+.ch-inp-row{display:flex;border-top:1px solid rgba(255,255,255,0.08)}
+#chat-inp{flex:1;background:rgba(255,255,255,0.05);border:none;color:var(--white);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;outline:none}
+#chat-inp::placeholder{color:rgba(255,255,255,0.22)}
+#chat-btn{background:var(--gold);border:none;cursor:pointer;padding:0 1rem;color:var(--navy);font-size:1rem;transition:background 0.2s}
+#chat-btn:hover{background:var(--gold2)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* FOOTER */
+footer{background:#080f1a;padding:1.8rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
+/* ABOUT */
+#about{background:var(--white)}
+.about-wrap{display:grid;grid-template-columns:3fr 2fr;gap:5rem;align-items:center;margin-top:3rem}
+@media(max-width:900px){.about-wrap{grid-template-columns:1fr;gap:3rem}}
+.about-paras p{font-size:1rem;color:var(--gray);line-height:1.85;margin-bottom:1.4rem}
+.about-paras p strong{color:var(--navy);font-weight:600}
+.about-paras p:last-child{margin-bottom:0}
+.pillars{display:flex;flex-direction:column;gap:1.1rem}
+.pillar{padding:1.4rem 1.6rem;border:1.5px solid var(--light);position:relative;transition:border-color 0.3s,transform 0.3s}
+.pillar:hover{border-color:var(--blue2);transform:translateX(4px)}
+.pillar-num{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--blue2);letter-spacing:0.15em;margin-bottom:0.45rem}
+.pillar-title{font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:0.3rem}
+.pillar-desc{font-size:0.84rem;color:var(--gray);line-height:1.55}
+.pillar::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue2);opacity:0;transition:opacity 0.3s}
+.pillar:hover::before{opacity:1}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Kiran <span>Bora</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#what">What I Do</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#beyond">Beyond Work</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Open to new opportunities</div>
+    <h1 class="hero-name">Kiran <em>Bora</em></h1>
+    <p class="hero-title">Chartered Accountant &nbsp;·&nbsp; Digital Transformation &nbsp;·&nbsp; Techno-Functional Consultant</p>
+    <p class="hero-summary">
+      CA with 3+ years of experience across banking, consulting, and digital transformation -
+      <strong>personally building and delivering</strong> ERP implementations, process re-engineering,
+      automation tools, and finance products while leading teams and engaging directly with
+      <strong>CEOs, CFOs, and COOs.</strong>
+      Seeking roles at the intersection of <strong>finance and technology</strong>.
+    </p>
+    <div class="counters">
+      <div class="counter-item">
+        <span class="counter-num" data-target="11" data-suffix="+">0</span>
+        <span class="counter-label">Client Engagements</span>
+      </div>
+      <div class="counter-divider"></div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="1050" data-suffix="+">0</span>
+        <span class="counter-label">Professionals Trained</span>
+      </div>
+      <div class="counter-divider"></div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="85" data-suffix="%">0</span>
+        <span class="counter-label">Faster Financial Close</span>
+      </div>
+      <div class="counter-divider"></div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="15" data-suffix="+">0</span>
+        <span class="counter-label">Team Members Led</span>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#connect" class="btn-gold">Let's Connect →</a>
+      <a href="#resume" class="btn-outline">⬇ View Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Who I Am</h2>
+  </div>
+  <div class="about-wrap">
+    <div class="about-paras reveal">
+      <p>I'm a <strong>Chartered Accountant who builds things</strong>. Most finance professionals analyse and advise - my approach is to pair domain expertise with execution. Whether it is coding an automation tool, authoring a BRD, or designing an ERP architecture, I focus on delivering tangible, working solutions to leadership.</p>
+      <p>My career has moved deliberately from <strong>audit → credit → consulting</strong> - each step adding a layer. Articleship taught me how businesses actually run. IDFC FIRST Bank taught me how risk, capital, and real money decisions get made at the C-suite level. Contetra gave me the canvas: 11+ live transformation engagements, 15-person teams, and the freedom to build from scratch.</p>
+      <p>I work across <strong>SAP ECC, SAP S/4 HANA, Oracle, and ERP Next</strong> - every one of them learned and delivered on live client projects. I also cover end-to-end finance process frameworks - O2C, P2P, R2R, and H2R - across every engagement. Now actively looking for roles in finance transformation and consulting, bringing a strong focus to <strong>product management</strong> and <strong>project management</strong>, ensuring that domain depth and hands-on delivery drive real impact.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <div class="pillar-num">01 / DOMAIN</div>
+        <div class="pillar-title">Finance Expert</div>
+        <p class="pillar-desc">CA background, IDFC credit experience, deep O2C / P2P / R2R / H2R process knowledge. Focused on clear, continuous communication with leadership.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02 / TECH</div>
+        <div class="pillar-title">Tech & Product Builder</div>
+        <p class="pillar-desc">Personally builds VBA workflows, Power BI dashboards, AI assistants, and functional POCs, bridging the gap between finance requirements and tech teams.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03 / PEOPLE</div>
+        <div class="pillar-title">People Leader</div>
+        <p class="pillar-desc">Teams of 10–15 · WBS &amp; delivery management · C-suite stakeholder engagement · Training 1,050+ professionals · O2C, P2P, R2R, H2R process frameworks</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="what">
+  <div class="reveal">
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">What I Do</h2>
+    <p class="section-sub">Four areas where finance domain depth meets hands-on technology delivery.</p>
+  </div>
+  <div class="svc-grid reveal">
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <div class="svc-title">Finance Transformation</div>
+      <p class="svc-txt">End-to-end diagnostic and redesign of finance operations - AS-IS discovery, TO-BE operating models, enterprise structure design, and process re-engineering across O2C, P2P, R2R, and H2R frameworks.</p>
+      <div class="tags"><span class="tag">AS-IS Diagnostics</span><span class="tag">Operating Models</span><span class="tag">SOPs</span><span class="tag">BRD / PRD</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <div class="svc-title">ERP & Implementation</div>
+      <p class="svc-txt">Full lifecycle ERP delivery - solution architecture, CRP sessions, data migration planning, UAT design, go-live support, and post-implementation optimization across multiple ERP platforms.</p>
+      <div class="tags"><span class="tag">UAT Design</span><span class="tag">Data Migration</span><span class="tag">CRP Sessions</span><span class="tag">License Optimization</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <div class="svc-title">Product Development</div>
+      <p class="svc-txt">Functional product ownership from market gap analysis and MVP definition through BRD, PRD, user stories, POC, and developer coordination. Built multiple internal and client-facing finance products.</p>
+      <div class="tags"><span class="tag">MVP</span><span class="tag">Product Roadmap</span><span class="tag">GTM</span><span class="tag">POC</span></div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">04</div>
+      <div class="svc-title">Automation & Analytics</div>
+      <p class="svc-txt">Personally builds VBA workflows, Power BI dashboards, reconciliation frameworks, and AI-assisted tools that eliminate manual effort, facilitating seamless collaboration with tech delivery teams.</p>
+      <div class="tags"><span class="tag">Power BI</span><span class="tag">VBA / Macros</span><span class="tag">AI Tools</span><span class="tag">Dashboards</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="reveal">
+    <p class="section-label">Work</p>
+    <h2 class="section-title">Problems Solved</h2>
+    <p class="section-sub">Real challenges. Real solutions. Real outcomes.</p>
+  </div>
+  <div class="proj-grid">
+
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-icon">⚡</div><div><div class="proj-title">Financial Close Automation</div><div class="proj-sector">Manufacturing · Multi-entity · 21 branches</div></div></div>
+      <div class="proj-body">
+        <div class="proj-row"><span class="lbl lbl-p">Problem</span><p class="proj-txt">21 branches across 15 states spending <strong>~15 days every month</strong> manually closing books - error-prone and zero real-time visibility.</p></div>
+        <div class="proj-row"><span class="lbl lbl-s">Solution</span><p class="proj-txt">A <strong>one-click automation tool</strong> using Excel, VBA &amp; Power Query. Input data once - full consolidated <strong>Schedule III compliant financials</strong> (P&amp;L, Balance Sheet, Cash Flow) generated instantly across all entities.</p></div>
+        <div class="proj-row"><span class="lbl lbl-o">Outcome</span><p class="proj-txt"><strong>15 days → under half a day. 85% faster.</strong> Now replicated across multiple clients.</p></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-icon">🔄</div><div><div class="proj-title">P2P Platform - Full Product Build</div><div class="proj-sector">Product Development · GTM Ready</div></div></div>
+      <div class="proj-body">
+        <div class="proj-row"><span class="lbl lbl-p">Problem</span><p class="proj-txt">No integrated solution covering the full <strong>vendor lifecycle</strong> - onboarding through purchase orders, approvals, and payment - causing fragmented processes.</p></div>
+        <div class="proj-row"><span class="lbl lbl-s">Solution</span><p class="proj-txt">Personally authored <strong>BRD, PRD, White Paper, GTM strategy</strong>; ran competitor analysis; designed full process flows; built POC; defined solution architecture with the dev team.</p></div>
+        <div class="proj-row"><span class="lbl lbl-o">Outcome</span><p class="proj-txt">Full product suite ready for <strong>client-facing deployment</strong>. End-to-end P2P coverage.</p></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-icon">🏭</div><div><div class="proj-title">Finance Transformation - EPC Client</div><div class="proj-sector">EPC &amp; Manufacturing · Multi-sector</div></div></div>
+      <div class="proj-body">
+        <div class="proj-row"><span class="lbl lbl-p">Problem</span><p class="proj-txt">For a new vertical: no formal finance processes and full dependency on spreadsheets. For legacy operations: processes required significant re-engineering and standardisation.</p></div>
+        <div class="proj-row"><span class="lbl lbl-s">Solution</span><p class="proj-txt">Led end-to-end implementation: AS-IS diagnostic → enterprise structure design (Profit/Cost Centers) → CRPs → UAT → training. Designed centralized PMO and Master Data teams for clear post go-live process ownership.</p></div>
+        <div class="proj-row"><span class="lbl lbl-o">Outcome</span><p class="proj-txt"><strong>100% statutory compliance</strong> at go-live. Standardization achieved. Team of 15 managed across 8+ months.</p></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-icon">🧹</div><div><div class="proj-title">Master Data Management Tool</div><div class="proj-sector">Internal Product · Pre-ERP Migration</div></div></div>
+      <div class="proj-body">
+        <div class="proj-row"><span class="lbl lbl-p">Problem</span><p class="proj-txt">ERP migrations failing due to <strong>dirty master data</strong> - inconsistent vendor names, duplicates, unstandardized formats across thousands of records.</p></div>
+        <div class="proj-row"><span class="lbl lbl-s">Solution</span><p class="proj-txt">Built a <strong>Master Data Cleanup Tool</strong> - accepts any format of vendor, customer, or master data; applies cleansing and standardization logic; outputs upload-ready ERP data.</p></div>
+        <div class="proj-row"><span class="lbl lbl-o">Outcome</span><p class="proj-txt">Now a <strong>standard internal tool</strong> used across Contetra engagements before every ERP migration.</p></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-icon">🔃</div><div><div class="proj-title">Reconciliation Tool</div><div class="proj-sector">Internal &amp; Client-facing</div></div></div>
+      <div class="proj-body">
+        <div class="proj-row"><span class="lbl lbl-p">Problem</span><p class="proj-txt">Finance teams across multiple organisations were spending hours every month <strong>manually matching transactions</strong>, flagging exceptions, and chasing discrepancies - with no standardised process.</p></div>
+        <div class="proj-row"><span class="lbl lbl-s">Solution</span><p class="proj-txt">A <strong>reconciliation tool</strong> that automates matching logic, flags unmatched entries, and surfaces exceptions clearly - deployed both internally at Contetra and for client finance teams.</p></div>
+        <div class="proj-row"><span class="lbl lbl-o">Outcome</span><p class="proj-txt"><strong>Deployed across multiple clients</strong> · Manual effort eliminated.</p></div>
+      </div>
+    </div>
+
+
+
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-icon">📊</div><div><div class="proj-title">CFO & CEO Power BI Dashboards</div><div class="proj-sector">Management Reporting · Multiple Clients</div></div></div>
+      <div class="proj-body">
+        <div class="proj-row"><span class="lbl lbl-p">Problem</span><p class="proj-txt">Leadership making decisions on <strong>week-old Excel reports</strong> with no real-time visibility into revenue, expenses, KPIs, or variance vs budget.</p></div>
+        <div class="proj-row"><span class="lbl lbl-s">Solution</span><p class="proj-txt">Designed and built <strong>interactive Power BI dashboards</strong> for CEO, CFO, and management - covering P&L, Budget vs Actual, KPI/KRA tracking with complex DAX calculations.</p></div>
+        <div class="proj-row"><span class="lbl lbl-o">Outcome</span><p class="proj-txt"><strong>Real-time visibility</strong> for board-level decisions. Deployed across Manufacturing, Pharma, and Tech clients.</p></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-icon">🤖</div><div><div class="proj-title">Custom AI Assistants for Consulting</div><div class="proj-sector">AI / GPTs · Internal Productivity</div></div></div>
+      <div class="proj-body">
+        <div class="proj-row"><span class="lbl lbl-p">Problem</span><p class="proj-txt">Consulting deliverables - wireframes, ERP specs, process docs - taking too long to produce with <strong>inconsistent quality</strong> across the team.</p></div>
+        <div class="proj-row"><span class="lbl lbl-s">Solution</span><p class="proj-txt">Designed and built <strong>custom GPTs/Gems</strong> trained on consulting frameworks to generate wireframes, ERP specs, and process documentation consistently.</p></div>
+        <div class="proj-row"><span class="lbl lbl-o">Outcome</span><p class="proj-txt">Measurably <strong>faster project delivery</strong> with consistent output quality across the team.</p></div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal">
+      <div class="proj-top"><div class="proj-icon">📝</div><div><div class="proj-title">AI Minutes of Meeting (MoM) Generator</div><div class="proj-sector">Internal Productivity · Automation</div></div></div>
+      <div class="proj-body">
+        <div class="proj-row"><span class="lbl lbl-p">Problem</span><p class="proj-txt">Extracting standard MoMs from 2-3 hour long client meetings was highly manual. Each resource used a different format, leading to inconsistencies.</p></div>
+        <div class="proj-row"><span class="lbl lbl-s">Solution</span><p class="proj-txt">Built a strict-format <strong>MoM Generator tool</strong>. It processes raw meeting transcripts, standardises the output, extracts clean action items, and queries the user if any context is missing or doubtful before finalising.</p></div>
+        <div class="proj-row"><span class="lbl lbl-o">Outcome</span><p class="proj-txt"><strong>Perfectly formatted MoMs</strong> delivered consistently in minutes instead of hours.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section id="career">
+  <div class="reveal">
+    <p class="section-label">Journey</p>
+    <h2 class="section-title">Career Timeline</h2>
+    <p class="section-sub">Click any stop to expand.</p>
+  </div>
+  <div class="timeline reveal">
+    <div class="tl-line"></div>
+
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">2015 – 2020</div>
+        <div class="tl-role">Student & CA Journey</div>
+        <div class="tl-org">ICAI · Chhatrapati Sambhajinagar</div>
+        <div class="tl-detail">SSC - 92.80% · 100/100 in Sanskrit · S.B.O.A (Shri Brijlal Biyani Oswal Academy), Chhatrapati Sambhajinagar. HSC - 93.08% · 3rd Rank in batch · Deogiri College, Chhatrapati Sambhajinagar. CA journey began - CPT cleared in first attempt (132/200), May 2017. Cleared both CA Intermediate groups with multiple exemptions. Alongside studies, developed a passion for art - sold 100+ portraits, won WICASA Art Competition. Began self-teaching Excel and automation tools.<div class="tl-tags"><span class="tl-tag">CA Foundation</span><span class="tl-tag">Intermediate</span><span class="tl-tag">Art</span><span class="tl-tag">Excel</span></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">Feb 2020 – Feb 2023</div>
+        <div class="tl-role">Article Assistant</div>
+        <div class="tl-org">R.B. Sharma &amp; Company - Chhatrapati Sambhajinagar</div>
+        <div class="tl-detail">Managed financial statements, tax audits, statutory and concurrent bank audits across Manufacturing, Pharma, Hospitals, Media, and Trading. Conducted trust audits of educational institutions. Performed internal audit of a prominent regional newspaper - focusing on budgeting, cost controls, and operational compliance. Filed 30+ monthly GST returns. Built first VBA automation tools improving team efficiency by 50%. Conducted seminars for article assistants and staff on GST and Direct Tax updates. Designed and distributed client-facing regulatory newsletters - combining finance communication with creative presentation. Featured original sketches and creative 2-liners in firm newsletters. Delivered training to 100+ people. Won Star Performer &amp; Best Article Award.<div class="tl-tags"><span class="tl-tag">Audit</span><span class="tl-tag">GST / TDS</span><span class="tl-tag">VBA Automation</span><span class="tl-tag">Star Performer Award</span></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">Nov 2022</div>
+        <div class="tl-role">CA Final - Both Groups, 1st Attempt</div>
+        <div class="tl-org">ICAI · 416/800 · 5th Rank in Chhatrapati Sambhajinagar</div>
+        <div class="tl-detail">Cleared both groups of CA Final in a single attempt scoring 416/800. Secured 5th rank in Chhatrapati Sambhajinagar. Received exemption in Economic Laws. The culmination of 5 years of CA journey alongside full-time articleship.<div class="tl-tags"><span class="tl-tag">5th Rank</span><span class="tl-tag">1st Attempt</span><span class="tl-tag">Both Groups</span></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">Mar 2023 – Jan 2025</div>
+        <div class="tl-role">Credit Analyst → Associate Relationship Manager</div>
+        <div class="tl-org">IDFC FIRST Bank - Corporate Banking, Pune</div>
+        <div class="tl-detail">Conducted financial analysis and credit risk assessment for 20+ corporate clients with turnover exceeding INR 500 crores across Manufacturing, Renewable Energy, and Automobile sectors. Prepared detailed Credit Appraisal Memorandums (CAMs) including financial modelling, industry benchmarking, and working capital analysis. Built automated financial rating tools improving analysis speed by 70%. Monitored financial covenants to ensure client adherence to lending terms and flag early warning signals. Conducted sensitivity and scenario analysis for financing and M&amp;A-related assessments. Promoted to ARM in April 2024 with expanded client relationship and cross-functional responsibilities.<div class="tl-tags"><span class="tl-tag">Credit Analysis</span><span class="tl-tag">CAM Writing</span><span class="tl-tag">Financial Modelling</span><span class="tl-tag">Promoted</span></div></div>
+      </div>
+    </div>
+
+    <div class="tl-item open" onclick="toggleTL(this)">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">Jan 2025 – Present</div>
+        <div class="tl-role">Assistant Manager - Digital Transformation & Automation</div>
+        <div class="tl-org">Contetra Pvt Ltd - Mumbai</div>
+        <div class="tl-detail">Leading 11+ finance transformation and digital enablement engagements across Manufacturing, EPC, Pharma, QSR, Renewable Energy, Trading, and Tech. Personally building BRDs, SOPs, ERP configurations, automation tools, Power BI dashboards, and product POCs - while managing teams of 10–15 and presenting directly to C-suite. Designed centralized operating structures (PMO, Procurement Ops, Master Data Management) for clients to establish process ownership post go-live. Works across O2C, P2P, R2R, and H2R end-to-end process frameworks. Trained 1,050+ professionals in AI and Excel.<div class="tl-tags"><span class="tl-tag">ERP Implementation</span><span class="tl-tag">Product Dev</span><span class="tl-tag">Team Lead</span><span class="tl-tag">C-Suite</span><span class="tl-tag">AI Tools</span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BEYOND WORK -->
+<section id="beyond">
+  <div class="reveal">
+    <p class="section-label">Beyond Work</p>
+    <h2 class="section-title">The Person Behind the Profile</h2>
+    <p class="section-sub">Work tells you what I do. This tells you who I am.</p>
+  </div>
+  <div class="beyond-grid">
+    <div class="beyond-card reveal">
+      <span class="beyond-icon">🎨</span>
+      <div class="beyond-title">Artist - Portraits & Stippling</div>
+      <p class="beyond-txt">Sold 100+ detailed human portrait sketches. Mastered stippling - a technique demanding extreme patience and precision. Won First Prize at the WICASA Art Competition, Chhatrapati Sambhajinagar. Art taught me that the best outputs come from sustained, detail-oriented effort - a mindset I bring to every project.</p>
+    </div>
+    <div class="beyond-card reveal">
+      <span class="beyond-icon">🛠</span>
+      <div class="beyond-title">Self-Builder - Personal Finance App</div>
+      <p class="beyond-txt">Built a personal finance health tracker app independently - not for work, just to learn and solve a personal need. Designed the data model, logic, and interface from scratch. Also built internal automation tools and utilities used across Contetra's delivery toolkit - because if there's a problem, the instinct is to build something.</p>
+    </div>
+    <div class="beyond-card reveal">
+      <span class="beyond-icon">📚</span>
+      <div class="beyond-title">Genuinely Enjoys Teaching</div>
+      <p class="beyond-txt">Has trained 1,050+ professionals in AI tools, Advanced Excel, and Power BI - across client organisations and internal teams. Started training people during articleship itself (100+ individuals) and never stopped. Not because it was in the job description - because explaining things clearly and watching people get it is genuinely satisfying.</p>
+    </div>
+    <div class="beyond-card reveal">
+      <span class="beyond-icon">🏆</span>
+      <div class="beyond-title">Achiever - Built on First Attempts</div>
+      <p class="beyond-txt">CA Final in 1st attempt. 5th Rank in Chhatrapati Sambhajinagar. Star Performer during articleship.</p>
+    </div>
+    <div class="beyond-card reveal">
+      <span class="beyond-icon">🏅</span>
+      <div class="beyond-title">Competitive Spirit</div>
+      <p class="beyond-txt">Participated in district-level Yoga, Tennikoit, and Athletics competitions. The same discipline that shows up in sport - consistent effort, showing up, not cutting corners - shows up in work too.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="reveal" style="text-align:center">
+    <p class="section-label" style="justify-content:center">Resume</p>
+    <h2 class="section-title">Professional Profile</h2>
+  </div>
+  <div class="resume-center reveal">
+    <p>A comprehensive overview of my experience, projects, tools built, and technical capabilities.</p>
+    <div class="resume-iframe-box">
+      <iframe src="CV - CA Kiran Bora.pdf" width="100%" height="100%" style="border:none;display:block" title="Kiran Bora CV">
+        <p style="padding:2rem;color:var(--navy)">Your browser does not support inline PDFs. <a href="CV - CA Kiran Bora.pdf" download style="color:var(--blue2)">Download the CV here.</a></p>
+      </iframe>
+    </div>
+    <a href="CV - CA Kiran Bora.pdf" download class="dl-btn">⬇ &nbsp; Download CV (PDF)</a>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect">
+  <div class="reveal" style="text-align:center">
+    <p class="section-label" style="justify-content:center">Contact</p>
+    <h2 class="section-title">Let's Talk</h2>
+  </div>
+  <div class="connect-center reveal">
+    <p>Whether you're hiring, exploring a collaboration, or want to discuss finance transformation, ERP, or AI - I'm always happy to connect.</p>
+    <div class="c-links-row">
+      <a href="mailto:cakiranbora@gmail.com" class="c-link"><span class="c-icon">✉</span><div class="c-info"><div class="c-label">Email</div><div class="c-val">cakiranbora@gmail.com</div></div></a>
+      <a href="https://linkedin.com/in/CAKiBo" target="_blank" class="c-link"><span class="c-icon" style="font-weight:700;font-size:1.1rem">in</span><div class="c-info"><div class="c-label">LinkedIn</div><div class="c-val">linkedin.com/in/CAKiBo</div></div></a>
+      <a href="tel:+917020679009" class="c-link"><span class="c-icon">☎</span><div class="c-info"><div class="c-label">Phone</div><div class="c-val">+91 7020679009</div></div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Kiran Bora · CA · Digital Transformation · Mumbai</p>
+  <p>Built to show what I do, not just describe it.</p>
+</footer>
+
+<!-- AI CHAT -->
+<div id="chat-bubble">
+  <div id="chat-win">
+    <div class="ch-head">
+      <div><div class="ch-title">Ask me anything ✦</div><div class="ch-sub">About Kiran only</div></div>
+      <button class="ch-x" onclick="toggleChat()">✕</button>
+    </div>
+    <div id="chat-msgs">
+      <div class="msg bot">Hi! I'm Kiran's AI assistant. Ask me anything about his experience, projects, skills, or background. 👋</div>
+    </div>
+    <div class="ch-sugg">
+      <span class="sugg" onclick="askQ(this)">What products has he built?</span>
+      <span class="sugg" onclick="askQ(this)">ERP experience?</span>
+      <span class="sugg" onclick="askQ(this)">Team leadership?</span>
+      <span class="sugg" onclick="askQ(this)">Why hire Kiran?</span>
+    </div>
+    <div class="ch-inp-row">
+      <input id="chat-inp" type="text" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendChat()" />
+      <button id="chat-btn" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+  <button id="chat-toggle" onclick="toggleChat()" title="Ask me anything about Kiran">✦</button>
+</div>
+
+<script>
+// COUNTERS
+function animateCount(el){
+  const t=parseInt(el.dataset.target),s=el.dataset.suffix||'+';
+  const dur=1800,step=t/(dur/16);let c=0;
+  const timer=setInterval(()=>{c=Math.min(c+step,t);el.textContent=Math.floor(c).toLocaleString()+s;if(c>=t)clearInterval(timer);},16);
+}
+const cObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animateCount(e.target);cObs.unobserve(e.target);}});},{threshold:0.5});
+document.querySelectorAll('.counter-num[data-target]').forEach(el=>cObs.observe(el));
+
+// REVEAL
+const rObs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*70);rObs.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>rObs.observe(el));
+
+// TIMELINE
+function toggleTL(el){
+  const isOpen=el.classList.contains('open');
+  document.querySelectorAll('.tl-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)el.classList.add('open');
+}
+
+// CHAT
+const API_KEY="AIzaSyC5uI0N2eItwGi0-YA9bgbOBzeXVNgqgDw";
+const CTX=`You are an AI assistant on Kiran Bora's personal portfolio website. ONLY answer questions about Kiran Bora. If asked anything unrelated, politely redirect.
+
+KIRAN BORA - KEY FACTS:
+- Chartered Accountant (CA), cleared both groups 1st attempt, Nov 2022, 5th rank in Chhatrapati Sambhajinagar
+- Currently: Assistant Manager – Digital Transformation & Automation, Contetra Pvt Ltd, Mumbai (Jan 2025–Present)
+- Previously: Credit Analyst → Associate Relationship Manager (ARM) at IDFC FIRST Bank, Pune (Mar 2023–Jan 2025); promoted Apr 2024
+- Articleship: R.B. Sharma & Co., Chhatrapati Sambhajinagar (Feb 2020–Feb 2023); won Star Performer & Best Article Award
+
+AT CONTETRA: Project Manager and hands-on contributor on 11+ engagements across Manufacturing, EPC, Pharma, QSR, Renewable Energy, Trading, and IT. Manages 10–15 people. Directly engages CEO, CFO, COO. Builds BRDs, PRDs, SOPs, process flowcharts, UAT test cases, WBS. Plans data migrations. Runs CRP sessions. Works across SAP ECC, S/4 HANA, Oracle, ERP Next, Tally. Process frameworks: O2C, P2P, R2R, H2R. Designed centralized operating structures (PMO, Procurement Ops, MDM) for clients. Built Schedule III Financials Tool and Reconciliation Tool as client-facing products.
+
+ARTICLESHIP: Conducted statutory audits, tax audits, concurrent bank audits, trust audits of educational institutions, and internal audit of a prominent regional newspaper. Filed 30+ monthly GST returns. Conducted seminars on GST and Direct Tax updates. Designed client-facing regulatory newsletters. Started training people from articleship itself - 100+ individuals trained during articleship alone.
+
+IDFC FIRST BANK: Financial analysis and credit risk assessment for 20+ corporate clients with turnover exceeding INR 500 crores across Manufacturing, Renewable Energy, and Automobile sectors. CAM writing, financial modelling, automated rating tools (70% faster), covenant monitoring (flagged early warning signals), M&A sensitivity analysis.
+
+PRODUCTS BUILT BY KIRAN:
+1. Financial Statement Automation Tool – one-click, 21 branches, 15 states, 15 days → half a day (85% faster)
+2. P2P Platform – wrote BRD, PRD, White Paper, GTM strategy, competitor analysis, built POC, defined architecture
+3. Master Data Cleanup Tool – any format input, auto-cleanses for ERP migration
+4. Reconciliation Tool – automates matching, flags exceptions, deployed for multiple clients
+5. Schedule III Financials Tool – accepts any trial balance, auto-generates P&L, Balance Sheet, Notes to Accounts
+6. Power BI Dashboards – CEO, CFO, KPI/KRA, Budget vs Actual, complex DAX calculations
+7. Custom AI Assistants (GPTs/Gems) – for consulting workflows (wireframes, ERP specs, process docs)
+8. Personal Finance Tracker App – self-built for learning, owns design/data model/logic
+
+SKILLS:
+- Automation & Analytics: Advanced Excel (VBA, Macros, Power Query), Power BI, Tableau, Power Automate
+- AI Skills: Prompt Engineering, Model Context Protocol (MCP), Design and Deploy AI Agents
+- AI Tools: Claude (incl. Claude Code), Google Gemini, ChatGPT, Copilot, Notebook LM, Perplexity, Lovable AI, Google Colab, Google AI Studio
+- Consulting: Techno-Functional Consulting, Stakeholder Management, Project Management, BRD/PRD/SOP, Process Flow Design, Cross-Functional Team Leadership
+- ERP: SAP ECC, SAP S/4 HANA, Oracle, ERP Next, Tally
+
+CERTIFICATIONS: AI Fluency (Anthropic), IND AS (CRISIL).
+TRAINING: 1,050+ professionals trained in AI tools, Advanced Excel, and Power BI.
+BEYOND WORK: Artist (sold 100+ portraits, stippling, won WICASA Art Competition 1st prize, Chhatrapati Sambhajinagar), self-builder (personal finance app, internal Contetra tools), achiever (CA Final 1st attempt, 5th rank, promoted at IDFC, Star Performer), competitive (district-level Yoga, Tennikoit, Athletics).
+CONTACT & LINKS: Email: cakiranbora@gmail.com, Phone: +91 7020679009, LinkedIn: linkedin.com/in/CAKiran, Website: This portfolio.
+
+Keep answers concise, friendly, professional. Max 130 words. Use bullet points for lists.
+IF ASKED FOR CONTACT INFO (email, phone, linkedin, how to reach out): Provide the email, phone number, and LinkedIn gracefully.
+IF ASKED ANYTHING ELSE NOT FOUND IN THE DATA: You MUST reply EXACTLY with: "Sorry, based on the available data, I do not have an answer to this. Please feel free to reach out to Kiran directly over email or LinkedIn." Do not invent data.`;
+
+function parseMD(txt){
+  let h=txt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  h=h.replace(/(^|\n)\*\s+(.*?)(?=\n|$)/g,'$1<span style="color:var(--gold2);margin-right:6px">•</span>$2');
+  h=h.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  h=h.replace(/\*([^*]+)\*/g,'<em>$1</em>');
+  h=h.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" style="color:var(--gold2);text-decoration:none;border-bottom:1px dotted currentColor">$1</a>');
+  return h;
+}
+
+let hist=[];
+function toggleChat(){document.getElementById('chat-win').classList.toggle('open');}
+function askQ(el){document.getElementById('chat-inp').value=el.textContent;sendChat();}
+
+async function sendChat(){
+  const inp=document.getElementById('chat-inp');
+  const msg=inp.value.trim();if(!msg)return;inp.value='';
+  const msgs=document.getElementById('chat-msgs');
+  const uEl=document.createElement('div');uEl.className='msg user';uEl.textContent=msg;msgs.appendChild(uEl);
+  const tEl=document.createElement('div');tEl.className='msg bot typing';tEl.textContent='Thinking...';msgs.appendChild(tEl);
+  msgs.scrollTop=msgs.scrollHeight;
+  hist.push({role:"user",parts:[{text:msg}]});
+  try{
+    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`,
+      {method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({system_instruction:{parts:[{text:CTX}]},contents:hist})});
+    const d=await r.json();
+    if(d.error) {
+      console.error(d.error);
+      throw new Error("API Error");
+    }
+    const reply=d.candidates?.[0]?.content?.parts?.[0]?.text||"Sorry, I couldn't respond right now.";
+    hist.push({role:"model",parts:[{text:reply}]});
+    tEl.innerHTML=parseMD(reply);tEl.classList.remove('typing');
+  }catch(e){console.error(e);tEl.innerHTML="Sorry, there seems to be a network or service issue right now. Please connect over email or LinkedIn.";tEl.classList.remove('typing');}
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+// NAV highlight
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY+80;
+  document.querySelectorAll('section[id]').forEach(s=>{
+    const link=document.querySelector(`.nav-links a[href="#${s.id}"]`);
+    if(link)link.style.color=y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight?'var(--gold2)':'';
+  });
+});
+</script>
+</body>
+</html>
