@@ -141,31 +141,7 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 .c-label{font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:0.05em;margin-bottom:2px}
 .c-val{font-weight:500;font-size:0.92rem}
 
-/* CHAT */
-#chat-bubble{position:fixed;bottom:28px;right:28px;z-index:999}
-#chat-toggle{width:56px;height:56px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 20px rgba(200,150,12,0.4);transition:transform 0.2s,background 0.2s}
-#chat-toggle:hover{transform:scale(1.08);background:var(--gold2)}
-#chat-win{position:absolute;bottom:68px;right:0;width:340px;background:var(--navy);border:1px solid rgba(200,150,12,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.5);display:none;flex-direction:column;overflow:hidden}
-#chat-win.open{display:flex}
-@media(max-width:500px){#chat-win{width:300px;right:-8px}}
-.ch-head{background:rgba(200,150,12,0.1);border-bottom:1px solid rgba(200,150,12,0.2);padding:0.85rem 1.2rem;display:flex;align-items:center;justify-content:space-between}
-.ch-title{font-weight:600;color:var(--white);font-size:0.87rem}
-.ch-sub{font-size:0.7rem;color:var(--gold2)}
-.ch-x{background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:1.1rem;padding:0.2rem;line-height:1}
-.ch-x:hover{color:var(--white)}
-#chat-msgs{padding:1rem;height:260px;overflow-y:auto;display:flex;flex-direction:column;gap:0.7rem;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.1) transparent}
-.msg{max-width:88%;padding:0.6rem 0.85rem;font-size:0.82rem;line-height:1.55;white-space:pre-wrap}
-.msg.bot{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.85);align-self:flex-start;border-left:2px solid var(--gold2)}
-.msg.user{background:rgba(26,95,168,0.35);color:var(--white);align-self:flex-end}
-.msg.typing{opacity:0.6;font-style:italic}
-.ch-sugg{padding:0.4rem 1rem 0.65rem;display:flex;flex-wrap:wrap;gap:0.35rem}
-.sugg{font-size:0.7rem;padding:0.25rem 0.6rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.55);cursor:pointer;transition:all 0.2s}
-.sugg:hover{background:rgba(200,150,12,0.15);border-color:rgba(200,150,12,0.3);color:var(--gold2)}
-.ch-inp-row{display:flex;border-top:1px solid rgba(255,255,255,0.08)}
-#chat-inp{flex:1;background:rgba(255,255,255,0.05);border:none;color:var(--white);padding:0.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;outline:none}
-#chat-inp::placeholder{color:rgba(255,255,255,0.22)}
-#chat-btn{background:var(--gold);border:none;cursor:pointer;padding:0 1rem;color:var(--navy);font-size:1rem;transition:background 0.2s}
-#chat-btn:hover{background:var(--gold2)}
+
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease}
@@ -539,29 +515,7 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
   <p>Built to show what I do, not just describe it.</p>
 </footer>
 
-<!-- AI CHAT -->
-<div id="chat-bubble">
-  <div id="chat-win">
-    <div class="ch-head">
-      <div><div class="ch-title">Ask me anything ✦</div><div class="ch-sub">About Kiran only</div></div>
-      <button class="ch-x" onclick="toggleChat()">✕</button>
-    </div>
-    <div id="chat-msgs">
-      <div class="msg bot">Hi! I'm Kiran's AI assistant. Ask me anything about his experience, projects, skills, or background. 👋</div>
-    </div>
-    <div class="ch-sugg">
-      <span class="sugg" onclick="askQ(this)">What products has he built?</span>
-      <span class="sugg" onclick="askQ(this)">ERP experience?</span>
-      <span class="sugg" onclick="askQ(this)">Team leadership?</span>
-      <span class="sugg" onclick="askQ(this)">Why hire Kiran?</span>
-    </div>
-    <div class="ch-inp-row">
-      <input id="chat-inp" type="text" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendChat()" />
-      <button id="chat-btn" onclick="sendChat()">➤</button>
-    </div>
-  </div>
-  <button id="chat-toggle" onclick="toggleChat()" title="Chat with KiraBot">💬</button>
-</div>
+
 
 <script>
 // COUNTERS
@@ -584,84 +538,8 @@ function toggleTL(el){
   if(!isOpen)el.classList.add('open');
 }
 
-// CHAT
-const API_KEY="AIzaSyA8Onnoi53vpklbNHMD8yks3AjDW8WE0js";
-const CTX=`You are an AI assistant on Kiran Bora's personal portfolio website. ONLY answer questions about Kiran Bora. If asked anything unrelated, politely redirect.
 
-KIRAN BORA - KEY FACTS:
-- Chartered Accountant (CA), cleared both groups 1st attempt, Nov 2022, 5th rank in Chhatrapati Sambhajinagar
-- Currently: Assistant Manager – Digital Transformation & Automation, Contetra Pvt Ltd, Mumbai (Jan 2025–Present)
-- Previously: Credit Analyst → Associate Relationship Manager (ARM) at IDFC FIRST Bank, Pune (Mar 2023–Jan 2025); promoted Apr 2024
-- Articleship: R.B. Sharma & Co., Chhatrapati Sambhajinagar (Feb 2020–Feb 2023); won Star Performer & Best Article Award
 
-AT CONTETRA: Project Manager and hands-on contributor on 11+ engagements across Manufacturing, EPC, Pharma, QSR, Renewable Energy, Trading, and IT. Manages 10–15 people. Directly engages CEO, CFO, COO. Builds BRDs, PRDs, SOPs, process flowcharts, UAT test cases, WBS. Plans data migrations. Runs CRP sessions. Works across SAP ECC, S/4 HANA, Oracle, ERP Next, Tally. Process frameworks: O2C, P2P, R2R, H2R. Designed centralized operating structures (PMO, Procurement Ops, MDM) for clients. Built Schedule III Financials Tool and Reconciliation Tool as client-facing products.
-
-ARTICLESHIP: Conducted statutory audits, tax audits, concurrent bank audits, trust audits of educational institutions, and internal audit of a prominent regional newspaper. Filed 30+ monthly GST returns. Conducted seminars on GST and Direct Tax updates. Designed client-facing regulatory newsletters. Started training people from articleship itself - 100+ individuals trained during articleship alone.
-
-IDFC FIRST BANK: Financial analysis and credit risk assessment for 20+ corporate clients with turnover exceeding INR 500 crores across Manufacturing, Renewable Energy, and Automobile sectors. CAM writing, financial modelling, automated rating tools (70% faster), covenant monitoring (flagged early warning signals), M&A sensitivity analysis.
-
-PRODUCTS BUILT BY KIRAN:
-1. Financial Statement Automation Tool – one-click, 21 branches, 15 states, 15 days → half a day (85% faster)
-2. P2P Platform – wrote BRD, PRD, White Paper, GTM strategy, competitor analysis, built POC, defined architecture
-3. Master Data Cleanup Tool – any format input, auto-cleanses for ERP migration
-4. Reconciliation Tool – automates matching, flags exceptions, deployed for multiple clients
-5. Schedule III Financials Tool – accepts any trial balance, auto-generates P&L, Balance Sheet, Notes to Accounts
-6. Power BI Dashboards – CEO, CFO, KPI/KRA, Budget vs Actual, complex DAX calculations
-7. Custom AI Assistants (GPTs/Gems) – for consulting workflows (wireframes, ERP specs, process docs)
-8. Personal Finance Tracker App – self-built for learning, owns design/data model/logic
-
-SKILLS:
-- Automation & Analytics: Advanced Excel (VBA, Macros, Power Query), Power BI, Tableau, Power Automate
-- AI Skills: Prompt Engineering, Model Context Protocol (MCP), Design and Deploy AI Agents
-- AI Tools: Claude (incl. Claude Code), Google Gemini, ChatGPT, Copilot, Notebook LM, Perplexity, Lovable AI, Google Colab, Google AI Studio
-- Consulting: Techno-Functional Consulting, Stakeholder Management, Project Management, BRD/PRD/SOP, Process Flow Design, Cross-Functional Team Leadership
-- ERP: SAP ECC, SAP S/4 HANA, Oracle, ERP Next, Tally
-
-CERTIFICATIONS: AI Fluency (Anthropic), IND AS (CRISIL).
-TRAINING: 1,050+ professionals trained in AI tools, Advanced Excel, and Power BI.
-BEYOND WORK: Artist (sold 100+ portraits, stippling, won WICASA Art Competition 1st prize, Chhatrapati Sambhajinagar), self-builder (personal finance app, internal Contetra tools), achiever (CA Final 1st attempt, 5th rank, promoted at IDFC, Star Performer), competitive (district-level Yoga, Tennikoit, Athletics).
-CONTACT & LINKS: Email: cakiranbora@gmail.com, Phone: +91 7020679009, LinkedIn: linkedin.com/in/CAKiran, Website: This portfolio.
-
-Keep answers concise, friendly, professional. Max 130 words. Use bullet points for lists.
-IF ASKED FOR CONTACT INFO (email, phone, linkedin, how to reach out): Provide the email, phone number, and LinkedIn gracefully.
-IF ASKED ANYTHING ELSE NOT FOUND IN THE DATA: You MUST reply EXACTLY with: "Sorry, based on the available data, I do not have an answer to this. Please feel free to reach out to Kiran directly over email or LinkedIn." Do not invent data.`;
-
-function parseMD(txt){
-  let h=txt.replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  h=h.replace(/(^|\n)\*\s+(.*?)(?=\n|$)/g,'$1<span style="color:var(--gold2);margin-right:6px">•</span>$2');
-  h=h.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
-  h=h.replace(/\*([^*]+)\*/g,'<em>$1</em>');
-  h=h.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" style="color:var(--gold2);text-decoration:none;border-bottom:1px dotted currentColor">$1</a>');
-  return h;
-}
-
-let hist=[];
-function toggleChat(){document.getElementById('chat-win').classList.toggle('open');}
-function askQ(el){document.getElementById('chat-inp').value=el.textContent;sendChat();}
-
-async function sendChat(){
-  const inp=document.getElementById('chat-inp');
-  const msg=inp.value.trim();if(!msg)return;inp.value='';
-  const msgs=document.getElementById('chat-msgs');
-  const uEl=document.createElement('div');uEl.className='msg user';uEl.textContent=msg;msgs.appendChild(uEl);
-  const tEl=document.createElement('div');tEl.className='msg bot typing';tEl.textContent='Thinking...';msgs.appendChild(tEl);
-  msgs.scrollTop=msgs.scrollHeight;
-  hist.push({role:"user",parts:[{text:msg}]});
-  try{
-    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
-      {method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({system_instruction:{parts:[{text:CTX}]},contents:hist})});
-    const d=await r.json();
-    if(d.error) {
-      console.error(d.error);
-      throw new Error("API Error");
-    }
-    const reply=d.candidates?.[0]?.content?.parts?.[0]?.text||"Sorry, I couldn't respond right now.";
-    hist.push({role:"model",parts:[{text:reply}]});
-    tEl.innerHTML=parseMD(reply);tEl.classList.remove('typing');
-  }catch(e){console.error(e);tEl.innerHTML="Sorry, there seems to be a network or service issue right now. Please connect over email or LinkedIn.";tEl.classList.remove('typing');}
-  msgs.scrollTop=msgs.scrollHeight;
-}
 
 // NAV highlight
 window.addEventListener('scroll',()=>{
@@ -674,4 +552,3 @@ window.addEventListener('scroll',()=>{
 </script>
 </body>
 </html>
-
