@@ -543,11 +543,11 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
 <div id="chat-bubble">
   <div id="chat-win">
     <div class="ch-head">
-      <div><div class="ch-title">Ask me anything ✦</div><div class="ch-sub">About Kiran only</div></div>
+      <div><div class="ch-title">💬 KiraBot</div><div class="ch-sub">Ask me anything about Kiran</div></div>
       <button class="ch-x" onclick="toggleChat()">✕</button>
     </div>
     <div id="chat-msgs">
-      <div class="msg bot">Hi! I'm Kiran's AI assistant. Ask me anything about his experience, projects, skills, or background. 👋</div>
+      <div class="msg bot">Hi! I'm <strong>KiraBot</strong> — Kiran's personal AI assistant 🤖 Ask me anything about his experience, projects, skills, or background!</div>
     </div>
     <div class="ch-sugg">
       <span class="sugg" onclick="askQ(this)">What products has he built?</span>
@@ -560,7 +560,7 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
       <button id="chat-btn" onclick="sendChat()">➤</button>
     </div>
   </div>
-  <button id="chat-toggle" onclick="toggleChat()" title="Ask me anything about Kiran">✦</button>
+  <button id="chat-toggle" onclick="toggleChat()" title="Chat with KiraBot">💬</button>
 </div>
 
 <script>
@@ -648,7 +648,7 @@ async function sendChat(){
   msgs.scrollTop=msgs.scrollHeight;
   hist.push({role:"user",parts:[{text:msg}]});
   try{
-    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`,
+    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
       {method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({system_instruction:{parts:[{text:CTX}]},contents:hist})});
     const d=await r.json();
