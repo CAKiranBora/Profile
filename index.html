@@ -141,6 +141,30 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 .c-label{font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:0.05em;margin-bottom:2px}
 .c-val{font-weight:500;font-size:0.92rem}
 
+/* FAQ WIDGET */
+#faq-bubble{position:fixed;bottom:28px;right:28px;z-index:999}
+#faq-toggle{width:56px;height:56px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 20px rgba(200,150,12,0.4);transition:transform 0.2s,background 0.2s}
+#faq-toggle:hover{transform:scale(1.08);background:var(--gold2)}
+#faq-win{position:absolute;bottom:68px;right:0;width:340px;background:var(--navy);border:1px solid rgba(200,150,12,0.25);box-shadow:0 20px 60px rgba(0,0,0,0.5);display:none;flex-direction:column;overflow:hidden;max-height:480px}
+#faq-win.open{display:flex}
+@media(max-width:500px){#faq-win{width:300px;right:-8px}}
+.fq-head{background:rgba(200,150,12,0.1);border-bottom:1px solid rgba(200,150,12,0.2);padding:0.85rem 1.2rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.fq-title{font-weight:600;color:var(--white);font-size:0.87rem}
+.fq-sub{font-size:0.7rem;color:var(--gold2)}
+.fq-x{background:none;border:none;color:rgba(255,255,255,0.4);cursor:pointer;font-size:1.1rem;padding:0.2rem;line-height:1}
+.fq-x:hover{color:var(--white)}
+.fq-body{overflow-y:auto;flex:1;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.1) transparent}
+.fq-intro{padding:0.9rem 1.2rem;font-size:0.8rem;color:rgba(255,255,255,0.45);border-bottom:1px solid rgba(255,255,255,0.06)}
+.fq-list{display:flex;flex-direction:column}
+.fq-q{padding:0.85rem 1.2rem;font-size:0.83rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:0.5rem;transition:background 0.2s}
+.fq-q:hover{background:rgba(200,150,12,0.1);color:var(--gold2)}
+.fq-q-arrow{font-size:0.7rem;color:var(--gold2);flex-shrink:0}
+.fq-answer{display:none;padding:1rem 1.2rem;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.06);flex-direction:column;gap:0.7rem}
+.fq-answer.show{display:flex}
+.fq-back{font-size:0.72rem;color:var(--gold2);cursor:pointer;display:flex;align-items:center;gap:0.35rem;margin-bottom:0.3rem;opacity:0.8}
+.fq-back:hover{opacity:1}
+.fq-q-label{font-weight:600;color:var(--white);font-size:0.84rem;margin-bottom:0.2rem}
+.fq-a-txt{font-size:0.82rem;color:rgba(255,255,255,0.7);line-height:1.6}
 
 
 /* REVEAL */
@@ -516,6 +540,76 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
 </footer>
 
 
+<!-- FAQ WIDGET -->
+<div id="faq-bubble">
+  <div id="faq-win">
+    <div class="fq-head">
+      <div><div class="fq-title">💬 Quick Answers</div><div class="fq-sub">About Kiran — click any question</div></div>
+      <button class="fq-x" onclick="toggleFAQ()">✕</button>
+    </div>
+    <div class="fq-body">
+      <div class="fq-intro">Select a question below to learn more about Kiran.</div>
+      <div class="fq-list" id="faq-list">
+
+        <div class="fq-q" onclick="showAnswer(0)">
+          <span>What products has he built?</span><span class="fq-q-arrow">›</span>
+        </div>
+        <div class="fq-answer" id="faq-ans-0">
+          <div class="fq-back" onclick="hideAnswer(0)">‹ Back to questions</div>
+          <div class="fq-q-label">What products has he built?</div>
+          <div class="fq-a-txt">Kiran has personally built: • Financial Close Automation Tool (15 days → half a day, 85% faster) • P2P Platform (BRD, PRD, GTM, POC) • Master Data Cleanup Tool (ERP migration ready) • Reconciliation Tool (deployed across multiple clients) • Schedule III Financials Tool • Power BI Dashboards for CEOs &amp; CFOs • Custom AI Assistants (GPTs/Gems) • Personal Finance Tracker App</div>
+        </div>
+
+        <div class="fq-q" onclick="showAnswer(1)">
+          <span>What is his ERP experience?</span><span class="fq-q-arrow">›</span>
+        </div>
+        <div class="fq-answer" id="faq-ans-1">
+          <div class="fq-back" onclick="hideAnswer(1)">‹ Back to questions</div>
+          <div class="fq-q-label">What is his ERP experience?</div>
+          <div class="fq-a-txt">Kiran has delivered 11+ live ERP implementations covering SAP ECC, SAP S/4 HANA, Oracle, ERP Next, and Tally — all on real client projects. He handles solution architecture, CRP sessions, UAT design, data migration planning, go-live support, and post-implementation optimization. Process coverage: O2C, P2P, R2R, and H2R end-to-end.</div>
+        </div>
+
+        <div class="fq-q" onclick="showAnswer(2)">
+          <span>How does he lead teams?</span><span class="fq-q-arrow">›</span>
+        </div>
+        <div class="fq-answer" id="faq-ans-2">
+          <div class="fq-back" onclick="hideAnswer(2)">‹ Back to questions</div>
+          <div class="fq-q-label">How does he lead teams?</div>
+          <div class="fq-a-txt">Kiran manages teams of 10–15 across 8+ month engagements. He presents directly to CEOs, CFOs, and COOs, owns WBS and delivery management, and has designed centralized operating structures (PMO, Procurement Ops, Master Data teams) for clients to ensure post-go-live process ownership.</div>
+        </div>
+
+        <div class="fq-q" onclick="showAnswer(3)">
+          <span>Why should we hire Kiran?</span><span class="fq-q-arrow">›</span>
+        </div>
+        <div class="fq-answer" id="faq-ans-3">
+          <div class="fq-back" onclick="hideAnswer(3)">‹ Back to questions</div>
+          <div class="fq-q-label">Why should we hire Kiran?</div>
+          <div class="fq-a-txt">Kiran is rare — a CA who actually builds. He doesn’t just advise; he codes automation tools, designs ERP architecture, writes BRDs, and leads delivery teams. 11+ live engagements, 1,050+ professionals trained, 85% faster financial close achieved for clients. He engages at the C-suite level and delivers end-to-end.</div>
+        </div>
+
+        <div class="fq-q" onclick="showAnswer(4)">
+          <span>What are his skills &amp; tools?</span><span class="fq-q-arrow">›</span>
+        </div>
+        <div class="fq-answer" id="faq-ans-4">
+          <div class="fq-back" onclick="hideAnswer(4)">‹ Back to questions</div>
+          <div class="fq-q-label">What are his skills &amp; tools?</div>
+          <div class="fq-a-txt">• ERP: SAP ECC, S/4 HANA, Oracle, ERP Next, Tally • Automation: Advanced Excel (VBA, Macros, Power Query), Power BI, Power Automate • AI: Prompt Engineering, MCP, Claude, Gemini, ChatGPT, Copilot • Consulting: BRD/PRD/SOP, Process Design, Stakeholder Management, Project Management • Certifications: AI Fluency (Anthropic), IND AS (CRISIL)</div>
+        </div>
+
+        <div class="fq-q" onclick="showAnswer(5)">
+          <span>How can I contact Kiran?</span><span class="fq-q-arrow">›</span>
+        </div>
+        <div class="fq-answer" id="faq-ans-5">
+          <div class="fq-back" onclick="hideAnswer(5)">‹ Back to questions</div>
+          <div class="fq-q-label">How can I contact Kiran?</div>
+          <div class="fq-a-txt">• Email: <a href="mailto:cakiranbora@gmail.com" style="color:var(--gold2)">cakiranbora@gmail.com</a> • Phone: <a href="tel:+917020679009" style="color:var(--gold2)">+91 7020679009</a> • LinkedIn: <a href="https://linkedin.com/in/CAKiBo" target="_blank" style="color:var(--gold2)">linkedin.com/in/CAKiBo</a></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <button id="faq-toggle" onclick="toggleFAQ()" title="Quick answers about Kiran">💬</button>
+</div>
 
 <script>
 // COUNTERS
@@ -540,6 +634,21 @@ function toggleTL(el){
 
 
 
+
+// FAQ WIDGET
+function toggleFAQ(){document.getElementById('faq-win').classList.toggle('open');}
+function showAnswer(i){
+  document.querySelectorAll('.fq-answer').forEach(a=>a.classList.remove('show'));
+  document.querySelectorAll('.fq-q').forEach(q=>q.style.display='');
+  document.getElementById('faq-ans-'+i).classList.add('show');
+  document.querySelectorAll('.fq-q').forEach(q=>q.style.display='none');
+  document.querySelector('.fq-intro').style.display='none';
+}
+function hideAnswer(i){
+  document.getElementById('faq-ans-'+i).classList.remove('show');
+  document.querySelectorAll('.fq-q').forEach(q=>q.style.display='');
+  document.querySelector('.fq-intro').style.display='';
+}
 
 // NAV highlight
 window.addEventListener('scroll',()=>{
