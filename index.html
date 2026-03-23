@@ -31,7 +31,7 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,30,53,0.97);b
 h1.hero-name{font-family:'DM Serif Display',serif;font-size:clamp(3rem,7vw,5.5rem);color:var(--white);line-height:1.05;margin-bottom:0.5rem;animation:fadeUp 0.6s 0.1s ease both}
 h1.hero-name em{color:var(--gold2);font-style:italic}
 .hero-title{font-size:1rem;color:rgba(255,255,255,0.45);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.8rem;font-weight:400;animation:fadeUp 0.6s 0.2s ease both}
-.hero-summary{font-size:1.05rem;color:rgba(255,255,255,0.7);line-height:1.75;max-width:680px;margin-bottom:3rem;animation:fadeUp 0.6s 0.3s ease both}
+.hero-summary{font-size:1.05rem;color:rgba(255,255,255,0.7);line-height:1.75;max-width:680px;margin-bottom:3rem;animation:fadeUp 0.6s 0.3s ease both;text-align:justify}
 .hero-summary strong{color:var(--white);font-weight:600}
 .counters{display:flex;flex-wrap:wrap;gap:2.5rem;margin-bottom:3rem;animation:fadeUp 0.6s 0.4s ease both}
 .counter-item{text-align:left}
@@ -51,7 +51,7 @@ section{padding:90px 5%}
 .section-label{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue2);font-weight:600;margin-bottom:0.6rem;display:flex;align-items:center;gap:0.75rem}
 .section-label::after{content:'';flex:0 0 40px;height:1px;background:var(--blue2)}
 h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--navy);line-height:1.15;margin-bottom:1rem}
-.section-sub{font-size:1.05rem;color:var(--gray);max-width:600px;line-height:1.7}
+.section-sub{font-size:1.05rem;color:var(--gray);max-width:600px;line-height:1.7;text-align:justify}
 
 /* WHAT I DO */
 #what{background:var(--white)}
@@ -64,7 +64,7 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 .svc-card:hover .tag{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)}
 .svc-num{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--light);line-height:1;margin-bottom:1rem;transition:color 0.3s}
 .svc-title{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:0.7rem;transition:color 0.3s}
-.svc-txt{font-size:0.88rem;color:var(--gray);line-height:1.65;transition:color 0.3s}
+.svc-txt{font-size:0.88rem;color:var(--gray);line-height:1.65;transition:color 0.3s;text-align:justify}
 .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.2rem}
 .tag{font-size:0.7rem;padding:0.22rem 0.6rem;background:var(--light);color:var(--gray);font-weight:500;letter-spacing:0.04em;transition:all 0.3s}
 
@@ -84,7 +84,7 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 .lbl-p{background:#fef2f2;color:#dc2626}
 .lbl-s{background:#eff6ff;color:#1d4ed8}
 .lbl-o{background:#f0fdf4;color:#16a34a}
-.proj-txt{font-size:0.85rem;color:var(--text);line-height:1.6}
+.proj-txt{font-size:0.85rem;color:var(--text);line-height:1.6;text-align:justify}
 .proj-txt strong{color:var(--navy)}
 
 /* TIMELINE */
@@ -103,8 +103,12 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 .tl-period{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--gold2);letter-spacing:0.08em;margin-bottom:0.35rem}
 .tl-role{font-weight:600;color:var(--white);margin-bottom:0.2rem}
 .tl-org{font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:0}
-.tl-detail{font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.65;max-height:0;overflow:hidden;transition:max-height 0.4s ease,margin-top 0.3s}
-.tl-item.open .tl-detail{max-height:300px;margin-top:0.8rem}
+.tl-detail{font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.8;max-height:0;overflow:hidden;transition:max-height 0.7s ease,margin-top 0.3s}
+.tl-item.open .tl-detail{max-height:2000px;margin-top:0.9rem}
+.tl-detail-intro{color:rgba(255,255,255,0.82);font-size:0.85rem;margin-bottom:0.55rem;display:block}
+.tl-detail ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.45rem}
+.tl-detail ul li{padding-left:1.1rem;position:relative;color:rgba(255,255,255,0.6);font-size:0.83rem;line-height:1.75;text-align:justify;word-break:break-word}
+.tl-detail ul li::before{content:'•';position:absolute;left:0;color:var(--gold2);font-size:0.9rem}
 .tl-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.75rem}
 .tl-tag{font-size:0.68rem;padding:0.18rem 0.55rem;background:rgba(200,150,12,0.1);color:var(--gold2);border:1px solid rgba(200,150,12,0.2)}
 
@@ -115,7 +119,7 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 .beyond-card:hover{border-color:var(--blue2);transform:translateY(-3px)}
 .beyond-icon{font-size:2rem;margin-bottom:1rem;display:block}
 .beyond-title{font-weight:600;font-size:0.98rem;color:var(--navy);margin-bottom:0.55rem}
-.beyond-txt{font-size:0.87rem;color:var(--gray);line-height:1.65}
+.beyond-txt{font-size:0.87rem;color:var(--gray);line-height:1.65;text-align:justify}
 
 /* RESUME */
 #resume{background:var(--white)}
@@ -178,7 +182,7 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
 #about{background:var(--white)}
 .about-wrap{display:grid;grid-template-columns:3fr 2fr;gap:5rem;align-items:center;margin-top:3rem}
 @media(max-width:900px){.about-wrap{grid-template-columns:1fr;gap:3rem}}
-.about-paras p{font-size:1rem;color:var(--gray);line-height:1.85;margin-bottom:1.4rem}
+.about-paras p{font-size:1rem;color:var(--gray);line-height:1.85;margin-bottom:1.4rem;text-align:justify}
 .about-paras p strong{color:var(--navy);font-weight:600}
 .about-paras p:last-child{margin-bottom:0}
 .pillars{display:flex;flex-direction:column;gap:1.1rem}
@@ -186,9 +190,17 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
 .pillar:hover{border-color:var(--blue2);transform:translateX(4px)}
 .pillar-num{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--blue2);letter-spacing:0.15em;margin-bottom:0.45rem}
 .pillar-title{font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:0.3rem}
-.pillar-desc{font-size:0.84rem;color:var(--gray);line-height:1.55}
+.pillar-desc{font-size:0.84rem;color:var(--gray);line-height:1.55;text-align:justify}
 .pillar::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue2);opacity:0;transition:opacity 0.3s}
 .pillar:hover::before{opacity:1}
+@media(max-width:600px){
+  .hero-summary,.section-sub,.svc-txt,.proj-txt,.beyond-txt,.about-paras p,.pillar-desc,.tl-detail ul li{text-align:left}
+  .tl-item{padding-left:44px}
+  .tl-card{padding:1.1rem 1.2rem;word-break:break-word;overflow-wrap:break-word;min-width:0}
+  .tl-detail{font-size:0.82rem}
+  .tl-detail ul li{font-size:0.81rem}
+  .tl-tags{flex-wrap:wrap}
+}
 </style>
 </head>
 <body>
@@ -412,33 +424,29 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
   <div class="timeline reveal">
     <div class="tl-line"></div>
 
-    <div class="tl-item" onclick="toggleTL(this)">
+    <div class="tl-item open" onclick="toggleTL(this)">
       <div class="tl-dot"></div>
       <div class="tl-card">
-        <div class="tl-period">2015 – 2020</div>
-        <div class="tl-role">Student & CA Journey</div>
-        <div class="tl-org">ICAI · Chhatrapati Sambhajinagar</div>
-        <div class="tl-detail">SSC - 92.80% · 100/100 in Sanskrit · S.B.O.A (Shri Brijlal Biyani Oswal Academy), Chhatrapati Sambhajinagar. HSC - 93.08% · 3rd Rank in batch · Deogiri College, Chhatrapati Sambhajinagar. CA journey began - CPT cleared in first attempt (132/200), May 2017. Cleared both CA Intermediate groups with multiple exemptions. Alongside studies, developed a passion for art - sold 100+ portraits, won WICASA Art Competition. Began self-teaching Excel and automation tools.<div class="tl-tags"><span class="tl-tag">CA Foundation</span><span class="tl-tag">Intermediate</span><span class="tl-tag">Art</span><span class="tl-tag">Excel</span></div></div>
-      </div>
-    </div>
-
-    <div class="tl-item" onclick="toggleTL(this)">
-      <div class="tl-dot"></div>
-      <div class="tl-card">
-        <div class="tl-period">Feb 2020 – Feb 2023</div>
-        <div class="tl-role">Article Assistant</div>
-        <div class="tl-org">R.B. Sharma &amp; Company - Chhatrapati Sambhajinagar</div>
-        <div class="tl-detail">Managed financial statements, tax audits, statutory and concurrent bank audits across Manufacturing, Pharma, Hospitals, Media, and Trading. Conducted trust audits of educational institutions. Performed internal audit of a prominent regional newspaper - focusing on budgeting, cost controls, and operational compliance. Filed 30+ monthly GST returns. Built first VBA automation tools improving team efficiency by 50%. Conducted seminars for article assistants and staff on GST and Direct Tax updates. Designed and distributed client-facing regulatory newsletters - combining finance communication with creative presentation. Featured original sketches and creative 2-liners in firm newsletters. Delivered training to 100+ people. Won Star Performer &amp; Best Article Award.<div class="tl-tags"><span class="tl-tag">Audit</span><span class="tl-tag">GST / TDS</span><span class="tl-tag">VBA Automation</span><span class="tl-tag">Star Performer Award</span></div></div>
-      </div>
-    </div>
-
-    <div class="tl-item" onclick="toggleTL(this)">
-      <div class="tl-dot"></div>
-      <div class="tl-card">
-        <div class="tl-period">Nov 2022</div>
-        <div class="tl-role">CA Final - Both Groups, 1st Attempt</div>
-        <div class="tl-org">ICAI · 416/800 · 5th Rank in Chhatrapati Sambhajinagar</div>
-        <div class="tl-detail">Cleared both groups of CA Final in a single attempt scoring 416/800. Secured 5th rank in Chhatrapati Sambhajinagar. Received exemption in Economic Laws. The culmination of 5 years of CA journey alongside full-time articleship.<div class="tl-tags"><span class="tl-tag">5th Rank</span><span class="tl-tag">1st Attempt</span><span class="tl-tag">Both Groups</span></div></div>
+        <div class="tl-period">Jan 2025 – Present</div>
+        <div class="tl-role">Assistant Manager – Digital Transformation &amp; Automation</div>
+        <div class="tl-org">Contetra Pvt Ltd · Mumbai</div>
+        <div class="tl-detail">
+          <span class="tl-detail-intro">Leading 11+ live finance transformation and digital enablement engagements across Manufacturing, EPC, Pharma, QSR, Renewable Energy, Trading, and IT.</span>
+          <ul>
+            <li>Manages cross-functional teams of 15+ across parallel projects</li>
+            <li>Engages directly with CEOs, CFOs, COOs on solution design and steering decisions</li>
+            <li>Conducts AS-IS diagnostics, designs TO-BE operating models, writes BRDs and SOPs</li>
+            <li>Leads full ERP lifecycle: CRP sessions → UAT → data migration → go-live → optimization</li>
+            <li>Designed centralized PMO, Procurement Ops, and Master Data Management structures for clients</li>
+            <li>Built Financial Close Automation Tool: 15 days → under half a day (85% faster), 21 branches, 15 states</li>
+            <li>Functionally led P2P product: BRD, PRD, white paper, GTM strategy, POC, developer coordination</li>
+            <li>Built Power BI dashboards for CEO/CFO-level decision making across multiple clients</li>
+            <li>Built Custom AI Assistants, AI MoM Generator, Master Data Cleanup Tool, Reconciliation Tool</li>
+            <li>Trained 1,050+ professionals in AI tools, Advanced Excel, and Power BI</li>
+            <li>Covers O2C, P2P, R2R, H2R, S2P, Q2C, T2R, A2R, I2P end-to-end</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">ERP Implementation</span><span class="tl-tag">Product Dev</span><span class="tl-tag">Team Lead</span><span class="tl-tag">C-Suite</span><span class="tl-tag">AI Tools</span></div>
+        </div>
       </div>
     </div>
 
@@ -447,18 +455,82 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
       <div class="tl-card">
         <div class="tl-period">Mar 2023 – Jan 2025</div>
         <div class="tl-role">Credit Analyst → Associate Relationship Manager</div>
-        <div class="tl-org">IDFC FIRST Bank - Corporate Banking, Pune</div>
-        <div class="tl-detail">Conducted financial analysis and credit risk assessment for 20+ corporate clients with turnover exceeding INR 500 crores across Manufacturing, Renewable Energy, and Automobile sectors. Prepared detailed Credit Appraisal Memorandums (CAMs) including financial modelling, industry benchmarking, and working capital analysis. Built automated financial rating tools improving analysis speed by 70%. Monitored financial covenants to ensure client adherence to lending terms and flag early warning signals. Conducted sensitivity and scenario analysis for financing and M&amp;A-related assessments. Promoted to ARM in April 2024 with expanded client relationship and cross-functional responsibilities.<div class="tl-tags"><span class="tl-tag">Credit Analysis</span><span class="tl-tag">CAM Writing</span><span class="tl-tag">Financial Modelling</span><span class="tl-tag">Promoted</span></div></div>
+        <div class="tl-org">IDFC FIRST Bank · Corporate Banking, Pune</div>
+        <div class="tl-detail">
+          <ul>
+            <li>Conducted financial analysis, forecasting, and credit risk assessment for 20+ corporate clients (500 Cr+ turnover) across Manufacturing, Renewable Energy, and Automobile sectors</li>
+            <li>Prepared detailed Credit Appraisal Memorandums (CAMs): financial modelling, industry benchmarking, working capital analysis, borrower risk assessment</li>
+            <li>Built automated financial rating tools using Excel and VBA — improved analysis speed by 70%</li>
+            <li>Engaged directly with client finance teams and management during credit appraisal and monitoring</li>
+            <li>Performed variance analysis, covenant monitoring, and performance tracking</li>
+            <li>Conducted sensitivity and scenario analysis for financing and M&amp;A-related assessments</li>
+            <li>Promoted from Credit Analyst to Associate Relationship Manager in April 2024</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">Credit Analysis</span><span class="tl-tag">CAM Writing</span><span class="tl-tag">Financial Modelling</span><span class="tl-tag">Promoted</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="tl-item open" onclick="toggleTL(this)">
+    <div class="tl-item" onclick="toggleTL(this)">
       <div class="tl-dot"></div>
       <div class="tl-card">
-        <div class="tl-period">Jan 2025 – Present</div>
-        <div class="tl-role">Assistant Manager - Digital Transformation & Automation</div>
-        <div class="tl-org">Contetra Pvt Ltd - Mumbai</div>
-        <div class="tl-detail">Leading 11+ finance transformation and digital enablement engagements across Manufacturing, EPC, Pharma, QSR, Renewable Energy, Trading, and Tech. Personally building BRDs, SOPs, ERP configurations, automation tools, Power BI dashboards, and product POCs - while managing teams of 10–15 and presenting directly to C-suite. Designed centralized operating structures (PMO, Procurement Ops, Master Data Management) for clients to establish process ownership post go-live. Works across O2C, P2P, R2R, and H2R end-to-end process frameworks. Trained 1,050+ professionals in AI and Excel.<div class="tl-tags"><span class="tl-tag">ERP Implementation</span><span class="tl-tag">Product Dev</span><span class="tl-tag">Team Lead</span><span class="tl-tag">C-Suite</span><span class="tl-tag">AI Tools</span></div></div>
+        <div class="tl-period">Nov 2022</div>
+        <div class="tl-role">CA Final – Both Groups Cleared, 1st Attempt</div>
+        <div class="tl-org">ICAI · 416/800 · 5th Rank in Chhatrapati Sambhajinagar</div>
+        <div class="tl-detail">
+          <ul>
+            <li>Cleared both groups of CA Final in a single attempt — Nov 2022</li>
+            <li>Scored 416/800 — 5th Rank in Chhatrapati Sambhajinagar</li>
+            <li>Exemption in Economic Laws</li>
+            <li>Culmination of 5 years of CA journey alongside full-time articleship</li>
+            <li>CPT cleared in 1st attempt (132/200) in May 2017</li>
+            <li>Cleared both CA Intermediate groups with multiple exemptions</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">5th Rank</span><span class="tl-tag">1st Attempt</span><span class="tl-tag">Both Groups</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">Feb 2020 – Feb 2023</div>
+        <div class="tl-role">Article Assistant</div>
+        <div class="tl-org">R.B. Sharma &amp; Company · Chhatrapati Sambhajinagar</div>
+        <div class="tl-detail">
+          <ul>
+            <li>Executed statutory audits, tax audits, and concurrent bank audits across Manufacturing, Pharma, Hospitals, Media, Construction, and Trading</li>
+            <li>Prepared financial statements, income tax computations, and audit documentation</li>
+            <li>Filed 30+ monthly GST returns; handled GST registrations, refunds, and litigation support</li>
+            <li>Built Excel and VBA automation tools — improved team efficiency by 50%</li>
+            <li>Conducted internal audit of a prominent regional newspaper: budgeting, cost controls, operational compliance</li>
+            <li>Delivered training sessions on Advanced Excel, VBA, and Tally to 100+ individuals</li>
+            <li>Designed and distributed client-facing regulatory newsletters with original creative content</li>
+            <li>Won Star Performer Award and Best Article Award</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">Audit</span><span class="tl-tag">GST / TDS</span><span class="tl-tag">VBA Automation</span><span class="tl-tag">Star Performer Award</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item" onclick="toggleTL(this)">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-period">2015 – 2020</div>
+        <div class="tl-role">Student – CA Foundation to Intermediate</div>
+        <div class="tl-org">ICAI · Chhatrapati Sambhajinagar</div>
+        <div class="tl-detail">
+          <ul>
+            <li>SSC — 92.80%, 100/100 in Sanskrit, S.B.O.A, Chhatrapati Sambhajinagar</li>
+            <li>HSC — 93.08%, 3rd Rank in batch, Deogiri College, Chhatrapati Sambhajinagar</li>
+            <li>CPT cleared in 1st attempt (132/200), May 2017</li>
+            <li>Cleared both CA Intermediate groups with multiple exemptions</li>
+            <li>Alongside studies: sold 100+ portrait sketches, won WICASA Art Competition First Prize</li>
+            <li>Mastered stippling — a technique demanding extreme patience and precision</li>
+            <li>Began self-teaching Excel and automation tools during this period</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">CA Foundation</span><span class="tl-tag">Intermediate</span><span class="tl-tag">Art</span><span class="tl-tag">Excel</span></div>
+        </div>
       </div>
     </div>
 
@@ -549,63 +621,7 @@ footer p{font-size:0.78rem;color:rgba(255,255,255,0.22)}
     </div>
     <div class="fq-body">
       <div class="fq-intro">Select a question below to learn more about Kiran.</div>
-      <div class="fq-list" id="faq-list">
-
-        <div class="fq-q" onclick="showAnswer(0)">
-          <span>What products has he built?</span><span class="fq-q-arrow">›</span>
-        </div>
-        <div class="fq-answer" id="faq-ans-0">
-          <div class="fq-back" onclick="hideAnswer(0)">‹ Back to questions</div>
-          <div class="fq-q-label">What products has he built?</div>
-          <div class="fq-a-txt">Kiran has personally built: • Financial Close Automation Tool (15 days → half a day, 85% faster) • P2P Platform (BRD, PRD, GTM, POC) • Master Data Cleanup Tool (ERP migration ready) • Reconciliation Tool (deployed across multiple clients) • Schedule III Financials Tool • Power BI Dashboards for CEOs &amp; CFOs • Custom AI Assistants (GPTs/Gems) • Personal Finance Tracker App</div>
-        </div>
-
-        <div class="fq-q" onclick="showAnswer(1)">
-          <span>What is his ERP experience?</span><span class="fq-q-arrow">›</span>
-        </div>
-        <div class="fq-answer" id="faq-ans-1">
-          <div class="fq-back" onclick="hideAnswer(1)">‹ Back to questions</div>
-          <div class="fq-q-label">What is his ERP experience?</div>
-          <div class="fq-a-txt">Kiran has delivered 11+ live ERP implementations covering SAP ECC, SAP S/4 HANA, Oracle, ERP Next, and Tally — all on real client projects. He handles solution architecture, CRP sessions, UAT design, data migration planning, go-live support, and post-implementation optimization. Process coverage: O2C, P2P, R2R, and H2R end-to-end.</div>
-        </div>
-
-        <div class="fq-q" onclick="showAnswer(2)">
-          <span>How does he lead teams?</span><span class="fq-q-arrow">›</span>
-        </div>
-        <div class="fq-answer" id="faq-ans-2">
-          <div class="fq-back" onclick="hideAnswer(2)">‹ Back to questions</div>
-          <div class="fq-q-label">How does he lead teams?</div>
-          <div class="fq-a-txt">Kiran manages teams of 10–15 across 8+ month engagements. He presents directly to CEOs, CFOs, and COOs, owns WBS and delivery management, and has designed centralized operating structures (PMO, Procurement Ops, Master Data teams) for clients to ensure post-go-live process ownership.</div>
-        </div>
-
-        <div class="fq-q" onclick="showAnswer(3)">
-          <span>Why should we hire Kiran?</span><span class="fq-q-arrow">›</span>
-        </div>
-        <div class="fq-answer" id="faq-ans-3">
-          <div class="fq-back" onclick="hideAnswer(3)">‹ Back to questions</div>
-          <div class="fq-q-label">Why should we hire Kiran?</div>
-          <div class="fq-a-txt">Kiran is rare — a CA who actually builds. He doesn’t just advise; he codes automation tools, designs ERP architecture, writes BRDs, and leads delivery teams. 11+ live engagements, 1,050+ professionals trained, 85% faster financial close achieved for clients. He engages at the C-suite level and delivers end-to-end.</div>
-        </div>
-
-        <div class="fq-q" onclick="showAnswer(4)">
-          <span>What are his skills &amp; tools?</span><span class="fq-q-arrow">›</span>
-        </div>
-        <div class="fq-answer" id="faq-ans-4">
-          <div class="fq-back" onclick="hideAnswer(4)">‹ Back to questions</div>
-          <div class="fq-q-label">What are his skills &amp; tools?</div>
-          <div class="fq-a-txt">• ERP: SAP ECC, S/4 HANA, Oracle, ERP Next, Tally • Automation: Advanced Excel (VBA, Macros, Power Query), Power BI, Power Automate • AI: Prompt Engineering, MCP, Claude, Gemini, ChatGPT, Copilot • Consulting: BRD/PRD/SOP, Process Design, Stakeholder Management, Project Management • Certifications: AI Fluency (Anthropic), IND AS (CRISIL)</div>
-        </div>
-
-        <div class="fq-q" onclick="showAnswer(5)">
-          <span>How can I contact Kiran?</span><span class="fq-q-arrow">›</span>
-        </div>
-        <div class="fq-answer" id="faq-ans-5">
-          <div class="fq-back" onclick="hideAnswer(5)">‹ Back to questions</div>
-          <div class="fq-q-label">How can I contact Kiran?</div>
-          <div class="fq-a-txt">• Email: <a href="mailto:cakiranbora@gmail.com" style="color:var(--gold2)">cakiranbora@gmail.com</a> • Phone: <a href="tel:+917020679009" style="color:var(--gold2)">+91 7020679009</a> • LinkedIn: <a href="https://linkedin.com/in/CAKiBo" target="_blank" style="color:var(--gold2)">linkedin.com/in/CAKiBo</a></div>
-        </div>
-
-      </div>
+      <div class="fq-list" id="faq-list"></div>
     </div>
   </div>
   <button id="faq-toggle" onclick="toggleFAQ()" title="Quick answers about Kiran">💬</button>
@@ -634,6 +650,54 @@ function toggleTL(el){
 
 
 
+
+// FAQ DATA
+const faqData=[
+  {q:"What makes Kiran different from a typical CA?",a:"Kiran does not just analyse and advise — he identifies the gap, defines the solution, and personally builds it. Most CAs stop at the recommendation. Kiran goes further: he codes the automation tool, designs the ERP architecture, writes the BRD and PRD, and delivers the working product to leadership. 8+ tools built and deployed on live client projects. Solutions, not slides."},
+  {q:"What ERP platforms has he worked on?",a:"Kiran has delivered live implementations across:\n• SAP ECC & SAP S/4 HANA\n• Oracle\n• ERP Next\n• Tally\nAll learned and delivered on real client projects — not certifications alone. Full lifecycle coverage: solution architecture → CRP sessions → UAT design → data migration → go-live → post-implementation optimization."},
+  {q:"What products has he personally built?",a:"• Financial Close Automation Tool — 85% faster close, 21 branches, 15 states\n• P2P Platform — full BRD, PRD, GTM strategy, POC, solution architecture\n• Master Data Cleanup Tool — standard pre-migration tool across all Contetra engagements\n• Reconciliation Tool — deployed across multiple clients\n• Power BI Dashboards — CEO/CFO level across Manufacturing, Pharma, Tech\n• Custom AI Assistants (GPTs/Gems) — consulting workflow automation\n• AI MoM Generator — 2-3 hour meetings → perfect formatted MoMs instantly\n• Personal Finance Tracker App — built independently for self-learning"},
+  {q:"What finance and enterprise processes does he cover?",a:"Kiran has hands-on delivery experience across all major enterprise process frameworks:\n• O2C — Order to Cash\n• P2P — Procure to Pay\n• R2R — Record to Report\n• H2R — Hire to Retire\n• S2P — Source to Pay\n• Q2C — Quote to Cash\n• T2R — Treasury to Reporting\n• A2R — Asset to Retirement\n• I2P — Invoice to Pay\nFor each process: AS-IS diagnostics, TO-BE operating model design, SOP creation, ERP configuration, and UAT — all delivered on live client engagements."},
+  {q:"Has he worked directly with C-suite?",a:"Yes — directly and regularly.\n• Presents solution designs, ERP architecture, and transformation roadmaps to CEOs, CFOs, and COOs\n• Conducts requirement discovery and validates solution design at steering level\n• Drives executive decision making on live transformation engagements\n• At IDFC FIRST Bank, prepared and presented Credit Appraisal Memorandums to credit committees for clients with 500 Cr+ turnover"},
+  {q:"How does he manage large, complex projects?",a:"Kiran brings structured programme management to every engagement:\n• Leads cross-functional teams of 15+ across parallel projects\n• Owns end-to-end delivery: scoping → sprint planning → milestone tracking → go-live\n• Runs structured sprint reviews, quality checks, and stakeholder updates throughout\n• Designs and implements centralized PMO structures for clients — ensuring clear ownership, governance, and accountability post go-live\n• Tracks delivery against WBS with regular steering reviews\n• 11+ live engagements delivered across 8+ month timelines at Contetra"},
+  {q:"What sectors has he worked across?",a:"• Manufacturing, EPC, Engineering\n• Pharma & Life Sciences\n• Quick Service Restaurants (QSR)\n• Renewable Energy\n• Automobile\n• IT & Technology\n• Trading\n• Banking — Corporate Banking at IDFC FIRST Bank\n• Hospitals, Media, Construction — during articleship"},
+  {q:"What are his automation and analytics capabilities?",a:"• Advanced Excel: VBA, Macros, Power Query — production-grade tools built and deployed\n• Power BI: interactive dashboards with complex DAX calculations for board-level reporting\n• Power Automate, Tableau\n• Eliminated manual processes worth days of effort across multiple client finance teams\n• Every tool built and shipped on live engagements — not theoretical exercises"},
+  {q:"What AI tools and skills does he have?",a:"Tools: Claude (incl. Claude Code), ChatGPT, Gemini, Notebook LM, Perplexity, MS Copilot, Lovable AI, Antigravity, Google AI Studio\nSkills: Prompt Engineering, Model Context Protocol (MCP), AI Agent design and deployment\nApplied: Custom GPTs/Gems for consulting, AI MoM Generator, AI-assisted reconciliation tool\nCertified: AI Fluency (Anthropic)\nTrained 1,050+ professionals in AI tools across client organizations and internal teams"},
+  {q:"What did he deliver at Contetra?",a:"At Contetra (Jan 2025 – Present) as Assistant Manager – Digital Transformation & Automation:\n• Led 11+ live finance transformation engagements across 7+ sectors\n• Managed teams of 15+ across parallel projects\n• Built Financial Close Automation Tool: 15 days → under half a day (85% faster) across 21 branches in 15 states\n• Functionally led P2P product: BRD, PRD, white paper, GTM, POC, developer coordination\n• Designed centralized PMO, Procurement Ops, and Master Data Management structures for clients\n• Built Power BI dashboards for CEO/CFO-level decision making\n• Built Custom AI Assistants, AI MoM Generator, Master Data Cleanup Tool, Reconciliation Tool\n• Trained 1,050+ professionals in AI, Advanced Excel, and Power BI"},
+  {q:"What was his impact at IDFC FIRST Bank?",a:"At IDFC FIRST Bank (Mar 2023 – Jan 2025) as Credit Analyst → Associate Relationship Manager:\n• Credit risk assessment for 20+ corporate clients (500 Cr+ turnover each)\n• Sectors: Manufacturing, Renewable Energy, Automobile\n• Prepared detailed CAMs: financial modelling, industry benchmarking, working capital analysis\n• Built automated financial rating tools — improved analysis speed by 70%\n• Performed sensitivity analysis, covenant monitoring, scenario analysis for M&A assessments\n• Promoted from Credit Analyst to ARM in April 2024"},
+  {q:"What did he do during his articleship?",a:"At R.B. Sharma & Company (Feb 2020 – Feb 2023):\n• Statutory, tax, and concurrent bank audits across Manufacturing, Pharma, Hospitals, Media, Trading\n• Filed 30+ monthly GST returns; handled GST registrations, refunds, litigation support\n• Built his first VBA automation tools — improved team efficiency by 50%\n• Trained 100+ individuals on Advanced Excel, VBA, and Tally\n• Won Star Performer Award and Best Article Award\n• Designed client-facing regulatory newsletters with original creative content"},
+  {q:"What is his educational background and certifications?",a:"• CA Final — Both groups, 1st attempt, Nov 2022, 5th Rank in Chhatrapati Sambhajinagar\n• Exemption in Economic Laws\n• HSC — 93.08%, 3rd Rank in batch, Deogiri College\n• SSC — 92.80%, 100/100 in Sanskrit\n• Certifications: AI Fluency (Anthropic), IND AS (CRISIL)"},
+  {q:"Is he open to opportunities outside his stated target roles?",a:"Kiran's focus is Finance Transformation, ERP Implementation, Product Management, Digital Transformation, and Management Consulting — but he believes in keeping an open mind. If the role sits at the intersection of finance and technology and involves real ownership and delivery, it is worth a conversation. Reach out directly: cakiranbora@gmail.com or +91 7020679009"},
+  {q:"What is his consulting and delivery style?",a:"• Starts with deep AS-IS discovery — understands the problem fully before proposing anything\n• Pairs domain expertise with hands-on execution — never just a deck, always a working solution\n• Designs for sustainability: every engagement ends with the client owning the process (PMO, MDM teams, SOPs, governance structures)\n• Communicates clearly at every level — from junior team members to the CEO\n• Builds tools that outlive the engagement — 3+ internal products now standard across Contetra's delivery toolkit"},
+  {q:"How many clients and engagements has he handled in total?",a:"• 11+ live transformation engagements at Contetra (Jan 2025–Present)\n• 20+ corporate banking clients at IDFC FIRST Bank (500 Cr+ turnover each)\n• Multiple audit and compliance clients during 3-year articleship\n• Total: 6+ years of experience spanning consulting, banking, and audit across 10+ sectors"},
+  {q:"What makes him stand out beyond his technical profile?",a:"• Artist — sold 100+ portrait sketches, won WICASA Art Competition First Prize, mastered stippling. Extreme patience and precision — same mindset in every project.\n• Self-builder — built a personal finance tracker app purely to learn, not for work\n• Genuine teacher — trained 1,050+ professionals because he actually enjoys making things clear\n• First-attempt achiever — CA Final both groups, 5th rank, promoted at IDFC, Star Performer at articleship\n• Competitive athlete — district-level Yoga, Tennikoit, Athletics"},
+  {q:"How can I get in touch with Kiran?",a:"• Email: cakiranbora@gmail.com\n• Phone: +91 7020679009\n• LinkedIn: linkedin.com/in/CAKiBo\nWhether you are hiring, exploring a collaboration, or want to discuss finance transformation, ERP, or AI — always happy to connect."}
+];
+
+// Build FAQ list
+(function buildFAQ(){
+  const list=document.getElementById('faq-list');
+  faqData.forEach(function(item,i){
+    const qDiv=document.createElement('div');
+    qDiv.className='fq-q';
+    qDiv.innerHTML='<span>'+item.q+'</span><span class="fq-q-arrow">›</span>';
+    qDiv.onclick=function(){showAnswer(i);};
+    list.appendChild(qDiv);
+
+    const aDiv=document.createElement('div');
+    aDiv.className='fq-answer';
+    aDiv.id='faq-ans-'+i;
+    // Format answer: replace \n with line breaks, linkify email/phone/linkedin on last Q
+    let formatted=item.a.replace(/\n/g,'<br>');
+    if(i===17){
+      formatted=formatted
+        .replace('cakiranbora@gmail.com','<a href="mailto:cakiranbora@gmail.com" style="color:var(--gold2)">cakiranbora@gmail.com</a>')
+        .replace('+91 7020679009','<a href="tel:+917020679009" style="color:var(--gold2)">+91 7020679009</a>')
+        .replace('linkedin.com/in/CAKiBo','<a href="https://linkedin.com/in/CAKiBo" target="_blank" style="color:var(--gold2)">linkedin.com/in/CAKiBo</a>');
+    }
+    aDiv.innerHTML='<div class="fq-back" onclick="hideAnswer('+i+')">‹ Back to questions</div><div class="fq-q-label">'+item.q+'</div><div class="fq-a-txt">'+formatted+'</div>';
+    list.appendChild(aDiv);
+  });
+})();
 
 // FAQ WIDGET
 function toggleFAQ(){document.getElementById('faq-win').classList.toggle('open');}
