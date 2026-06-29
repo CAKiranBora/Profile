@@ -9,20 +9,41 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiran Bora &mdash; CA | Founder&rsquo;s Office, ERP/Product Transformation &amp; Finance Automation</title>
+<title>Kiran Bora - CA | Finance, Systems &amp; Execution</title>
 <meta name="description" content="CA-qualified finance and operations builder working across finance transformation, ERP/product workflows, automation, CXO dashboards, PMO structures, and business execution. Built operating systems, reduced close timelines, redesigned billing workflows, and converted process gaps into SaaS MVP concepts.">
 <meta name="author" content="Kiran Bora">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Kiran Bora &mdash; CA | Founder&rsquo;s Office, ERP/Product Transformation &amp; Finance Automation">
+<meta property="og:title" content="Kiran Bora - CA | Finance, Systems &amp; Execution">
 <meta property="og:description" content="CA-qualified finance and operations builder working across finance transformation, ERP/product workflows, automation, CXO dashboards, PMO structures, and business execution. Built operating systems, reduced close timelines, redesigned billing workflows, and converted process gaps into SaaS MVP concepts.">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kiran Bora &mdash; CA | Founder&rsquo;s Office, ERP/Product Transformation &amp; Finance Automation">
+<meta property="og:image" content="KiBo.png">
+<meta property="og:image:alt" content="Kiran Bora, Chartered Accountant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="KiBo.png">
+<meta name="twitter:title" content="Kiran Bora - CA | Finance, Systems &amp; Execution">
 <meta name="twitter:description" content="CA-qualified finance and operations builder working across finance transformation, ERP/product workflows, automation, CXO dashboards, PMO structures, and business execution. Built operating systems, reduced close timelines, redesigned billing workflows, and converted process gaps into SaaS MVP concepts.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23070c15'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23e8b84b'%3EKB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kiran Bora",
+  "honorificPrefix": "CA",
+  "jobTitle": "Chartered Accountant | Finance & Digital Transformation",
+  "description": "CA-qualified finance and operations builder working across finance transformation, ERP/product workflows, automation, CXO dashboards, and business execution.",
+  "image": "KiBo.png",
+  "email": "cakiranbora@gmail.com",
+  "telephone": "+91-70206-79009",
+  "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressCountry": "IN" },
+  "worksFor": { "@type": "Organization", "name": "Contetra Pvt Ltd" },
+  "alumniOf": { "@type": "Organization", "name": "Institute of Chartered Accountants of India" },
+  "knowsAbout": ["Finance Transformation","ERP Implementation","Financial Close Automation","MIS & Dashboards","Power BI","Business Process Design","Product Management","Corporate Banking & Credit Appraisal"],
+  "sameAs": ["https://linkedin.com/in/CAKiBo"]
+}
+</script>
 <style>
 
 :root {
@@ -230,11 +251,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
 #hero {
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
   align-items: center;
+  gap: 3rem;
   padding: 100px 6% 80px;
   position: relative;
   overflow: hidden;
+}
+@media(max-width:900px){
+  #hero { grid-template-columns: 1fr; gap: 2rem; text-align: left; }
 }
 
 /* Background graph-paper grid */
@@ -252,17 +278,132 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
   height: 100%;
 }
 
-/* Node network canvas - right side */
-#three-canvas-wrap {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 55%;
-  z-index: 1;
+/* Hero portrait - right side */
+.hero-photo-col {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  perspective: 1100px;
   pointer-events: none;
 }
-@media(max-width:900px){ #three-canvas-wrap { width: 100%; opacity: .35; } }
+.hero-photo-stage {
+  position: relative;
+  width: min(430px, 92%);
+  aspect-ratio: 1122 / 1220;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+.hero-photo {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 32px 48px rgba(0,0,0,0.55));
+  animation: heroFloat 6.5s ease-in-out infinite;
+}
+@keyframes heroFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+/* Soft gold glow behind the figure */
+.hero-photo-glow {
+  position: absolute;
+  z-index: 0;
+  left: 50%; top: 46%;
+  transform: translate(-50%,-50%);
+  width: 118%; height: 118%;
+  background: radial-gradient(circle at 50% 42%,
+              rgba(var(--accent-rgb),0.30),
+              rgba(var(--accent-rgb),0.06) 46%,
+              transparent 70%);
+  filter: blur(22px);
+  pointer-events: none;
+}
+/* Thin orbit ring + grounding ellipse */
+.hero-photo-ring {
+  position: absolute;
+  z-index: 1;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-52%);
+  width: 92%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--accent-rgb),0.18);
+  box-shadow: inset 0 0 60px rgba(var(--accent-rgb),0.06);
+  pointer-events: none;
+}
+.hero-photo-ring::after {
+  content: '';
+  position: absolute;
+  left: 50%; bottom: -2%;
+  transform: translateX(-50%);
+  width: 78%; height: 26px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.45), transparent 70%);
+  filter: blur(6px);
+}
+/* Floating role pills around portrait */
+.hero-chip {
+  position: absolute;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+  padding: .42rem .85rem;
+  font-family: 'Space Mono', monospace;
+  font-size: .62rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--off);
+  white-space: nowrap;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(var(--accent-rgb),0.28);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.38);
+  transition: opacity .4s ease;
+}
+.hero-chip::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold2);
+  box-shadow: 0 0 9px rgba(var(--accent-rgb),0.7);
+  flex-shrink: 0;
+}
+.hero-chip-0 { top: 14%; right: -3%; animation: heroFloat 6.5s ease-in-out infinite 0s; }
+.hero-chip-1 { top: 30%; left: -7%;  animation: heroFloat 6.8s ease-in-out infinite .2s; }
+.hero-chip-2 { top: 60%; left: -3%;  animation: heroFloat 7.4s ease-in-out infinite .9s; }
+.hero-chip-3 { top: 78%; right: -4%; animation: heroFloat 7.0s ease-in-out infinite 1.4s; }
+[data-theme="parchment"] .hero-chip,
+[data-theme="arctic"] .hero-chip {
+  background: rgba(255,255,255,0.75);
+  color: var(--white);
+  border-color: rgba(var(--accent-rgb),0.3);
+}
+[data-theme="parchment"] .hero-photo .ring,
+[data-theme="arctic"] .hero-photo-ring { border-color: rgba(var(--accent-rgb),0.28); }
+@media(max-width:900px){
+  .hero-photo-col { height: auto; margin-top: .5rem; }
+  .hero-photo-stage { width: min(300px, 72%); }
+  .hero-chip { font-size: .56rem; padding: .35rem .7rem; }
+  .hero-chip-1 { left: -2%; }
+  .hero-chip-2 { left: 0; }
+  .hero-chip-3 { right: -1%; }
+}
+@media(max-width:600px){
+  .hero-photo-stage { width: 240px; }
+  .hero-chip { display: none; }
+}
 
 /* Overlay gradient from left */
 .hero-overlay {
@@ -644,7 +785,7 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 }
 #about > *{position:relative;z-index:1}
 
-.about-layout{display:grid;grid-template-columns:1fr 380px;gap:6rem;align-items:start;margin-top:4rem}
+.about-layout{display:grid;grid-template-columns:1.25fr 0.95fr;gap:3.5rem;align-items:start;margin-top:4rem}
 @media(max-width:1100px){.about-layout{grid-template-columns:1fr;gap:4rem}}
 
 /* PHASE 4 - editorial quote, larger and more dramatic */
@@ -1016,7 +1157,7 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 .proj-card[data-sector="banking"]{--sector-color:#38bdf8}
 .proj-card:hover{border-color:rgba(var(--accent-rgb),0.18);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
 
-/* Featured card &mdash; different interior layout */
+/* Featured card - different interior layout */
 .proj-card.featured{
   border:1px solid rgba(var(--accent-rgb),0.14);
   background:rgba(255,255,255,0.035);
@@ -1205,10 +1346,26 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 }
 
 #career{background:var(--bg2);padding:120px 6%}
-.timeline{margin-top:4rem;position:relative;max-width:900px}
+.timeline{margin:4rem auto 0;position:relative;max-width:960px}
+/* Reliable always-visible track line through node centers */
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:16px;top:14px;bottom:24px;
+  width:2px;
+  background:linear-gradient(to bottom,
+    transparent,
+    rgba(var(--accent-rgb),0.45) 6%,
+    rgba(var(--accent-rgb),0.45) 94%,
+    transparent);
+  z-index:0;
+  pointer-events:none;
+}
+@media(max-width:600px){ .timeline::before{ display:none; } }
 
-/* PHASE 9 - SVG animated track line */
+/* PHASE 9 - SVG animated track line (replaced by .timeline::before) */
 .tl-track-svg{
+  display:none;
   position:absolute;
   left:16px;top:0;bottom:0;
   width:1px;
@@ -1218,7 +1375,7 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 }
 .tl-track-line{
   stroke:url(#tlGrad);
-  stroke-width:1;
+  stroke-width:2;
   stroke-linecap:round;
   fill:none;
   stroke-dasharray:var(--total-len,800);
@@ -1332,8 +1489,10 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 }
 
 #beyond{background:var(--bg3);padding:120px 6%}
-.beyond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:4rem}
-.beyond-card{padding:2.2rem 2rem;border:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);transition:all .35s;position:relative;overflow:hidden}
+.beyond-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem;margin-top:4rem}
+.beyond-card{flex:0 1 calc(33.333% - 0.8rem);padding:2.2rem 2rem;border:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);transition:all .35s;position:relative;overflow:hidden}
+@media(max-width:900px){.beyond-card{flex-basis:calc(50% - 0.6rem)}}
+@media(max-width:600px){.beyond-card{flex-basis:100%}}
 .beyond-glow{position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(var(--accent-rgb),0.07),transparent 70%);opacity:0;transition:opacity .4s}
 .beyond-card:hover{border-color:var(--gold-b);background:var(--gold-glass)}
 .beyond-card:hover .beyond-glow{opacity:1}
@@ -1577,8 +1736,8 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 
 /* Dot Nav Removed */
 
-footer{background:#030609;padding:2rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,0.04)}
-footer p{font-size:.7rem;color:rgba(255,255,255,.14)}
+footer{background:#030609;padding:3.5rem 6% 2rem;border-top:1px solid rgba(255,255,255,0.05)}
+footer p{font-size:.7rem;color:rgba(255,255,255,.38)}
 
 #btt{position:fixed;bottom:88px;right:28px;width:42px;height:42px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);color:var(--gold2);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;z-index:900;opacity:0;pointer-events:none;transition:all .3s;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 #btt.show{opacity:1;pointer-events:all}
@@ -2005,13 +2164,13 @@ h1.hero-name { animation-delay: 0s; }
   box-shadow: 0 24px 64px rgba(0,0,0,0.55);
 }
 .proj-detail {
-  display: grid;
-  grid-template-rows: 0fr;
-  max-height: none;
-  opacity: 1;
-  transition: grid-template-rows .55s cubic-bezier(.4,0,.2,1);
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .55s cubic-bezier(.4,0,.2,1), opacity .4s ease;
 }
-.proj-detail.open { grid-template-rows: 1fr; max-height: none; }
+.proj-detail.open { max-height: 600px; opacity: 1; }
 .proj-detail > .proj-detail-inner { overflow: hidden; min-height: 0; }
 
 .testi-card:hover,
@@ -2217,23 +2376,33 @@ h1.hero-name { animation-delay: 0s; }
 .cw-faq-cat:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 .cw-typing { display: flex; }
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .9rem 1.2rem;
-  justify-content: center;
+.footer-top{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:2.5rem;
+  max-width:1100px;
+  margin:0 auto;
+  padding-bottom:2.5rem;
+  border-bottom:1px solid rgba(255,255,255,0.06);
 }
-.footer-links a {
-  color: rgba(255,255,255,.42);
-  font-family: 'Space Mono', monospace;
-  font-size: .62rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: color .2s;
+@media(max-width:760px){ .footer-top{grid-template-columns:1fr;gap:2rem} }
+.footer-logo{font-size:1.25rem;display:inline-block;margin-bottom:1rem}
+.footer-tag{font-size:.8rem;line-height:1.8;color:rgba(255,255,255,.42);max-width:430px;margin-bottom:1.2rem}
+.footer-status{display:inline-flex;align-items:center;gap:.5rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#4ade80;border:1px solid rgba(74,222,128,0.28);background:rgba(74,222,128,0.06);padding:.3rem .75rem;border-radius:999px}
+.footer-status-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px rgba(74,222,128,0.6);animation:pulse 2.2s ease infinite}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:480px){ .footer-cols{grid-template-columns:repeat(2,1fr)} }
+.footer-col{display:flex;flex-direction:column;gap:.7rem}
+.footer-col-h{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin-bottom:.2rem}
+.footer-col a{font-size:.78rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s,padding-left .2s}
+.footer-col a:hover{color:var(--gold2);padding-left:.25rem}
+.footer-bottom{
+  max-width:1100px;margin:0 auto;
+  padding-top:1.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
 }
-.footer-links a:hover { color: var(--gold2); }
-footer p { color: rgba(255,255,255,.38); }
+.footer-meta{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.06em;color:rgba(255,255,255,.32)!important;text-transform:uppercase}
+@media(max-width:600px){ .footer-bottom{flex-direction:column;text-align:center;gap:.6rem} }
 
 .sp-link.active {
   color: var(--gold2);
@@ -2370,41 +2539,100 @@ footer p { color: rgba(255,255,255,.38); }
 .svc-icon { font-size: 2.05rem; line-height: 1; }
 .proj-icon-wrap { font-size: 1.05rem; }
 .pillar-icon, .beyond-icon, .contact-icon, .c-icon { font-size: 1.05rem; }
+
+/* === Inline line-icon system === */
+.ic {
+  width: 1em; height: 1em;
+  display: inline-block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+  overflow: visible;
+}
+.svc-icon { color: var(--gold2); display: inline-flex; align-items: center; justify-content: center; }
+.svc-card:hover .svc-icon { color: var(--gold3); }
+.proj-icon-wrap { color: var(--gold2); }
+.proj-icon-wrap .ic { width: 20px; height: 20px; }
+.pillar-icon { color: var(--gold2); }
+.pillar-icon .ic { width: 19px; height: 19px; }
+.beyond-icon { color: var(--beyond-accent, var(--gold2)); font-size: 1.6rem; display: inline-flex; }
+.contact-icon, .c-icon { color: var(--gold2); display: inline-flex; align-items: center; justify-content: center; }
 @media(max-width:600px) {
+  /* === Mobile FAB layout: contact actions bottom-RIGHT, utilities bottom-LEFT === */
+  /* Contact: AI chat (bottom) + WhatsApp (above) on the right */
   #chat-bubble {
-    left: 92px;
-    right: auto;
-    bottom: 18px;
-    max-width: calc(100vw - 36px);
-    align-items: flex-start;
+    left: auto;
+    right: 16px;
+    bottom: 16px;
+    align-items: flex-end;
+    max-width: calc(100vw - 32px);
   }
   #chat-toggle {
-    max-width: calc(100vw - 36px);
-    width: 58px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    clip-path: none;
     justify-content: center;
     padding: 0;
+    gap: 0;
   }
-  #chat-toggle .chat-toggle-label {
-    display: none;
-  }
+  #chat-toggle .chat-toggle-label { display: none; }
+  #chat-toggle #chat-toggle-icon { font-size: 0; gap: 0; }
+  #chat-toggle #chat-toggle-icon svg { width: 24px; height: 24px; }
   .whatsapp-float {
-    left: 20px;
-    right: auto;
-    bottom: 24px;
-    width: 44px;
-    height: 44px;
+    left: auto;
+    right: 16px;
+    bottom: 80px;
+    width: 52px;
+    height: 52px;
     font-size: 0.68rem;
   }
+  /* Utilities: theme (bottom) + back-to-top (above) on the left */
   #theme-switcher {
-    left: 20px;
-    bottom: 82px;
+    left: 16px;
+    right: auto;
+    bottom: 16px;
   }
+  #theme-toggle-btn { width: 52px; height: 52px; }
+  #btt {
+    left: 16px;
+    right: auto;
+    bottom: 80px;
+    width: 52px;
+    height: 52px;
+  }
+  /* Keep footer bottom text clear of the FAB zone */
+  footer { padding-bottom: 7rem; }
 }
 
 </style>
 </head>
 <body>
+<!-- ICON SPRITE (line icons, currentColor) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="ic-bank" viewBox="0 0 24 24"><path d="M3 21h18M4 10h16M5 21V10M19 21V10M9 21V10M15 21V10M12 3 4 7v1h16V7z"/></symbol>
+<symbol id="ic-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13z"/></symbol>
+<symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+<symbol id="ic-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5z"/></symbol>
+<symbol id="ic-workflow" viewBox="0 0 24 24"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="15" y="15" width="6" height="5" rx="1"/><path d="M9 6.5h5a3 3 0 0 1 3 3V15"/></symbol>
+<symbol id="ic-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></symbol>
+<symbol id="ic-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+<symbol id="ic-package" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol>
+<symbol id="ic-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 10h4v4h-4zM9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
+<symbol id="ic-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M22 12h-3M5 12H2m15.5-6.5-2 2m-7 7-2 2m11 0-2-2m-7-7-2-2"/></symbol>
+<symbol id="ic-clipboard" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9zM9 11h6M9 15h4"/></symbol>
+<symbol id="ic-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+<symbol id="ic-pen" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3 0z" transform="translate(-3 -3)"/><path d="M14 6l3 3M3 21l3.5-1 9-9-2.5-2.5-9 9z"/></symbol>
+<symbol id="ic-code" viewBox="0 0 24 24"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"/></symbol>
+<symbol id="ic-teach" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8 20h8"/></symbol>
+<symbol id="ic-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3M10 14h4M9 20h6M12 14v6"/></symbol>
+<symbol id="ic-activity" viewBox="0 0 24 24"><path d="M3 12h4l2.5-7 5 14L17 12h4"/></symbol>
+<symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="ic-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></symbol>
+</defs></svg>
 <!-- LOADER -->
 <div id="kb-loader">
   <div class="kb-stage">
@@ -2482,25 +2710,25 @@ footer p { color: rgba(255,255,255,.38); }
   </div>
   <script>
   (function(){
-    var T=6500,TL='FINANCE \u00B7 SYSTEMS \u00B7 EXECUTION';
+    var T=3000,TL='FINANCE \u00B7 SYSTEMS \u00B7 EXECUTION';
     setTimeout(function(){
       document.getElementById('kb-left').classList.add('visible');
       document.getElementById('kb-right').classList.add('visible');
-    },300);
+    },150);
     document.querySelectorAll('.kb-icon-item').forEach(function(el){
       var d=parseInt(el.getAttribute('data-d'))||0;
-      setTimeout(function(){el.classList.add('lit');},500+d);
+      setTimeout(function(){el.classList.add('lit');},220+d*0.45);
     });
     setTimeout(function(){
       document.getElementById('kb-dot-l').classList.add('show');
       document.getElementById('kb-dot-r').classList.add('show');
-    },1400);
+    },620);
     setTimeout(function(){
       document.getElementById('kb-arc').classList.add('drawn');
-    },1550);
+    },720);
     setTimeout(function(){
       document.getElementById('kb-name-block').classList.add('show');
-    },3100);
+    },1300);
     setTimeout(function(){
       var b=document.getElementById('kb-bottom');
       var el=document.getElementById('kb-typed');
@@ -2509,8 +2737,8 @@ footer p { color: rgba(255,255,255,.38); }
       var iv=setInterval(function(){
         if(i<=TL.length){el.textContent=TL.slice(0,i);i++;}
         else{clearInterval(iv);}
-      },48);
-    },3600);
+      },32);
+    },1550);
     var p=0,bar=document.getElementById('kb-bar');
     var pi=setInterval(function(){
       p=Math.min(p+1.6,100);bar.style.width=p+'%';
@@ -2534,7 +2762,7 @@ footer p { color: rgba(255,255,255,.38); }
   <button id="side-open" onclick="toggleSidePanel()" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
-  <a class="nav-logo" href="#hero">Kiran <span>Bora</span></a>
+  <a class="nav-logo" href="#hero">CA Kiran <span>Bora</span></a>
 </nav>
 <div id="mobile-menu">
   <a href="#about" onclick="toggleMenu()">About</a>
@@ -2542,7 +2770,7 @@ footer p { color: rgba(255,255,255,.38); }
   <a href="#impact" onclick="toggleMenu()">Impact</a>
   <a href="#career" onclick="toggleMenu()">Career</a>
   <a href="#beyond" onclick="toggleMenu()">Beyond</a>
-  <a href="#resume" onclick="toggleMenu()">Resume</a>
+  <a href="#resume" onclick="toggleMenu()">Profile</a>
   <a href="#connect" onclick="toggleMenu()">Connect</a>
 </div>
 
@@ -2584,26 +2812,33 @@ footer p { color: rgba(255,255,255,.38); }
     </svg>
   </div>
 
-  
-  <div id="three-canvas-wrap"></div>
-
   <div class="hero-overlay"></div>
 
-  
   <div class="hero-content">
-    <div class="hero-pretag"><span class="hero-dot"></span><span class="hero-status">Available</span><span>CA &middot; Mumbai &middot; Finance &times; Technology &times; Business Execution</span></div>
+    <div class="hero-pretag"><span class="hero-dot"></span><span class="hero-status">Open to Connect</span></div>
     <h1 class="hero-name">Kiran <em>Bora</em></h1>
     <div class="hero-typed-wrap">
       <span class="hero-typed-prefix">CA &middot;</span>
       <span id="typed-text"></span>
     </div>
     <p class="hero-summary">
-      I bridge finance, technology, and business execution &mdash; turning CXO priorities into operating systems, dashboards, automations, ERP workflows, product requirements, and measurable outcomes across finance, operations, product, and technology. CA-qualified finance and operations builder with experience building PMO structures, redesigning billing workflows, automating financial close, and converting recurring process gaps into SaaS MVP concepts.
+      I turn CXO priorities into operating systems, dashboards, automations, and ERP workflows that move real numbers. A CA who builds: financial-close automation, billing redesigns, governance structures, and SaaS products born from real client gaps.
     </p>
     <div class="hero-ctas">
-      <a href="#connect" class="btn-gold">Work Together &rarr;</a>
-      <a href="#resume" class="btn-ghost">View Resume</a>
-      <a href="https://wa.me/917020679009?text=Hi%20Kiran%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="btn-ghost">WhatsApp Me</a>
+      <a href="#connect" class="btn-gold">Let's Connect &rarr;</a>
+      <a href="#resume" class="btn-ghost">View Profile</a>
+    </div>
+  </div>
+
+  <div class="hero-photo-col">
+    <div class="hero-photo-stage" id="hero-photo-stage">
+      <span class="hero-photo-glow" aria-hidden="true"></span>
+      <span class="hero-photo-ring" aria-hidden="true"></span>
+      <span class="hero-chip hero-chip-0" aria-hidden="true">CA</span>
+      <span class="hero-chip hero-chip-1" aria-hidden="true">Trainer</span>
+      <span class="hero-chip hero-chip-2" aria-hidden="true">Builder</span>
+      <span class="hero-chip hero-chip-3" aria-hidden="true">Product</span>
+      <img class="hero-photo" src="KiBo-cut.png" alt="Kiran Bora, Chartered Accountant" width="1122" height="1220">
     </div>
   </div>
 
@@ -2653,11 +2888,11 @@ footer p { color: rgba(255,255,255,.38); }
       <div class="about-extra-wrap" id="about-extra-wrap">
         <div class="about-extra" id="about-extra">
           <p>
-            I work without a playbook when needed. I've managed cross-functional teams of <strong>15+ members</strong> across finance, IT, operations, outsourced developers, and client stakeholders &mdash; serving as the primary point of contact and project lead across all engagements. I present directly to <strong>CEOs, CFOs, COOs, and founders</strong>, and I build the dashboards, trackers, and governance systems they use to run their businesses.
+            I work without a playbook when needed. I've managed cross-functional teams of <strong>15+ members</strong> across finance, IT, operations, outsourced developers, and client stakeholders, serving as the primary point of contact and project lead across all engagements. I present directly to <strong>CEOs, CFOs, COOs, and founders</strong>, and I build the dashboards, trackers, and governance systems they use to run their businesses.
           </p>
 
           <p>
-            I am open to <strong>Founder's Office, Strategy &amp; Operations, ERP/Product Transformation, Business Operations, Finance Automation, Product Operations, and Program/Project Management roles</strong> where finance, systems, and execution need to come together.
+            My work lives where <strong>finance, systems, and execution meet</strong>, across Founder's Office and CXO execution, Strategy &amp; Operations, ERP and product transformation, finance automation, and program management. Wherever a business needs structure turned into outcomes, that's the problem I like to own.
           </p>
         </div>
       </div>
@@ -2667,17 +2902,17 @@ footer p { color: rgba(255,255,255,.38); }
       <div class="pillar">
         <div class="pillar-glow"></div>
         <div class="pillar-accent"></div>
-        <div class="pillar-icon" aria-hidden="true">&#127974;</div>
+        <div class="pillar-icon" aria-hidden="true"><svg class="ic"><use href="#ic-bank"></use></svg></div>
         <div class="pillar-body">
           <div class="pillar-num">01 / DOMAIN</div>
           <div class="pillar-title">Finance &amp; Process</div>
-          <p class="pillar-desc">CA background with deep hands-on experience in P2P, O2C, R2R, financial close, and business process redesign. Proposed and implemented operating frameworks that founders adopted &mdash; including PMO offices, governance structures, and billing workflows for &#8377;600 Cr enterprises.</p>
+          <p class="pillar-desc">CA background with deep hands-on experience in P2P, O2C, R2R, financial close, and business process redesign. Proposed and implemented operating frameworks that founders adopted, including PMO offices, governance structures, and billing workflows for &#8377;600 Cr enterprises.</p>
         </div>
       </div>
       <div class="pillar">
         <div class="pillar-glow"></div>
         <div class="pillar-accent"></div>
-        <div class="pillar-icon" aria-hidden="true">&#9889;</div>
+        <div class="pillar-icon" aria-hidden="true"><svg class="ic"><use href="#ic-bolt"></use></svg></div>
         <div class="pillar-body">
           <div class="pillar-num">02 / TECH</div>
           <div class="pillar-title">Technology &amp; Automation</div>
@@ -2687,7 +2922,7 @@ footer p { color: rgba(255,255,255,.38); }
       <div class="pillar">
         <div class="pillar-glow"></div>
         <div class="pillar-accent"></div>
-        <div class="pillar-icon" aria-hidden="true">&#127919;</div>
+        <div class="pillar-icon" aria-hidden="true"><svg class="ic"><use href="#ic-target"></use></svg></div>
         <div class="pillar-body">
           <div class="pillar-num">03 / PEOPLE</div>
           <div class="pillar-title">CXO &amp; Team Execution</div>
@@ -2702,14 +2937,14 @@ footer p { color: rgba(255,255,255,.38); }
   <div data-aos="fade-up">
     <div class="section-eyebrow">Capabilities</div>
     <h2 class="section-title">What I Do</h2>
-    <p class="section-sub">I build operating systems, fix broken processes, and own delivery end-to-end &mdash; across finance, operations, product, and CXO execution.</p>
+    <p class="section-sub">I build operating systems, fix broken processes, and own delivery end-to-end, across finance, operations, product, and CXO execution.</p>
   </div>
   <div class="svc-grid">
 
     <div class="svc-card" data-tilt data-tilt-glare data-tilt-max-glare="0.06" data-tilt-max="5" data-aos="fade-up" data-aos-delay="0">
       <div class="svc-card-header">
         <div class="svc-num">01 / Process</div>
-        <span class="svc-icon" aria-hidden="true">&#9881;</span>
+        <span class="svc-icon" aria-hidden="true"><svg class="ic"><use href="#ic-compass"></use></svg></span>
         <div class="svc-title">Founder's Office &amp; CXO Execution</div>
       </div>
       <div class="svc-card-body">
@@ -2728,7 +2963,7 @@ footer p { color: rgba(255,255,255,.38); }
     <div class="svc-card" data-tilt data-tilt-glare data-tilt-max-glare="0.06" data-tilt-max="5" data-aos="fade-up" data-aos-delay="80">
       <div class="svc-card-header">
         <div class="svc-num">02 / ERP</div>
-        <span class="svc-icon" aria-hidden="true">&#128295;</span>
+        <span class="svc-icon" aria-hidden="true"><svg class="ic"><use href="#ic-workflow"></use></svg></span>
         <div class="svc-title">ERP &amp; Process Transformation</div>
       </div>
       <div class="svc-card-body">
@@ -2747,7 +2982,7 @@ footer p { color: rgba(255,255,255,.38); }
     <div class="svc-card" data-tilt data-tilt-glare data-tilt-max-glare="0.06" data-tilt-max="5" data-aos="fade-up" data-aos-delay="160">
       <div class="svc-card-header">
         <div class="svc-num">03 / MIS</div>
-        <span class="svc-icon" aria-hidden="true">&#128200;</span>
+        <span class="svc-icon" aria-hidden="true"><svg class="ic"><use href="#ic-chart"></use></svg></span>
         <div class="svc-title">Finance Automation &amp; MIS</div>
       </div>
       <div class="svc-card-body">
@@ -2766,7 +3001,7 @@ footer p { color: rgba(255,255,255,.38); }
     <div class="svc-card" data-tilt data-tilt-glare data-tilt-max-glare="0.06" data-tilt-max="5" data-aos="fade-up" data-aos-delay="240">
       <div class="svc-card-header">
         <div class="svc-num">04 / Execution</div>
-        <span class="svc-icon" aria-hidden="true">&#128188;</span>
+        <span class="svc-icon" aria-hidden="true"><svg class="ic"><use href="#ic-layers"></use></svg></span>
         <div class="svc-title">Product &amp; Automation Build</div>
       </div>
       <div class="svc-card-body">
@@ -2789,7 +3024,7 @@ footer p { color: rgba(255,255,255,.38); }
   <div class="tools-header" data-aos="fade-up">
     <div class="section-eyebrow center">Tech Stack</div>
     <h2 class="section-title">Tools &amp; Platforms</h2>
-    <p class="section-sub">Every tool below has been used on live client engagements or shipped products &mdash; not just studied.</p>
+    <p class="section-sub">Every tool below has been used on live client engagements or shipped products, not just studied.</p>
   </div>
 
   <div class="tool-row-label">ERP / Process / Governance</div>
@@ -2871,23 +3106,33 @@ footer p { color: rgba(255,255,255,.38); }
   <div class="tool-row-label">Finance / MIS / Delivery</div>
   <div class="ticker-row ticker-row-3">
     <div class="ticker-track" id="ticker-process">
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">O2C</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">P2P</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">R2R</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">H2R</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">S2P</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Financial Close</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Schedule III</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">GST / TDS</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Budgeting</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Variance Analysis</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Reconciliation</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Working Capital</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Financial Modelling</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Cash Flow</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">MIS Reporting</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Month-End Close</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Finance Transformation</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">ERP Go-Live</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Product Management</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">CXO Engagement</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">O2C</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">P2P</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">R2R</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">H2R</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">S2P</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Financial Close</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Schedule III</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">GST / TDS</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Budgeting</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Variance Analysis</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Reconciliation</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Working Capital</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Financial Modelling</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Cash Flow</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">MIS Reporting</span></div>
+      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Month-End Close</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Finance Transformation</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">ERP Go-Live</span></div>
-      <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Product Management</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">CXO Engagement</span></div>
     </div>
   </div>
@@ -2912,7 +3157,7 @@ footer p { color: rgba(255,255,255,.38); }
   <div class="proj-featured-row">
 
     <div class="proj-card featured" data-sector="automation" data-cat="automation" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
-      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true">&#128200;</div><div class="proj-meta"><div class="proj-title">Financial Close Automation</div><div class="proj-sector">Schedule III &middot; 21 branches &middot; 15 states</div></div></div>
+      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-chart"></use></svg></div><div class="proj-meta"><div class="proj-title">Financial Close Automation</div><div class="proj-sector">Schedule III &middot; 21 branches &middot; 15 states</div></div></div>
       <div class="proj-body">
         <div class="proj-pso-col">
           <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Manual financial data consolidation and Schedule III notes to accounts preparation took ~15 days across 21 branches in 15 states.</p></div>
@@ -2926,14 +3171,14 @@ footer p { color: rgba(255,255,255,.38); }
     </div>
 
     <div class="proj-card featured" data-sector="product" data-cat="product" data-aos="fade-up" data-aos-delay="80" onclick="toggleProj(this)">
-      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true">&#128295;</div><div class="proj-meta"><div class="proj-title">ERP Product Discovery &amp; Functional Design</div><div class="proj-sector">ERP/product transformation &middot; Functional design</div></div></div>
+      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-workflow"></use></svg></div><div class="proj-meta"><div class="proj-title">ERP Product Discovery &amp; Functional Design</div><div class="proj-sector">ERP/product transformation &middot; Functional design</div></div></div>
       <div class="proj-body">
         <div class="proj-pso-col">
           <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Finance and operations teams needed product-ready workflows, clearer functional requirements, and implementation inputs across ERP and automation initiatives.</p></div>
           <div class="pso-row"><span class="pso-label pso-s">Solution</span><p class="pso-txt">Functionally led finance and operations product discovery by preparing white papers, BRDs, PRDs, solution architecture, process flows, POCs, MVP requirements, and developer coordination inputs.</p></div>
           <div class="pso-row"><span class="pso-label pso-o">Outcome</span><p class="pso-txt">Converted process knowledge into product-ready workflows and MVP requirements.</p></div>
         </div>
-        <div class="proj-metric-col"><div class="feat-metric">Product-ready Workflows</div><div class="feat-metric-label">Outcome Metric</div></div>
+        <div class="proj-metric-col"><div class="feat-metric">Idea &rarr; MVP</div><div class="feat-metric-label">Outcome Metric</div></div>
       </div>
       <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Product-ready Workflows</div><div class="proj-outcome-sub">ERP/product transformation &middot; Functional design</div><p class="proj-outcome-desc">Functionally led finance and operations product discovery by preparing white papers, BRDs, PRDs, solution architecture, process flows, POCs, MVP requirements, and developer coordination inputs.</p></div></div>
@@ -2944,7 +3189,7 @@ footer p { color: rgba(255,255,255,.38); }
 
     <div class="proj-card" data-sector="product" data-cat="product" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
       <div class="proj-header">
-        <div class="proj-icon-wrap" aria-hidden="true">&#127981;</div>
+        <div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-package"></use></svg></div>
         <div class="proj-meta">
           <div class="proj-title">P2P &amp; Vendor Management Product</div>
           <div class="proj-sector">SaaS MVP &middot; Working Prototype &middot; In Active Development</div>
@@ -2952,9 +3197,9 @@ footer p { color: rgba(255,255,255,.38); }
       </div>
       <div class="proj-body">
         <div class="">
-          <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Repeated client diagnostics showed no existing ERP or tool adequately covered end-to-end P2P workflow &mdash; vendor onboarding, lifecycle management, approvals, and payments &mdash; in one place.</p></div>
-          <div class="pso-row"><span class="pso-label pso-s">Solution</span><p class="pso-txt">Identified the pattern across 3-4 engagements. Authored white paper, BRD, PRD, user stories, and wireframes. Built working MVP prototype &mdash; demoed and tested with stakeholders.</p></div>
-          <div class="pso-row"><span class="pso-label pso-o">Outcome</span><p class="pso-txt">Working MVP in active development. Born from real client pain &mdash; not a hypothetical build.</p></div>
+          <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Repeated client diagnostics showed no existing ERP or tool adequately covered end-to-end P2P workflow (vendor onboarding, lifecycle management, approvals, and payments) in one place.</p></div>
+          <div class="pso-row"><span class="pso-label pso-s">Solution</span><p class="pso-txt">Identified the pattern across 3-4 engagements. Authored white paper, BRD, PRD, user stories, and wireframes. Built working MVP prototype, demoed and tested with stakeholders.</p></div>
+          <div class="pso-row"><span class="pso-label pso-o">Outcome</span><p class="pso-txt">Working MVP in active development. Born from real client pain, not a hypothetical build.</p></div>
         </div>
       </div>
       <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
@@ -2963,7 +3208,7 @@ footer p { color: rgba(255,255,255,.38); }
 
     <div class="proj-card" data-sector="product" data-cat="product" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="80" onclick="toggleProj(this)">
       <div class="proj-header">
-        <div class="proj-icon-wrap" aria-hidden="true">&#128200;</div>
+        <div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-chart"></use></svg></div>
         <div class="proj-meta">
           <div class="proj-title">Revenue Assurance Product</div>
           <div class="proj-sector">SaaS MVP &middot; Working Prototype &middot; In Active Development</div>
@@ -2971,17 +3216,17 @@ footer p { color: rgba(255,255,255,.38); }
       </div>
       <div class="proj-body">
         <div class="">
-          <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Project-based businesses (EPC, O&amp;M, long-cycle contracts) had no single integrated solution for revenue assurance &mdash; contract lifecycle, WBS, milestone billing, resource allocation, invoicing, and reconciliation were handled across separate tools.</p></div>
-          <div class="pso-row"><span class="pso-label pso-s">Solution</span><p class="pso-txt">Designed end-to-end product from O&amp;M billing diagnostic insight &mdash; covering contract lifecycle management, WBS, milestone tracking, multi-type billing, resource allocation, invoicing, payment tracking, and reconciliation. White paper &rarr; BRD &rarr; PRD &rarr; working MVP.</p></div>
+          <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Project-based businesses (EPC, O&amp;M, long-cycle contracts) had no single integrated solution for revenue assurance: contract lifecycle, WBS, milestone billing, resource allocation, invoicing, and reconciliation were all handled across separate tools.</p></div>
+          <div class="pso-row"><span class="pso-label pso-s">Solution</span><p class="pso-txt">Designed end-to-end product from O&amp;M billing diagnostic insight, covering contract lifecycle management, WBS, milestone tracking, multi-type billing, resource allocation, invoicing, payment tracking, and reconciliation. White paper &rarr; BRD &rarr; PRD &rarr; working MVP.</p></div>
           <div class="pso-row"><span class="pso-label pso-o">Outcome</span><p class="pso-txt">Working MVP demoed and tested. Addresses a gap no standard ERP covers for project-based revenue businesses.</p></div>
         </div>
       </div>
       <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
-      <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Working MVP</div><div class="proj-outcome-sub">SaaS &middot; Revenue Assurance &middot; EPC / O&amp;M</div><p class="proj-outcome-desc">Integrated revenue assurance platform: contract lifecycle, WBS, milestone tracking, multi-type billing (progress, milestone, fixed, T&amp;M), resource allocation, approval workflows, invoicing, payment tracking, and reconciliation &mdash; all in one place. Built from white paper to working prototype.</p></div></div>
+      <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Working MVP</div><div class="proj-outcome-sub">SaaS &middot; Revenue Assurance &middot; EPC / O&amp;M</div><p class="proj-outcome-desc">Integrated revenue assurance platform: contract lifecycle, WBS, milestone tracking, multi-type billing (progress, milestone, fixed, T&amp;M), resource allocation, approval workflows, invoicing, payment tracking, and reconciliation, all in one place. Built from white paper to working prototype.</p></div></div>
     </div>
 
     <div class="proj-card" data-sector="ai" data-cat="ai" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
-      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true">&#129504;</div><div class="proj-meta"><div class="proj-title">AI Assistants &amp; Consulting Workflows</div><div class="proj-sector">Custom AI assistants &middot; GPTs / Gems &middot; AI MoM</div></div></div>
+      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-cpu"></use></svg></div><div class="proj-meta"><div class="proj-title">AI Assistants &amp; Consulting Workflows</div><div class="proj-sector">Custom AI assistants &middot; GPTs / Gems &middot; AI MoM</div></div></div>
       <div class="proj-body">
         <div class="">
           <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Consulting delivery needed faster and more consistent support for MoMs, ERP implementation, wireframes, reconciliation, and repeatable outputs.</p></div>
@@ -2995,7 +3240,7 @@ footer p { color: rgba(255,255,255,.38); }
     </div>
 
     <div class="proj-card" data-sector="erp" data-cat="erp" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
-      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true">&#9881;</div><div class="proj-meta"><div class="proj-title">Finance &amp; Business Process Transformation</div><div class="proj-sector">AS-IS &middot; TO-BE &middot; SOPs &middot; Governance</div></div></div>
+      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-gear"></use></svg></div><div class="proj-meta"><div class="proj-title">Finance &amp; Business Process Transformation</div><div class="proj-sector">AS-IS &middot; TO-BE &middot; SOPs &middot; Governance</div></div></div>
       <div class="proj-body">
         <div class="">
           <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Finance and business operations needed clearer ownership, controls, approval workflows, escalation mechanisms, and governance.</p></div>
@@ -3009,7 +3254,7 @@ footer p { color: rgba(255,255,255,.38); }
     </div>
 
     <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
-      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true">&#128203;</div><div class="proj-meta"><div class="proj-title">Post-ERP Reconciliation &amp; Data Validation</div><div class="proj-sector">Post-ERP &middot; Reconciliation &middot; Reporting reliability</div></div></div>
+      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-clipboard"></use></svg></div><div class="proj-meta"><div class="proj-title">Post-ERP Reconciliation &amp; Data Validation</div><div class="proj-sector">Post-ERP &middot; Reconciliation &middot; Reporting reliability</div></div></div>
       <div class="proj-body">
         <div class="">
           <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Post-ERP reporting needed stronger validation to ensure financial data accuracy and identify system or process inconsistencies.</p></div>
@@ -3023,7 +3268,7 @@ footer p { color: rgba(255,255,255,.38); }
     </div>
 
     <div class="proj-card" data-sector="reporting" data-cat="reporting" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
-      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true">&#128202;</div><div class="proj-meta"><div class="proj-title">CXO MIS, Budgeting &amp; Variance Dashboards</div><div class="proj-sector">Power BI &middot; MIS &middot; Budgeting &middot; Variance Analysis</div></div></div>
+      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-chart"></use></svg></div><div class="proj-meta"><div class="proj-title">CXO MIS, Budgeting &amp; Variance Dashboards</div><div class="proj-sector">Power BI &middot; MIS &middot; Budgeting &middot; Variance Analysis</div></div></div>
       <div class="proj-body">
         <div class="">
           <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Leadership needed reliable visibility into revenue, expenses, budgets, variance trends, vertical-wise performance, operational KPIs, and business review metrics.</p></div>
@@ -3037,7 +3282,7 @@ footer p { color: rgba(255,255,255,.38); }
     </div>
 
     <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
-      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true">&#128451;</div><div class="proj-meta"><div class="proj-title">Master Data Cleanup &amp; Governance</div><div class="proj-sector">MDM tool &middot; ERP migration readiness</div></div></div>
+      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-database"></use></svg></div><div class="proj-meta"><div class="proj-title">Master Data Cleanup &amp; Governance</div><div class="proj-sector">MDM tool &middot; ERP migration readiness</div></div></div>
       <div class="proj-body">
         <div class="">
           <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">ERP migration readiness was affected by inconsistent vendor, customer, item, and finance master data.</p></div>
@@ -3051,7 +3296,7 @@ footer p { color: rgba(255,255,255,.38); }
     </div>
 
     <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
-      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true">&#127974;</div><div class="proj-meta"><div class="proj-title">Credit Appraisal &amp; Business Finance Automation</div><div class="proj-sector">Corporate Banking &middot; IDFC FIRST Bank</div></div></div>
+      <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-bank"></use></svg></div><div class="proj-meta"><div class="proj-title">Credit Appraisal &amp; Business Finance Automation</div><div class="proj-sector">Corporate Banking &middot; IDFC FIRST Bank</div></div></div>
       <div class="proj-body">
         <div class="">
           <div class="pso-row"><span class="pso-label pso-p">Problem</span><p class="pso-txt">Corporate banking analysis needed structured credit analysis, financial modelling, working capital analysis, borrower risk assessment, covenant monitoring, scenario analysis, and credit committee support.</p></div>
@@ -3118,8 +3363,8 @@ footer p { color: rgba(255,255,255,.38); }
       <defs>
         <linearGradient id="tlGrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="rgba(var(--accent-rgb,232,184,75),0)"/>
-          <stop offset="10%" stop-color="rgba(var(--accent-rgb,232,184,75),0.25)"/>
-          <stop offset="90%" stop-color="rgba(var(--accent-rgb,232,184,75),0.25)"/>
+          <stop offset="10%" stop-color="rgba(var(--accent-rgb,232,184,75),0.45)"/>
+          <stop offset="90%" stop-color="rgba(var(--accent-rgb,232,184,75),0.45)"/>
           <stop offset="100%" stop-color="rgba(var(--accent-rgb,232,184,75),0)"/>
         </linearGradient>
       </defs>
@@ -3133,7 +3378,7 @@ footer p { color: rgba(255,255,255,.38); }
         <div class="tl-head">
           <div>
             <div class="tl-period">Jan 2025 &ndash; Present <span class="tl-present-badge">Present</span><span class="tl-duration">1 yr+</span></div>
-            <div class="tl-role">Assistant Manager &mdash; Finance &amp; Digital Transformation | Founder's Office Execution</div>
+            <div class="tl-role">Assistant Manager - Finance &amp; Digital Transformation | Founder's Office Execution</div>
             <div class="tl-org-row">
               <span class="tl-org">Contetra Pvt Ltd &middot; Mumbai</span>
               <span class="tl-sector-tag">Consulting</span>
@@ -3142,10 +3387,10 @@ footer p { color: rgba(255,255,255,.38); }
           <div class="tl-expand-hint">Expand Role <span class="chev">&#9662;</span></div>
         </div>
         <div class="tl-detail">
-          <span class="tl-intro">Primary client-facing lead and project manager across 15 engagements. Proposed and implemented operating systems &mdash; PMO offices, process governance, billing workflows &mdash; that founders and CEOs adopted. Reduced financial close from 15 days to half a day. Spotted client pain patterns and built two SaaS MVPs from scratch.</span>
+          <span class="tl-intro">Primary client-facing lead and project manager across 15 engagements. Proposed and implemented operating systems (PMO offices, process governance, billing workflows) that founders and CEOs adopted. Reduced financial close from 15 days to half a day. Spotted client pain patterns and built two SaaS MVPs from scratch.</span>
           <ul>
-            <li>Proposed and implemented a PMO office from scratch for a &#8377;600 Cr EPC client &mdash; defined roles and responsibilities, WBS, SOPs, escalation workflows &mdash; converting reactive firefighting into structured, accountable execution adopted by the founding team.</li>
-            <li>Redesigned an O&amp;M billing workflow that was taking 25-30 days &mdash; identified manual bottlenecks, non-standard ERP gaps, and dispute loops &mdash; and reduced the billing cycle to 7 days (75% reduction), directly improving collections speed.</li>
+            <li>Proposed and implemented a PMO office from scratch for a &#8377;600 Cr EPC client, defining roles and responsibilities, WBS, SOPs, and escalation workflows that converted reactive firefighting into structured, accountable execution adopted by the founding team.</li>
+            <li>Redesigned an O&amp;M billing workflow that was taking 25-30 days: identified manual bottlenecks, non-standard ERP gaps, and dispute loops, and reduced the billing cycle to 7 days (75% reduction), directly improving collections speed.</li>
             <li>Led finance and business process transformation engagements covering AS-IS diagnostics, TO-BE process design, SOPs, approval workflows, controls, governance, reporting structures, and process ownership.</li>
             <li>Worked across CRM, O2C, P2P, R2R, financial close, statutory workflows, master data, GST / TDS, controls, governance, PMO, Procurement Operations, and Master Data Management.</li>
             <li>Prepared BRDs, PRDs, SOPs, process flow diagrams, solution notes, and functional specifications for ERP configurations, automation workflows, and product features.</li>
@@ -3222,17 +3467,17 @@ footer p { color: rgba(255,255,255,.38); }
       <div class="tl-node"></div>
       <div class="tl-card">
         <div class="tl-head">
-          <div><div class="tl-period">Nov 2022 <span class="tl-duration">Milestone</span></div><div class="tl-role">CA Final &mdash; Both Groups, 1st Attempt</div><div class="tl-org">Institute of Chartered Accountants of India</div></div>
+          <div><div class="tl-period">Nov 2022 <span class="tl-duration">Milestone</span></div><div class="tl-role">CA Final - Both Groups, 1st Attempt</div><div class="tl-org">Institute of Chartered Accountants of India</div></div>
           <div class="tl-expand-hint">Expand <span class="chev">&#9662;</span></div>
         </div>
         <div class="tl-detail">
           <ul>
-            <li>Cleared CA Final &mdash; both groups &mdash; in the very first attempt in November 2022 &middot; Score: <strong>416/800</strong></li>
+            <li>Cleared CA Final (both groups) in the very first attempt in November 2022 &middot; Score: <strong>416/800</strong></li>
             <li><strong>5th Rank in Chhatrapati Sambhajinagar</strong> &middot; Exemption in Economic Laws</li>
             <li>CA Intermediate: both groups cleared with multiple exemptions (Financial Reporting, SFM, Law, Audit)</li>
             <li>CPT cleared in 1st attempt &middot; Score: 132/200</li>
-            <li>HSC &mdash; 93.08%, 3rd Rank in batch, Deogiri College, Chhatrapati Sambhajinagar</li>
-            <li>SSC &mdash; 92.80%, secured 100/100 in Sanskrit</li>
+            <li>HSC: 93.08%, 3rd Rank in batch, Deogiri College, Chhatrapati Sambhajinagar</li>
+            <li>SSC: 92.80%, secured 100/100 in Sanskrit</li>
             <li>Certifications: AI Fluency (Anthropic), IND AS (CRISIL)</li>
           </ul>
           <div class="tl-chips"><span class="tl-chip">CA Final 416/800</span><span class="tl-chip">1st Attempt</span><span class="tl-chip">5th Rank</span><span class="tl-chip">CPT 132/200</span><span class="tl-chip">AI Fluency</span></div>
@@ -3245,18 +3490,18 @@ footer p { color: rgba(255,255,255,.38); }
       <div class="tl-node"></div>
       <div class="tl-card">
         <div class="tl-head">
-          <div><div class="tl-period">2015 &ndash; 2020 <span class="tl-duration">5 yrs</span></div><div class="tl-role">Student &mdash; CA Foundation to Intermediate</div><div class="tl-org">Institute of Chartered Accountants of India</div></div>
+          <div><div class="tl-period">2015 &ndash; 2020 <span class="tl-duration">5 yrs</span></div><div class="tl-role">Student - CA Foundation to Intermediate</div><div class="tl-org">Institute of Chartered Accountants of India</div></div>
           <div class="tl-expand-hint">Expand <span class="chev">&#9662;</span></div>
         </div>
         <div class="tl-detail">
           <ul>
-            <li>Commenced CA journey in 2015 with CA Foundation (CPT at the time) &mdash; cleared in 1st attempt with <strong>132/200</strong></li>
-            <li>Completed CA Intermediate &mdash; both groups cleared with <strong>multiple exemptions</strong> (Financial Reporting, SFM, Law, Audit)</li>
-            <li>HSC &mdash; 93.08%, 3rd Rank in batch, Deogiri College, Chhatrapati Sambhajinagar</li>
-            <li>SSC &mdash; 92.80%, secured <strong>100/100 in Sanskrit</strong></li>
+            <li>Commenced CA journey in 2015 with CA Foundation (CPT at the time), cleared in 1st attempt with <strong>132/200</strong></li>
+            <li>Completed CA Intermediate: both groups cleared with <strong>multiple exemptions</strong> (Financial Reporting, SFM, Law, Audit)</li>
+            <li>HSC: 93.08%, 3rd Rank in batch, Deogiri College, Chhatrapati Sambhajinagar</li>
+            <li>SSC: 92.80%, secured <strong>100/100 in Sanskrit</strong></li>
             <li>Built academic discipline and analytical foundations across 5+ years of structured CA curriculum</li>
           </ul>
-          <div class="tl-chips"><span class="tl-chip">CPT 132/200</span><span class="tl-chip">CA Inter &mdash; Both Groups</span><span class="tl-chip">Multiple Exemptions</span><span class="tl-chip">HSC 93.08%</span></div>
+          <div class="tl-chips"><span class="tl-chip">CPT 132/200</span><span class="tl-chip">CA Inter - Both Groups</span><span class="tl-chip">Multiple Exemptions</span><span class="tl-chip">HSC 93.08%</span></div>
         </div>
       </div>
     </div>
@@ -3273,48 +3518,48 @@ footer p { color: rgba(255,255,255,.38); }
   <div class="beyond-grid" data-aos="fade-up" data-aos-delay="80">
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
-      <span class="beyond-icon" aria-hidden="true">&#127912;</span>
-      <div class="beyond-title">Artist &mdash; Portraits &amp; Stippling</div>
+      <span class="beyond-icon" aria-hidden="true"><svg class="ic"><use href="#ic-pen"></use></svg></span>
+      <div class="beyond-title">Artist - Portraits &amp; Stippling</div>
       <div class="beyond-stat">100+ sketches &middot; WICASA winner</div>
-      <p class="beyond-txt">Sold 100+ detailed human portrait sketches. Mastered stippling &mdash; a technique demanding extreme patience and precision. Won First Prize at the WICASA Art Competition, Chhatrapati Sambhajinagar.</p>
+      <p class="beyond-txt">Sold 100+ detailed human portrait sketches. Mastered stippling, a technique demanding extreme patience and precision. Won First Prize at the WICASA Art Competition, Chhatrapati Sambhajinagar.</p>
       <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>Art taught me that the best outputs come from sustained, detail-oriented effort &mdash; a mindset I bring to every project. The same patience it takes to stipple 10,000 dots into a portrait is exactly what I bring to digging into the root cause of a broken finance process.</p></div>
+      <div class="beyond-extra"><p>Art taught me that the best outputs come from sustained, detail-oriented effort, a mindset I bring to every project. The same patience it takes to stipple 10,000 dots into a portrait is exactly what I bring to digging into the root cause of a broken finance process.</p></div>
     </div>
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
-      <span class="beyond-icon" aria-hidden="true">&#128295;</span>
-      <div class="beyond-title">Self-Builder &mdash; Personal Finance App</div>
+      <span class="beyond-icon" aria-hidden="true"><svg class="ic"><use href="#ic-code"></use></svg></span>
+      <div class="beyond-title">Self-Builder - Personal Finance App</div>
       <div class="beyond-stat">Built from scratch</div>
-      <p class="beyond-txt">Built a personal finance health tracker app independently &mdash; not for work, just to learn and solve a personal need. Designed the data model, logic, and interface from scratch.</p>
+      <p class="beyond-txt">Built a personal finance health tracker app independently, not for work, just to learn and solve a personal need. Designed the data model, logic, and interface from scratch.</p>
       <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>Also built internal automation tools and utilities now used across Contetra's delivery toolkit &mdash; because if there's a problem, the instinct is to build something. Not wait. Not delegate. Build.</p></div>
+      <div class="beyond-extra"><p>Also built internal automation tools and utilities now used across Contetra's delivery toolkit, because if there's a problem, the instinct is to build something. Not wait. Not delegate. Build.</p></div>
     </div>
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
-      <span class="beyond-icon" aria-hidden="true">&#128203;</span>
+      <span class="beyond-icon" aria-hidden="true"><svg class="ic"><use href="#ic-teach"></use></svg></span>
       <div class="beyond-title">Genuinely Enjoys Teaching</div>
       <div class="beyond-stat">1,050+ professionals trained</div>
-      <p class="beyond-txt">Has trained 1,050+ professionals in AI tools, Advanced Excel, and Power BI &mdash; across client organisations and internal teams. Started training people during articleship itself (100+ individuals) and never stopped.</p>
+      <p class="beyond-txt">Has trained 1,050+ professionals in AI tools, Advanced Excel, and Power BI, across client organisations and internal teams. Started training people during articleship itself (100+ individuals) and never stopped.</p>
       <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>Not because it was in the job description &mdash; because explaining things clearly and watching people get it is genuinely satisfying. The kind of teacher who answers follow-up questions months later because the learning actually matters.</p></div>
+      <div class="beyond-extra"><p>Not because it was in the job description, but because explaining things clearly and watching people get it is genuinely satisfying. The kind of teacher who answers follow-up questions months later because the learning actually matters.</p></div>
     </div>
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
-      <span class="beyond-icon" aria-hidden="true">&#127942;</span>
-      <div class="beyond-title">Achiever &mdash; Built on First Attempts</div>
+      <span class="beyond-icon" aria-hidden="true"><svg class="ic"><use href="#ic-trophy"></use></svg></span>
+      <div class="beyond-title">Achiever - Built on First Attempts</div>
       <div class="beyond-stat">CA Final &middot; 1st attempt</div>
-      <p class="beyond-txt">CA Final in 1st attempt. 5th Rank in Chhatrapati Sambhajinagar. Star Performer during articleship. Promoted from Credit Analyst to ARM at IDFC FIRST Bank in April 2024. HSC &mdash; 93.08%.</p>
+      <p class="beyond-txt">CA Final in 1st attempt. 5th Rank in Chhatrapati Sambhajinagar. Star Performer during articleship. Promoted from Credit Analyst to ARM at IDFC FIRST Bank in April 2024. HSC: 93.08%.</p>
       <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>There's a pattern: set a high bar, meet it on the first attempt, then raise it again. Not a once-off &mdash; a consistent approach to every significant challenge. Exemption in Economic Laws in CA Final. 100/100 in Sanskrit in SSC. This isn't luck. It's method.</p></div>
+      <div class="beyond-extra"><p>There's a pattern: set a high bar, meet it on the first attempt, then raise it again. Not a once-off, but a consistent approach to every significant challenge. Exemption in Economic Laws in CA Final. 100/100 in Sanskrit in SSC. This isn't luck. It's method.</p></div>
     </div>
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
-      <span class="beyond-icon" aria-hidden="true">&#127939;</span>
+      <span class="beyond-icon" aria-hidden="true"><svg class="ic"><use href="#ic-activity"></use></svg></span>
       <div class="beyond-title">Competitive Athlete</div>
       <div class="beyond-stat">District level &middot; 3 sports</div>
-      <p class="beyond-txt">District-level competitor in Yoga, Tennikoit, and Athletics. The discipline, consistency, and pressure management that competitive sport builds &mdash; these show up in every high-stakes project deadline.</p>
+      <p class="beyond-txt">District-level competitor in Yoga, Tennikoit, and Athletics. The discipline, consistency, and pressure management that competitive sport builds show up in every high-stakes project deadline.</p>
       <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>Competing at district level requires showing up, doing the work, and performing under pressure &mdash; consistently. The same headspace helps you stay sharp at 11pm pre-go-live checks.</p></div>
+      <div class="beyond-extra"><p>Competing at district level requires showing up, doing the work, and performing under pressure, consistently. The same headspace helps you stay sharp at 11pm pre-go-live checks.</p></div>
     </div>
   </div>
 </section>
@@ -3322,23 +3567,23 @@ footer p { color: rgba(255,255,255,.38); }
 <!-- RESUME -->
 <section id="resume">
   <div data-aos="fade-up" class="section-center">
-    <div class="section-eyebrow center">Resume</div>
+    <div class="section-eyebrow center">Profile</div>
     <h2 class="section-title">View &amp; Download</h2>
   </div>
   <div class="resume-wrap" data-aos="fade-up" data-aos-delay="80">
     <p>A finance-tech profile covering 6+ years of Chartered Accountant experience across finance transformation, business process design, MIS automation, ERP implementation, corporate banking, AI-led automation, and CXO-level execution.</p>
     <div class="resume-frame" id="resume-frame">
-      <div class="resume-loader" id="resume-loader">Loading resume preview</div>
-      <iframe src="CV - CA Kiran Bora.pdf#toolbar=0" id="resume-iframe" title="Kiran Bora Resume"
+      <div class="resume-loader" id="resume-loader">Loading profile preview</div>
+      <iframe src="CA_Kiran_Bora.pdf#toolbar=0" id="resume-iframe" title="Kiran Bora Profile"
         onload="document.getElementById('resume-loader').style.display='none';document.getElementById('resume-fallback').style.display='none'"
         onerror="document.getElementById('resume-loader').style.display='none';document.getElementById('resume-fallback').style.display='flex'"></iframe>
       <div class="resume-fallback" id="resume-fallback">
-        <p>PDF preview not available in your browser. Please download the resume directly.</p>
-        <a href="CV - CA Kiran Bora.pdf" download class="btn-gold">Download Resume PDF</a>
+        <p>PDF preview not available in your browser. Please download the profile directly.</p>
+        <a href="CA_Kiran_Bora.pdf" download class="btn-gold">Download Profile PDF</a>
       </div>
     </div>
-    <a class="pdf-mobile-btn btn-gold" href="CV - CA Kiran Bora.pdf#toolbar=0" target="_blank">Download Resume</a>
-    <a href="CV - CA Kiran Bora.pdf" download class="btn-gold">Download Resume PDF</a>
+    <a class="pdf-mobile-btn btn-gold" href="CA_Kiran_Bora.pdf#toolbar=0" target="_blank">Download Profile</a>
+    <a href="CA_Kiran_Bora.pdf" download class="btn-gold">Download Profile PDF</a>
   </div>
 </section>
 
@@ -3349,15 +3594,15 @@ footer p { color: rgba(255,255,255,.38); }
     <h2 class="section-title">Let's Talk</h2>
   </div>
   <div class="connect-inner" data-aos="fade-up" data-aos-delay="80">
-    <p class="connect-statement">If you're building something and need someone who can <em>own the operations side</em> &mdash; I'm ready.</p>
-    <p class="connect-sub">Open to Founder's Office, Strategy &amp; Operations, ERP/Product Transformation, Business Operations, Finance Automation, Product Operations, and Program/Project Management roles where finance, systems, and execution need to come together.</p>
+    <p class="connect-statement">An idea worth building, a problem worth solving, or just something I can help with, <em>I'm always glad to connect</em>.</p>
+    <p class="connect-sub">Whether it's a project to collaborate on, an idea to build, or just a question where I can help, feel free to reach out. Always happy to connect with people working at the intersection of finance, systems, and execution.</p>
     <div class="c-grid">
       <a href="#" onclick="openEmail(event)" class="c-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
-        <div class="c-icon contact-icon" aria-hidden="true">&#9993;</div>
+        <div class="c-icon contact-icon" aria-hidden="true"><svg class="ic"><use href="#ic-mail"></use></svg></div>
         <div class="c-info"><div class="c-label">Email</div><div class="c-val">cakiranbora@gmail.com</div></div>
       </a>
       <a href="tel:+917020679009" class="c-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
-        <div class="c-icon contact-icon" aria-hidden="true">&#9742;</div>
+        <div class="c-icon contact-icon" aria-hidden="true"><svg class="ic"><use href="#ic-phone"></use></svg></div>
         <div class="c-info"><div class="c-label">Phone</div><div class="c-val">+91 70206 79009</div></div>
       </a>
       <a href="https://linkedin.com/in/CAKiBo" target="_blank" rel="noopener noreferrer" class="c-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
@@ -3386,24 +3631,45 @@ footer p { color: rgba(255,255,255,.38); }
 </section>
 
 <footer>
-  <p>&copy; 2026 Kiran Bora. Designed and built as a single-file portfolio.</p>
-  <div class="footer-links">
-    <a href="#about">About</a>
-    <a href="#impact">Impact</a>
-    <a href="#career">Career</a>
-    <a href="#resume">Resume</a>
-    <a href="mailto:cakiranbora@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/CAKiBo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://wa.me/917020679009?text=Hi%20Kiran%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="nav-logo footer-logo" href="#hero">CA Kiran <span>Bora</span></a>
+      <p class="footer-tag">CA building at the intersection of finance, systems, and execution. Operating systems, dashboards, automations, and products that move real numbers.</p>
+      <span class="footer-status"><span class="footer-status-dot"></span>Open to Connect</span>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-h">Explore</div>
+        <a href="#about">About</a>
+        <a href="#what">What I Do</a>
+        <a href="#impact">Impact</a>
+        <a href="#career">Career</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-h">More</div>
+        <a href="#beyond">Beyond</a>
+        <a href="#resume">Profile</a>
+        <a href="#connect">Connect</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-h">Reach</div>
+        <a href="mailto:cakiranbora@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/CAKiBo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://wa.me/917020679009?text=Hi%20Kiran%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
   </div>
-  <p>Finance &amp; Ops Builder &middot; Founder's Office &middot; ERP/Product Transformation &middot; Finance Automation &middot; Business Execution</p>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Kiran Bora. All rights reserved.</p>
+    <p class="footer-meta">Finance &amp; Ops Builder &middot; Founder's Office &middot; ERP / Product Transformation &middot; Finance Automation</p>
+  </div>
 </footer>
 
   <!-- SIDE PANEL -->
   <div id="side-overlay" onclick="toggleSidePanel()"></div>
   <aside id="side-panel">
     <div class="sp-top">
-      <a class="nav-logo sp-logo" href="#hero" onclick="toggleSidePanel()">Kiran <span>Bora</span></a>
+      <a class="nav-logo sp-logo" href="#hero" onclick="toggleSidePanel()">CA Kiran <span>Bora</span></a>
       <button id="side-close" onclick="toggleSidePanel()">&times;</button>
     </div>
 
@@ -3437,7 +3703,7 @@ footer p { color: rgba(255,255,255,.38); }
         <span class="sp-arrow">&rarr;</span>
       </a>
       <a class="sp-link" href="#resume" onclick="toggleSidePanel()">
-        <span class="sp-num">08</span><span class="sp-name">Resume</span>
+        <span class="sp-num">08</span><span class="sp-name">Profile</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
       <a class="sp-link sp-link-cta" href="#connect" onclick="toggleSidePanel()">
@@ -3524,7 +3790,6 @@ footer p { color: rgba(255,255,255,.38); }
 
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&uarr;</button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
@@ -3951,7 +4216,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 AOS.init({duration:650,easing:'ease-out-cubic',once:true,offset:50});
 
-new Typed('#typed-text',{strings:['Finance Transformation','ERP/Product Transformation','Business Execution Systems','CXO Dashboards & MIS','Automation from Process Gaps',"Founder's Office Support"],typeSpeed:52,backSpeed:28,backDelay:2400,loop:true,showCursor:true,cursorChar:'|'});
+new Typed('#typed-text',{strings:["Founder's Office Execution",'ERP & Product Transformation','Finance Automation & MIS','Product Discovery to MVP','CXO Dashboards & Reporting','Process & Operations Design','Training & Enablement','AI-led Workflows'],typeSpeed:52,backSpeed:28,backDelay:2200,loop:true,showCursor:true,cursorChar:'|'});
+
+/* Cycling role/skill chips around hero photo */
+(function(){
+  var slots=[
+    {sel:'.hero-chip-0',items:['CA','Financial Analysis','MIS']},
+    {sel:'.hero-chip-1',items:['Trainer','Process Improvement','ERP']},
+    {sel:'.hero-chip-2',items:['Builder','Automation','Reconciliation']},
+    {sel:'.hero-chip-3',items:['Product','AI Workflows','Dashboards']}
+  ];
+  slots.forEach(function(s,i){
+    var el=document.querySelector(s.sel);
+    if(!el) return;
+    var idx=0;
+    setTimeout(function(){
+      setInterval(function(){
+        el.style.opacity='0';
+        setTimeout(function(){
+          idx=(idx+1)%s.items.length;
+          el.textContent=s.items[idx];
+          el.style.opacity='';
+        },400);
+      },3200);
+    },i*800);
+  });
+})();
 
 if(!('ontouchstart' in window) && window.matchMedia('(pointer:fine)').matches) {
   VanillaTilt.init(document.querySelectorAll('[data-tilt]'),{max:7,speed:400,glare:true,'max-glare':0.08,scale:1.015});
@@ -4117,7 +4407,7 @@ TOOLS / SOLUTIONS BUILT: Financial Close Automation Tool; P2P & Vendor Managemen
 
 LEADERSHIP: Primary client-facing lead and project manager across 15 engagements. Managed cross-functional teams of 15+ members across finance, IT, operations, outsourced developers, and client stakeholders. Worked directly with CEOs, CFOs, COOs, and founders. Built dashboards, governance trackers, PMO structures, billing workflows, automation roadmaps, and operating systems used by leadership teams.
 
-TARGET ROLES: Founder's Office, Strategy & Operations, ERP/Product Transformation, Business Operations, Finance Automation, Product Operations, and Program/Project Management roles where finance, systems, and execution need to come together. His strongest positioning is finance + technology + business execution.`;
+FOCUS AREAS: Founder's Office, Strategy & Operations, ERP/Product Transformation, Business Operations, Finance Automation, Product Operations, and Program/Project Management, work where finance, systems, and execution come together. His strongest positioning is finance + technology + business execution. IMPORTANT: Kiran is currently employed at Contetra and is NOT job-seeking. Frame everything as connecting, collaborating, and helping, never as him looking for a job. If asked about jobs/hiring, say he is happy to connect and collaborate on relevant work.`;
 
 var chatHistory = [];
 var chatOpen = false;
@@ -4126,8 +4416,9 @@ var isLoading = false;
 var KIRAN_CONTACT_HTML = 'This needs Kiran\'s direct view. Please connect with him here:<br><br><strong>Email:</strong> <a href="mailto:cakiranbora@gmail.com">cakiranbora@gmail.com</a><br><strong>Phone:</strong> <a href="tel:+917020679009">+91 70206 79009</a><br><strong>WhatsApp:</strong> <a href="https://wa.me/917020679009?text=Hi%20Kiran%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">Message Kiran on WhatsApp</a><br><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/CAKiBo" target="_blank" rel="noopener noreferrer">linkedin.com/in/CAKiBo</a>';
 
 var FALLBACK_RESPONSES = {
-  'roles': 'Kiran is open to Founder\'s Office, Strategy & Operations, ERP/Product Transformation, Business Operations, Finance Automation, Product Operations, and Program/Project Management roles where finance, systems, and execution need to come together.',
-  'open to': 'Kiran is open to Founder\'s Office, Strategy & Operations, ERP/Product Transformation, Business Operations, Finance Automation, Product Operations, and Program/Project Management roles where finance, systems, and execution need to come together.',
+  'roles': 'Kiran works at the intersection of finance, systems, and execution, across Founder\'s Office, ERP / product transformation, finance automation, MIS, business operations, and process design. He is currently at Contetra (not job-seeking) and is always glad to connect and collaborate on work in these areas.',
+  'focus areas': 'Kiran works at the intersection of finance, systems, and execution, across Founder\'s Office, ERP / product transformation, finance automation, MIS, business operations, and process design. He is always glad to connect and collaborate on work in these areas.',
+  'open to': 'Kiran is always glad to connect and collaborate on work across finance, systems, and execution, Founder\'s Office, ERP / product transformation, finance automation, MIS, and process design.',
   'hire': KIRAN_CONTACT_HTML,
   'about': 'Kiran Bora is a CA-qualified finance and operations builder with 6+ years of experience across finance transformation, business operations, MIS, ERP, AI/tool-building, project leadership, and Founder\'s Office / CXO-level execution. He designs systems from scratch and turns operational chaos into repeatable workflows.',
   'who is kiran': 'Kiran Bora is a CA-qualified finance and operations builder based in Mumbai, currently Assistant Manager - Finance & Digital Transformation | Founder\'s Office Execution at Contetra. He combines finance depth, process design, product thinking, MIS/dashboarding, automation, and cross-functional delivery.',
@@ -4153,8 +4444,8 @@ var FALLBACK_RESPONSES = {
   'cxo': 'Kiran works directly with CEOs, CFOs, COOs, Finance, IT, and Operations leaders on requirement discovery, solution validation, MIS reporting, governance trackers, and transformation priorities.',
   'erp experience': 'Kiran works across AS-IS diagnostics, TO-BE operating models, SOPs, approval workflows, ERP lifecycle support, UAT scenarios, statutory validation, master data, CRM, O2C, P2P, R2R, financial close, GST/TDS, controls, and governance workflows.',
   'erp': 'Kiran works across AS-IS diagnostics, TO-BE operating models, SOPs, approval workflows, ERP lifecycle support, UAT scenarios, statutory validation, master data, CRM, O2C, P2P, R2R, financial close, GST/TDS, controls, and governance workflows.',
-  'resume': 'Kiran\'s latest resume is available in the Resume section as CV - CA Kiran Bora.pdf. It covers finance transformation, process design, MIS automation, ERP implementation, corporate banking, AI-led automation, and CXO-level execution.',
-  'cv': 'Kiran\'s latest CV is available in the Resume section as CV - CA Kiran Bora.pdf.',
+  'resume': 'Kiran\'s profile is available in the Profile section as CA_Kiran_Bora.pdf. It covers finance transformation, process design, MIS automation, ERP implementation, corporate banking, AI-led automation, and CXO-level execution.',
+  'cv': 'Kiran\'s profile/CV is available in the Profile section as CA_Kiran_Bora.pdf.',
   'contetra': 'At Contetra, Kiran is Assistant Manager - Finance & Digital Transformation | Founder\'s Office Execution. He is a primary client-facing lead across 15 engagements, building PMO systems, process governance, billing workflows, MIS dashboards, automation tools, SaaS MVPs, and CXO operating trackers.',
   'idfc': 'At IDFC FIRST Bank, Kiran worked in Corporate Banking as Associate Relationship Manager, covering credit analysis, financial modelling, working capital analysis, borrower risk assessment, covenant monitoring, and credit committee decision support.',
   'bank': 'Kiran\'s corporate banking experience at IDFC FIRST Bank included credit analysis, financial modelling, working capital analysis, borrower risk assessment, covenant monitoring, and client finance team engagement.',
@@ -4178,7 +4469,7 @@ var FALLBACK_RESPONSES = {
   'hello': 'Hi, I can help you explore Kiran\'s work across finance transformation, ERP/product transformation, automation, Founder\'s Office support, MIS dashboards, and key projects.',
   'hi': 'Hi, I can help you explore Kiran\'s work across finance transformation, ERP/product transformation, automation, Founder\'s Office support, MIS dashboards, and key projects.',
   'hey': 'Hey! Ask me about Kiran\'s finance + operations + systems + execution profile.',
-  'location': 'Kiran is based in Mumbai and is open to relevant roles depending on fit.',
+  'location': 'Kiran is based in Mumbai, India.',
   'mumbai': 'Yes, Kiran is based in Mumbai.',
   'salary': 'Kiran would prefer to discuss compensation directly. Reach him at cakiranbora@gmail.com or +91 70206 79009.',
   'art': 'Beyond work, Kiran is a portrait artist who has sold 100+ sketches and won the WICASA Art Competition First Prize.',
@@ -4211,7 +4502,7 @@ var FAQ_MENU = [
   { cat: 'Experience', questions: ['Contetra','Founder\'s Office','Why Founder\'s Office','CXO','PMO'] },
   { cat: 'Technical Skills', questions: ['Tech stack','ERP experience','SAP','AI','Process'] },
   { cat: 'Background', questions: ['CA','Education','Background','Sectors'] },
-  { cat: 'Connect', questions: ['Contact Kiran','Roles','Location','Hire'] }
+  { cat: 'Connect', questions: ['Contact Kiran','Focus Areas','Location'] }
 ];
 
 function showFAQMenu() {
@@ -4462,6 +4753,31 @@ document.addEventListener('keydown', function(e) {
 <!-- END EMAIL MODAL -->
 
 <!-- End of body -->
+
+<script>
+/* Hero portrait subtle 3D tilt on pointer move (desktop, motion-safe) */
+(function(){
+  var stage = document.getElementById('hero-photo-stage');
+  var hero = document.getElementById('hero');
+  if(!stage || !hero) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(window.matchMedia && window.matchMedia('(hover: none)').matches) return;
+  var raf = null, tx = 0, ty = 0;
+  hero.addEventListener('mousemove', function(e){
+    var r = hero.getBoundingClientRect();
+    var px = (e.clientX - r.left) / r.width - 0.5;
+    var py = (e.clientY - r.top) / r.height - 0.5;
+    tx = px * 10;          // max ~10deg yaw
+    ty = -py * 7;          // max ~7deg pitch
+    if(!raf) raf = requestAnimationFrame(apply);
+  });
+  hero.addEventListener('mouseleave', function(){ tx = 0; ty = 0; if(!raf) raf = requestAnimationFrame(apply); });
+  function apply(){
+    raf = null;
+    stage.style.transform = 'rotateY(' + tx.toFixed(2) + 'deg) rotateX(' + ty.toFixed(2) + 'deg)';
+  }
+})();
+</script>
 
 </body>
 </html>
