@@ -2514,8 +2514,8 @@ h1.hero-name { animation-delay: 0s; }
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 .whatsapp-float svg {
-  width: 24px;
-  height: 24px;
+  width: 27px;
+  height: 27px;
   display: block;
 }
 .whatsapp-mark {
@@ -2606,6 +2606,205 @@ h1.hero-name { animation-delay: 0s; }
   }
   /* Keep footer bottom text clear of the FAB zone */
   footer { padding-bottom: 7rem; }
+}
+
+/* ============================================================
+   === MOBILE UX REBUILD === (Phase 11) — overrides desktop only on small screens
+   ============================================================ */
+
+/* K. AOS safety — never let scroll-reveal leave content invisible on mobile */
+@media (max-width: 768px) {
+  [data-aos],
+  [data-aos].aos-init,
+  [data-aos].aos-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* hero mobile-only summary (hidden on desktop) */
+.hero-summary-m { display: none; }
+
+/* A. Hero — mobile-first rebuild: photo → badge → name → role → summary → CTAs */
+@media (max-width: 768px) {
+  #hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: auto;
+    padding: 84px 20px 46px;
+    gap: 1rem;
+  }
+  #hero-grid { opacity: .5; }
+  .hero-photo-col {
+    order: -1;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    justify-content: center;
+  }
+  .hero-photo-stage { width: clamp(270px, 78vw, 330px) !important; }
+  .hero-content {
+    max-width: 34rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-content::before { display: none; }
+  .hero-pretag {
+    justify-content: center;
+    margin-bottom: .7rem;
+    font-size: 11px;
+    letter-spacing: .1em;
+  }
+  h1.hero-name {
+    font-size: clamp(3.05rem, 14vw, 4rem) !important;
+    line-height: .98;
+    margin-bottom: .5rem;
+  }
+  .hero-typed-wrap {
+    justify-content: center;
+    font-size: 13px;
+    letter-spacing: .12em;
+    margin-bottom: 1rem;
+    min-height: 0;
+  }
+  .hero-summary { display: none !important; }
+  .hero-summary-m {
+    display: block;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 32rem;
+    margin: 0 auto 1.4rem;
+  }
+  .hero-ctas {
+    width: 100%;
+    max-width: 32rem;
+    flex-direction: column;
+    gap: .75rem;
+  }
+  .hero-ctas .btn-gold,
+  .hero-ctas .btn-ghost {
+    width: 100%;
+    min-height: 50px;
+    font-size: 14px;
+    justify-content: center;
+  }
+  .hero-scroll { display: none !important; }
+}
+
+/* B. Stats — compact 2x2 on mobile (was 1-per-row + huge gaps) */
+@media (max-width: 600px) {
+  #stats-banner { padding: 48px 5%; }
+  .stats-panel {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 1.6rem 1rem !important;
+    gap: .4rem;
+  }
+  .stat-item { padding: 1rem .5rem; }
+  .stat-item::after { display: none !important; }
+  .stat-item::before { margin-bottom: .5rem; }
+  .stat-num { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .stat-label { font-size: 11.5px; letter-spacing: .07em; }
+  .stat-desc { font-size: 11.5px; margin-top: .3rem; }
+}
+
+/* C. About pillars — stack vertically on mobile (was title-left / desc-cramped-right) */
+@media (max-width: 768px) {
+  .pillar { grid-template-columns: 1fr; row-gap: .3rem; }
+  .pillar-icon { margin-bottom: .3rem; }
+  .pillar-desc { font-size: 14.5px; line-height: 1.7; }
+  #about { padding: 64px 5%; }
+}
+
+/* J. Mobile font-size minimums — readability (mobile only, desktop untouched) */
+@media (max-width: 600px) {
+  .section-eyebrow { font-size: 12px; }
+  .section-sub { font-size: 15px; line-height: 1.7; }
+  .tag { font-size: 11px; }
+  .tl-chip, .tl-sector-tag { font-size: 11px; }
+  .proj-expand-btn { font-size: 12px; }
+  .svc-learn-btn { font-size: 12px; }
+  .pf-btn { font-size: 12px; padding: .42rem .85rem; }
+  .tool-row-label { font-size: 11px; }
+  .tool-badge-name { font-size: 11.5px; }
+  .c-label { font-size: 11.5px; }
+  .c-val { font-size: 14px; }
+  .sp-num { font-size: 11px; }
+  .footer-col a, .sp-footer-links a { font-size: 13px; }
+  .pso-txt, .svc-txt { font-size: 14.5px; line-height: 1.7; }
+  .proj-outcome-desc, .svc-detail-inner ul li, .tl-detail ul li, .beyond-txt { font-size: 14.5px; }
+  .tl-intro { font-size: 14.5px; }
+}
+
+/* I. Floating buttons — declutter: keep WhatsApp + AI chat, hide theme + back-to-top */
+@media (max-width: 600px) {
+  #theme-switcher { display: none !important; }
+  #btt { display: none !important; }
+}
+
+/* F. Tools — pause ticker on mobile so labels are readable (swipe to browse) */
+@media (max-width: 768px) {
+  .ticker-row { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .ticker-row::-webkit-scrollbar { display: none; }
+  .ticker-track { animation: none !important; }
+}
+
+/* E. Career — readable stacked cards on mobile */
+@media (max-width: 600px) {
+  #career { padding: 64px 5%; }
+  .tl-role { font-size: 17px; line-height: 1.35; }
+  .tl-expand-hint { font-size: 12px; padding: .5rem .8rem; }
+  .tl-duration, .tl-present-badge { font-size: 10.5px; }
+  .tl-entry { padding-left: 0; }
+}
+
+/* D. Impact — mobile: outcome row prominent, bigger expand, scrollable filters */
+@media (max-width: 600px) {
+  #impact { padding: 64px 5%; }
+  .proj-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: .5rem; scrollbar-width: none; }
+  .proj-filters::-webkit-scrollbar { display: none; }
+  .pf-btn { flex: 0 0 auto; }
+  .proj-body .pso-row:last-child {
+    background: rgba(74,222,128,0.06);
+    border: 1px solid rgba(74,222,128,0.14);
+    border-radius: 8px;
+    padding: .6rem .7rem;
+    margin-top: .3rem;
+  }
+  .proj-expand-btn { padding: .75rem 1rem; }
+}
+
+/* L. Mobile menu — lock background scroll when side panel open */
+body.sp-open { overflow: hidden; }
+
+/* H. Landscape phones — compact 2-col hero, avoid tall vertical stack */
+@media (max-height: 480px) and (orientation: landscape) and (max-width: 950px) {
+  #hero {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    text-align: left;
+    min-height: auto;
+    padding: 74px 6% 26px;
+    gap: 1.5rem;
+  }
+  .hero-photo-col { order: 0; width: auto; flex: 0 0 36%; }
+  .hero-photo-stage { width: clamp(180px, 30vw, 235px) !important; }
+  .hero-content { order: -1; align-items: flex-start; text-align: left; max-width: none; flex: 1; }
+  .hero-pretag { justify-content: flex-start; margin-bottom: .5rem; }
+  h1.hero-name { font-size: 3rem !important; margin-bottom: .35rem; }
+  .hero-summary { display: none !important; }
+  .hero-summary-m { display: block; margin-bottom: .7rem; font-size: 13.5px; line-height: 1.55; max-width: 36rem; }
+  .hero-typed-wrap { margin-bottom: .5rem; }
+  .hero-ctas { flex-direction: row; width: auto; max-width: none; gap: .6rem; }
+  .hero-ctas .btn-gold, .hero-ctas .btn-ghost { width: auto; min-height: 44px; }
+  .hero-scroll, #theme-switcher, #btt { display: none !important; }
+  .hero-chip { display: none; }
 }
 
 </style>
@@ -2824,6 +3023,7 @@ h1.hero-name { animation-delay: 0s; }
     <p class="hero-summary">
       I turn CXO priorities into operating systems, dashboards, automations, and ERP workflows that move real numbers. A CA who builds: financial-close automation, billing redesigns, governance structures, and SaaS products born from real client gaps.
     </p>
+    <p class="hero-summary-m">I build finance operating systems: MIS dashboards, ERP workflows, automations, billing redesigns, and CXO review loops that move real numbers.</p>
     <div class="hero-ctas">
       <a href="#connect" class="btn-gold">Let's Connect &rarr;</a>
       <a href="#resume" class="btn-ghost">View Profile</a>
@@ -2863,7 +3063,7 @@ h1.hero-name { animation-delay: 0s; }
       <div class="stat-desc">&#8377;50 Cr startups to &#8377;600 Cr enterprises</div>
     </div>
     <div class="stat-item" data-aos="fade-up" data-aos-delay="240">
-      <span class="stat-num" data-target="1050" data-suffix="+">0</span>
+      <span class="stat-num" data-target="1500" data-suffix="+">0</span>
       <div class="stat-label">Professionals<br>Trained</div>
       <div class="stat-desc">AI &middot; Excel &middot; Power BI</div>
     </div>
@@ -3538,8 +3738,8 @@ h1.hero-name { animation-delay: 0s; }
       <div class="beyond-glow"></div>
       <span class="beyond-icon" aria-hidden="true"><svg class="ic"><use href="#ic-teach"></use></svg></span>
       <div class="beyond-title">Genuinely Enjoys Teaching</div>
-      <div class="beyond-stat">1,050+ professionals trained</div>
-      <p class="beyond-txt">Has trained 1,050+ professionals in AI tools, Advanced Excel, and Power BI, across client organisations and internal teams. Started training people during articleship itself (100+ individuals) and never stopped.</p>
+      <div class="beyond-stat">1,500+ professionals trained</div>
+      <p class="beyond-txt">Has trained 1,500+ professionals in AI tools, Advanced Excel, and Power BI, across client organisations and internal teams. Started training people during articleship itself (100+ individuals) and never stopped.</p>
       <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
       <div class="beyond-extra"><p>Not because it was in the job description, but because explaining things clearly and watching people get it is genuinely satisfying. The kind of teacher who answers follow-up questions months later because the learning actually matters.</p></div>
     </div>
@@ -3783,8 +3983,8 @@ h1.hero-name { animation-delay: 0s; }
    target="_blank"
    rel="noopener noreferrer"
    aria-label="Message Kiran on WhatsApp">
-  <svg viewBox="0 0 32 32" focusable="false" aria-hidden="true">
-    <path d="M16 3.4A12.5 12.5 0 0 0 5.2 22.1L3.8 28.6l6.6-1.5A12.5 12.5 0 1 0 16 3.4Zm0 2.4a10.1 10.1 0 1 1-5.1 18.8l-.4-.2-3.6.8.8-3.5-.2-.4A10.1 10.1 0 0 1 16 5.8Zm-4.1 4.8c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.8c.2.3 2.6 4.1 6.4 5.5 3.1 1.2 3.8.7 4.5.6.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5l-2.5-1.2c-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.5-.2.3-.5.3-.9.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.4-.7.1-.3.1-.5 0-.7l-1.1-2.6c-.3-.7-.6-.6-.9-.6h-.7Z" fill="currentColor"/>
+  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2Zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.21.84.86-3.13-.2-.32a8.21 8.21 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24Zm4.52 9.93c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.25 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z" fill="currentColor"/>
   </svg>
 </a>
 
@@ -4214,9 +4414,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })();
 
-AOS.init({duration:650,easing:'ease-out-cubic',once:true,offset:50});
+if (window.AOS) {
+  AOS.init({duration:650,easing:'ease-out-cubic',once:true,offset:50,disable:function(){return window.innerWidth<=768;}});
+  window.addEventListener('load',function(){ if(window.AOS) AOS.refreshHard(); });
+  window.addEventListener('hashchange',function(){ if(window.AOS) AOS.refreshHard(); });
+}
 
-new Typed('#typed-text',{strings:["Founder's Office Execution",'ERP & Product Transformation','Finance Automation & MIS','Product Discovery to MVP','CXO Dashboards & Reporting','Process & Operations Design','Training & Enablement','AI-led Workflows'],typeSpeed:52,backSpeed:28,backDelay:2200,loop:true,showCursor:true,cursorChar:'|'});
+(function(){
+  var typedEl=document.getElementById('typed-text');
+  if(!(window.Typed && typedEl)) return;
+  if(window.innerWidth>600){
+    new Typed('#typed-text',{strings:["Founder's Office Execution",'ERP & Product Transformation','Finance Automation & MIS','Product Discovery to MVP','CXO Dashboards & Reporting','Process & Operations Design','Training & Enablement','AI-led Workflows'],typeSpeed:52,backSpeed:28,backDelay:2200,loop:true,showCursor:true,cursorChar:'|'});
+  } else {
+    typedEl.textContent='Finance Systems · Automation';
+  }
+})();
 
 /* Cycling role/skill chips around hero photo */
 (function(){
@@ -4243,7 +4455,7 @@ new Typed('#typed-text',{strings:["Founder's Office Execution",'ERP & Product Tr
   });
 })();
 
-if(!('ontouchstart' in window) && window.matchMedia('(pointer:fine)').matches) {
+if(window.VanillaTilt && !('ontouchstart' in window) && window.matchMedia('(pointer:fine)').matches) {
   VanillaTilt.init(document.querySelectorAll('[data-tilt]'),{max:7,speed:400,glare:true,'max-glare':0.08,scale:1.015});
 }
 
@@ -4456,7 +4668,7 @@ var FALLBACK_RESPONSES = {
   'power bi': 'Kiran builds Power BI MIS dashboards and automation-backed reports covering budgeting, budget vs actuals, variance analysis, revenue, expenses, vertical-wise performance, operational KPIs, CXO reporting, and business review metrics.',
   'automation': 'Kiran\'s automation work includes financial close automation, reconciliation utilities, post-ERP data validation, Power Query and Excel/VBA tools, Power BI MIS dashboards, AI assistants, and credit appraisal automation.',
   'team': 'Kiran has managed cross-functional teams of 15+ members across parallel projects, coordinating finance, IT, operations, junior team members, client users, and leadership stakeholders.',
-  'training': 'Kiran has trained 1,050+ professionals in AI tools, Advanced Excel, and Power BI, and earlier trained 100+ individuals in Advanced Excel, VBA, and Tally during articleship.',
+  'training': 'Kiran has trained 1,500+ professionals in AI tools, Advanced Excel, and Power BI, and earlier trained 100+ individuals in Advanced Excel, VBA, and Tally during articleship.',
   'contact kiran': KIRAN_CONTACT_HTML,
   'contact': KIRAN_CONTACT_HTML,
   'whatsapp': KIRAN_CONTACT_HTML,
