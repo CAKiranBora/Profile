@@ -10,20 +10,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kiran Bora - CA | Finance, Systems &amp; Execution</title>
-<meta name="description" content="CA-qualified finance and operations builder working across finance transformation, ERP/product workflows, automation, CXO dashboards, PMO structures, and business execution. Built operating systems, reduced close timelines, redesigned billing workflows, and converted process gaps into SaaS MVP concepts.">
+<meta name="description" content="CA-qualified finance and operations builder turning CXO priorities into ERP workflows, MIS dashboards, automation, PMO systems, and measurable execution.">
 <meta name="author" content="Kiran Bora">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#070c15">
+<!-- Replace relative canonical / og:url with absolute live URL after deployment. -->
+<link rel="canonical" href="./">
 <meta property="og:title" content="Kiran Bora - CA | Finance, Systems &amp; Execution">
-<meta property="og:description" content="CA-qualified finance and operations builder working across finance transformation, ERP/product workflows, automation, CXO dashboards, PMO structures, and business execution. Built operating systems, reduced close timelines, redesigned billing workflows, and converted process gaps into SaaS MVP concepts.">
+<meta property="og:description" content="CA-qualified finance and operations builder turning CXO priorities into ERP workflows, MIS dashboards, automation, PMO systems, and measurable execution.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="KiBo.png">
+<meta property="og:url" content="./">
+<meta property="og:image" content="social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Kiran Bora, Chartered Accountant">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="KiBo.png">
+<meta name="twitter:image" content="social-card.png">
+<meta name="twitter:image:alt" content="Kiran Bora - CA | Finance, Systems & Execution">
 <meta name="twitter:title" content="Kiran Bora - CA | Finance, Systems &amp; Execution">
-<meta name="twitter:description" content="CA-qualified finance and operations builder working across finance transformation, ERP/product workflows, automation, CXO dashboards, PMO structures, and business execution. Built operating systems, reduced close timelines, redesigned billing workflows, and converted process gaps into SaaS MVP concepts.">
+<meta name="twitter:description" content="CA-qualified finance and operations builder turning CXO priorities into ERP workflows, MIS dashboards, automation, PMO systems, and measurable execution.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23070c15'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%23e8b84b'%3EKB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 <script type="application/ld+json">
@@ -34,7 +42,7 @@
   "honorificPrefix": "CA",
   "jobTitle": "Chartered Accountant | Finance & Digital Transformation",
   "description": "CA-qualified finance and operations builder working across finance transformation, ERP/product workflows, automation, CXO dashboards, and business execution.",
-  "image": "KiBo.png",
+  "image": "KiBo-cut.png",
   "email": "cakiranbora@gmail.com",
   "telephone": "+91-70206-79009",
   "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressCountry": "IN" },
@@ -299,6 +307,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
   transform-style: preserve-3d;
   transition: transform .25s cubic-bezier(.4,0,.2,1);
   will-change: transform;
+}
+.hero-photo-picture {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 100%;
 }
 .hero-photo {
   position: relative;
@@ -893,6 +907,60 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
   text-align:center;
   padding:0 6% 3.5rem;
 }
+.tool-summary-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;
+  width:min(1120px,88%);
+  margin:0 auto 3rem;
+}
+.tool-summary-card{
+  background:rgba(255,255,255,0.025);
+  border:1px solid rgba(255,255,255,0.06);
+  padding:1.35rem 1.35rem 1.2rem;
+  position:relative;
+  overflow:hidden;
+}
+.tool-summary-card::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--gold2),var(--cyan));
+  opacity:.65;
+}
+.tool-summary-title{
+  font-family:'Space Mono',monospace;
+  font-size:.66rem;
+  color:var(--gold2);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:.85rem;
+}
+.tool-summary-list{
+  color:var(--text-muted);
+  font-size:.82rem;
+  line-height:1.75;
+}
+.tool-summary-list strong{
+  color:var(--off);
+  font-weight:600;
+}
+.tool-summary-note{
+  width:min(900px,88%);
+  margin:-1.7rem auto 2.6rem;
+  color:var(--dim);
+  font-size:.76rem;
+  line-height:1.7;
+  text-align:center;
+}
+@media(max-width:900px){
+  .tool-summary-grid{grid-template-columns:1fr;width:90%;margin-bottom:2rem}
+  .tool-summary-card{padding:1.2rem}
+  .tool-summary-note{text-align:left;width:90%;margin-top:-.7rem}
+}
 .ticker-row{
   display:flex;
   gap:1px;
@@ -1184,7 +1252,7 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
 }
 @media(max-width:600px){
   .proj-card.featured .proj-body{grid-template-columns:1fr}
-  .proj-card.featured .proj-metric-col{min-width:unset;flex-direction:row;gap:1rem;align-items:center;justify-content:flex-start;padding:.75rem 1rem}
+  .proj-card.featured .proj-metric-col{order:-1;min-width:unset;flex-direction:row;gap:1rem;align-items:center;justify-content:flex-start;padding:.75rem 1rem}
 }
 .feat-metric{
   font-family:'DM Serif Display',serif;
@@ -1310,6 +1378,35 @@ h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3
   z-index:1;
 }
 .testi-text strong{color:var(--off);font-style:normal;font-weight:500}
+.testi-context{
+  display:grid;
+  gap:.55rem;
+  margin:0 0 1.35rem;
+  padding:1rem;
+  background:rgba(255,255,255,0.018);
+  border:1px solid rgba(255,255,255,0.055);
+  position:relative;
+  z-index:1;
+}
+.testi-context-row{
+  display:grid;
+  grid-template-columns:88px 1fr;
+  gap:.7rem;
+  align-items:start;
+  color:var(--text-muted);
+  font-size:.76rem;
+  line-height:1.55;
+}
+.testi-context-label{
+  font-family:'Space Mono',monospace;
+  font-size:.55rem;
+  color:var(--gold2);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+@media(max-width:520px){
+  .testi-context-row{grid-template-columns:1fr;gap:.25rem}
+}
 .testi-footer{
   display:flex;
   align-items:center;
@@ -2697,6 +2794,31 @@ h1.hero-name { animation-delay: 0s; }
   .hero-scroll { display: none !important; }
 }
 
+@media (max-width: 380px) {
+  #hero {
+    padding: 76px 20px 38px;
+    gap: .72rem;
+  }
+  .hero-photo-stage { width: clamp(238px, 72vw, 265px) !important; }
+  h1.hero-name {
+    font-size: clamp(2.75rem, 13vw, 3.12rem) !important;
+    margin-bottom: .35rem;
+  }
+  .hero-typed-wrap {
+    font-size: 12px;
+    margin-bottom: .75rem;
+  }
+  .hero-summary-m {
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+  .hero-ctas .btn-gold,
+  .hero-ctas .btn-ghost {
+    min-height: 48px;
+  }
+}
+
 /* B. Stats — compact 2x2 on mobile (was 1-per-row + huge gaps) */
 @media (max-width: 600px) {
   #stats-banner { padding: 48px 5%; }
@@ -2741,10 +2863,12 @@ h1.hero-name { animation-delay: 0s; }
   .tl-intro { font-size: 14.5px; }
 }
 
-/* I. Floating buttons — declutter: keep WhatsApp + AI chat, hide theme + back-to-top */
-@media (max-width: 600px) {
+/* I. Floating buttons - declutter touch screens; direct CTAs remain inside the page */
+@media (max-width: 900px) {
   #theme-switcher { display: none !important; }
   #btt { display: none !important; }
+  #chat-bubble { display: none !important; }
+  .whatsapp-float { display: none !important; }
 }
 
 /* F. Tools — pause ticker on mobile so labels are readable (swipe to browse) */
@@ -2769,6 +2893,14 @@ h1.hero-name { animation-delay: 0s; }
   .proj-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: .5rem; scrollbar-width: none; }
   .proj-filters::-webkit-scrollbar { display: none; }
   .pf-btn { flex: 0 0 auto; }
+  .proj-pso-col,
+  .proj-body > div {
+    display: flex;
+    flex-direction: column;
+  }
+  .pso-row.pso-outcome-row {
+    order: -1;
+  }
   .proj-body .pso-row:last-child {
     background: rgba(74,222,128,0.06);
     border: 1px solid rgba(74,222,128,0.14);
@@ -2803,8 +2935,49 @@ body.sp-open { overflow: hidden; }
   .hero-typed-wrap { margin-bottom: .5rem; }
   .hero-ctas { flex-direction: row; width: auto; max-width: none; gap: .6rem; }
   .hero-ctas .btn-gold, .hero-ctas .btn-ghost { width: auto; min-height: 44px; }
-  .hero-scroll, #theme-switcher, #btt { display: none !important; }
+  .hero-scroll, #theme-switcher, #btt, #chat-bubble, .whatsapp-float { display: none !important; }
   .hero-chip { display: none; }
+}
+
+/* M. Resume — mobile uses clean PDF actions instead of cramped embedded iframe */
+.resume-mobile-note { display: none; }
+@media (max-width: 768px) {
+  #resume { padding: 64px 5%; }
+  .resume-frame { display: none !important; }
+  .resume-wrap { margin-top: 2rem; }
+  .resume-wrap > p { margin-bottom: 1.4rem; }
+  .resume-mobile-note {
+    display: block;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin: 0 auto 1rem;
+    max-width: 30rem;
+  }
+  .pdf-mobile-btn { display: flex !important; }
+  .resume-wrap > a.btn-gold {
+    width: 100%;
+    max-width: 340px;
+    margin: .8rem auto 0;
+    justify-content: center;
+  }
+}
+
+/* N. Accessibility basics */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+:where(a, button, input, textarea, [role="button"]):focus-visible {
+  outline: 2px solid var(--gold2);
+  outline-offset: 4px;
 }
 
 </style>
@@ -2909,7 +3082,12 @@ body.sp-open { overflow: hidden; }
   </div>
   <script>
   (function(){
-    var T=3000,TL='FINANCE \u00B7 SYSTEMS \u00B7 EXECUTION';
+    var fastLoader =
+      (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) ||
+      (window.matchMedia && window.matchMedia('(max-height: 500px) and (orientation: landscape)').matches) ||
+      (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    var T = fastLoader ? 1200 : 3000;
+    var TL='FINANCE \u00B7 SYSTEMS \u00B7 EXECUTION';
     setTimeout(function(){
       document.getElementById('kb-left').classList.add('visible');
       document.getElementById('kb-right').classList.add('visible');
@@ -2958,40 +3136,40 @@ body.sp-open { overflow: hidden; }
 
 <!-- NAV -->
 <nav id="main-nav">
-  <button id="side-open" onclick="toggleSidePanel()" aria-label="Open menu">
+  <button type="button" id="side-open" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
   <a class="nav-logo" href="#hero">CA Kiran <span>Bora</span></a>
 </nav>
 <div id="mobile-menu">
-  <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#what" onclick="toggleMenu()">What I Do</a>
-  <a href="#impact" onclick="toggleMenu()">Impact</a>
-  <a href="#career" onclick="toggleMenu()">Career</a>
-  <a href="#beyond" onclick="toggleMenu()">Beyond</a>
-  <a href="#resume" onclick="toggleMenu()">Profile</a>
-  <a href="#connect" onclick="toggleMenu()">Connect</a>
+  <a href="#about">About</a>
+  <a href="#what">What I Do</a>
+  <a href="#impact">Impact</a>
+  <a href="#career">Career</a>
+  <a href="#beyond">Beyond</a>
+  <a href="#resume">Profile</a>
+  <a href="#connect">Connect</a>
 </div>
 
 <div id="theme-switcher">
   <div id="theme-panel">
-    <button class="theme-opt active" data-theme="midnight" id="theme-midnight" onclick="setTheme('midnight')">
+    <button type="button" class="theme-opt active" data-theme="midnight" id="theme-midnight">
       <span class="theme-swatch swatch-midnight"></span>Midnight
     </button>
-    <button class="theme-opt" data-theme="obsidian" id="theme-obsidian" onclick="setTheme('obsidian')">
+    <button type="button" class="theme-opt" data-theme="obsidian" id="theme-obsidian">
       <span class="theme-swatch swatch-obsidian"></span>Obsidian
     </button>
-    <button class="theme-opt" data-theme="slate" id="theme-slate" onclick="setTheme('slate')">
+    <button type="button" class="theme-opt" data-theme="slate" id="theme-slate">
       <span class="theme-swatch swatch-deepslate"></span>Deep Slate
     </button>
-    <button class="theme-opt" data-theme="parchment" id="theme-parchment" onclick="setTheme('parchment')">
+    <button type="button" class="theme-opt" data-theme="parchment" id="theme-parchment">
       <span class="theme-swatch swatch-parchment"></span>Parchment
     </button>
-    <button class="theme-opt" data-theme="arctic" id="theme-arctic" onclick="setTheme('arctic')">
+    <button type="button" class="theme-opt" data-theme="arctic" id="theme-arctic">
       <span class="theme-swatch swatch-arctic"></span>Arctic
     </button>
   </div>
-  <button id="theme-toggle-btn" onclick="toggleThemePanel()" title="Change Theme" aria-label="Theme switcher">&#9680;</button>
+  <button type="button" id="theme-toggle-btn" title="Change Theme" aria-label="Theme switcher">&#9680;</button>
 </div>
 
 <section id="hero">
@@ -3038,7 +3216,10 @@ body.sp-open { overflow: hidden; }
       <span class="hero-chip hero-chip-1" aria-hidden="true">Trainer</span>
       <span class="hero-chip hero-chip-2" aria-hidden="true">Builder</span>
       <span class="hero-chip hero-chip-3" aria-hidden="true">Product</span>
-      <img class="hero-photo" src="KiBo-cut.png" alt="Kiran Bora, Chartered Accountant" width="1122" height="1220">
+      <picture class="hero-photo-picture">
+        <source srcset="KiBo-cut.webp" type="image/webp">
+        <img class="hero-photo" src="KiBo-cut.png" alt="Kiran Bora, Chartered Accountant" width="1122" height="1220" decoding="async" fetchpriority="high">
+      </picture>
     </div>
   </div>
 
@@ -3096,7 +3277,7 @@ body.sp-open { overflow: hidden; }
           </p>
         </div>
       </div>
-      <button class="about-read-more" id="about-rm" onclick="toggleAbout()">Read More <span class="about-rm-arrow">&#9662;</span></button>
+      <button type="button" class="about-read-more" id="about-rm">Read More <span class="about-rm-arrow">&#9662;</span></button>
     </div>
     <div class="pillars" data-aos="fade-left" data-aos-delay="160">
       <div class="pillar">
@@ -3126,7 +3307,7 @@ body.sp-open { overflow: hidden; }
         <div class="pillar-body">
           <div class="pillar-num">03 / PEOPLE</div>
           <div class="pillar-title">CXO &amp; Team Execution</div>
-          <p class="pillar-desc">Served as primary client-facing lead across 15 engagements. Managed 15+ cross-functional teams. Presented directly to CEOs, CFOs, COOs, and founders. Built the dashboards and governance trackers that leadership teams use for weekly operational decision-making.</p>
+          <p class="pillar-desc">Served as primary client-facing lead across 15 engagements. Managed cross-functional teams of 15+ members. Presented directly to CEOs, CFOs, COOs, and founders. Built the dashboards and governance trackers that leadership teams use for weekly operational decision-making.</p>
         </div>
       </div>
     </div>
@@ -3151,7 +3332,7 @@ body.sp-open { overflow: hidden; }
         <p class="svc-txt">Translate founder/CXO priorities into operating cadence, governance trackers, dashboards, cross-functional follow-ups, and structured review mechanisms.</p>
         <div class="tags"><span class="tag">Founder's Office</span><span class="tag">CXO Reporting</span><span class="tag">Operating Cadence</span><span class="tag">PMO</span></div>
       </div>
-      <button class="svc-learn-btn" onclick="toggleSvc(this)">Learn More <span class="svc-learn-arrow">&#9662;</span></button>
+      <button type="button" class="svc-learn-btn">Learn More <span class="svc-learn-arrow">&#9662;</span></button>
       <div class="svc-detail-wrap"><div class="svc-detail"><div class="svc-detail-inner"><ul>
         <li>Set up review rhythms, trackers, and escalation mechanisms.</li>
         <li>Build business dashboards and MIS packs for decision-making.</li>
@@ -3170,7 +3351,7 @@ body.sp-open { overflow: hidden; }
         <p class="svc-txt">Design AS-IS diagnostics, TO-BE operating models, SOPs, approval workflows, ERP workflows, UAT scenarios, and governance frameworks.</p>
         <div class="tags"><span class="tag">ERP</span><span class="tag">AS-IS / TO-BE</span><span class="tag">SOP</span><span class="tag">UAT</span></div>
       </div>
-      <button class="svc-learn-btn" onclick="toggleSvc(this)">Learn More <span class="svc-learn-arrow">&#9662;</span></button>
+      <button type="button" class="svc-learn-btn">Learn More <span class="svc-learn-arrow">&#9662;</span></button>
       <div class="svc-detail-wrap"><div class="svc-detail"><div class="svc-detail-inner"><ul>
         <li>Map CRM, O2C, P2P, R2R, financial close, GST/TDS, master data, and control workflows.</li>
         <li>Identify ERP gaps, process inefficiencies, unclear ownership, and governance issues.</li>
@@ -3189,7 +3370,7 @@ body.sp-open { overflow: hidden; }
         <p class="svc-txt">Build dashboards, reconciliation tools, close automation, variance analysis, and reporting systems that reduce manual work and improve decision-making.</p>
         <div class="tags"><span class="tag">Power BI</span><span class="tag">Excel/VBA</span><span class="tag">Power Query</span><span class="tag">MIS</span></div>
       </div>
-      <button class="svc-learn-btn" onclick="toggleSvc(this)">Learn More <span class="svc-learn-arrow">&#9662;</span></button>
+      <button type="button" class="svc-learn-btn">Learn More <span class="svc-learn-arrow">&#9662;</span></button>
       <div class="svc-detail-wrap"><div class="svc-detail"><div class="svc-detail-inner"><ul>
         <li>Build budgeting, budget vs actuals, variance analysis, revenue, expense, and operational KPI dashboards.</li>
         <li>Automate financial close, reconciliations, and reporting workflows.</li>
@@ -3208,7 +3389,7 @@ body.sp-open { overflow: hidden; }
         <p class="svc-txt">Convert recurring process gaps into product requirements, MVP scopes, wireframes, BRDs, PRDs, user stories, and automation workflows.</p>
         <div class="tags"><span class="tag">BRD</span><span class="tag">PRD</span><span class="tag">MVP</span><span class="tag">Wireframes</span></div>
       </div>
-      <button class="svc-learn-btn" onclick="toggleSvc(this)">Learn More <span class="svc-learn-arrow">&#9662;</span></button>
+      <button type="button" class="svc-learn-btn">Learn More <span class="svc-learn-arrow">&#9662;</span></button>
       <div class="svc-detail-wrap"><div class="svc-detail"><div class="svc-detail-inner"><ul>
         <li>Build P2P/vendor management and revenue assurance product concepts.</li>
         <li>Own problem discovery, product scope, user stories, prototype demos, and testing.</li>
@@ -3227,8 +3408,24 @@ body.sp-open { overflow: hidden; }
     <p class="section-sub">Every tool below has been used on live client engagements or shipped products, not just studied.</p>
   </div>
 
+  <div class="tool-summary-grid" aria-label="Grouped tools and platforms summary">
+    <div class="tool-summary-card">
+      <div class="tool-summary-title">ERP / Process / Governance</div>
+      <p class="tool-summary-list"><strong>SAP ECC, SAP S/4 HANA, Oracle, ERPNext, Tally, CRM</strong>, O2C, P2P, R2R, BRD / PRD / SOP, UAT, CRP, Master Data Management, Controls &amp; Governance, Approval Matrix, Workflow Design, and Data Migration Validation.</p>
+    </div>
+    <div class="tool-summary-card">
+      <div class="tool-summary-title">Analytics / Automation / AI</div>
+      <p class="tool-summary-list"><strong>Power BI, Advanced Excel, Excel VBA, Power Query, Power Automate, Tableau</strong>, Claude, ChatGPT, Gemini, NotebookLM, MS Copilot, Custom GPTs / Gems, AI Agents, AI-assisted Reconciliation, and AI-enabled Consulting Workflows.</p>
+    </div>
+    <div class="tool-summary-card">
+      <div class="tool-summary-title">Finance / MIS / Delivery</div>
+      <p class="tool-summary-list"><strong>Financial Close, Schedule III, GST / TDS, Budgeting, Variance Analysis</strong>, Reconciliation, Working Capital, Financial Modelling, Cash Flow, MIS Reporting, Month-End Close, Finance Transformation, ERP Go-Live, and CXO Engagement.</p>
+    </div>
+  </div>
+  <p class="tool-summary-note">The moving rows below are a visual scan of the same capability set; the grouped cards above are the primary readable version.</p>
+
   <div class="tool-row-label">ERP / Process / Governance</div>
-  <div class="ticker-row ticker-row-1">
+  <div class="ticker-row ticker-row-1" aria-hidden="true">
     <div class="ticker-track" id="ticker-erp">
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">SAP ECC</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">SAP S/4 HANA</span></div>
@@ -3268,7 +3465,7 @@ body.sp-open { overflow: hidden; }
   </div>
 
   <div class="tool-row-label">Analytics &amp; AI</div>
-  <div class="ticker-row ticker-row-2">
+  <div class="ticker-row ticker-row-2" aria-hidden="true">
     <div class="ticker-track" id="ticker-ai">
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Power BI</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Advanced Excel</span></div>
@@ -3304,7 +3501,7 @@ body.sp-open { overflow: hidden; }
   </div>
 
   <div class="tool-row-label">Finance / MIS / Delivery</div>
-  <div class="ticker-row ticker-row-3">
+  <div class="ticker-row ticker-row-3" aria-hidden="true">
     <div class="ticker-track" id="ticker-process">
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Financial Close</span></div>
       <div class="tool-badge"><span class="tool-badge-icon">&bull;</span><span class="tool-badge-name">Schedule III</span></div>
@@ -3346,17 +3543,17 @@ body.sp-open { overflow: hidden; }
   </div>
 
   <div class="proj-filters">
-    <button class="pf-btn active" onclick="filterProj('all',this)">All</button>
-    <button class="pf-btn" onclick="filterProj('product',this)">Product / SaaS</button>
-    <button class="pf-btn" onclick="filterProj('automation',this)">Automation</button>
-    <button class="pf-btn" onclick="filterProj('erp',this)">ERP</button>
-    <button class="pf-btn" onclick="filterProj('ai',this)">AI Tools</button>
-    <button class="pf-btn" onclick="filterProj('reporting',this)">Reporting</button>
+    <button type="button" class="pf-btn active" data-filter="all">All</button>
+    <button type="button" class="pf-btn" data-filter="product">Product / SaaS</button>
+    <button type="button" class="pf-btn" data-filter="automation">Automation</button>
+    <button type="button" class="pf-btn" data-filter="erp">ERP</button>
+    <button type="button" class="pf-btn" data-filter="ai">AI Tools</button>
+    <button type="button" class="pf-btn" data-filter="reporting">Reporting</button>
   </div>
 
   <div class="proj-featured-row">
 
-    <div class="proj-card featured" data-sector="automation" data-cat="automation" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
+    <div class="proj-card featured" data-sector="automation" data-cat="automation" data-aos="fade-up" data-aos-delay="0">
       <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-chart"></use></svg></div><div class="proj-meta"><div class="proj-title">Financial Close Automation</div><div class="proj-sector">Schedule III &middot; 21 branches &middot; 15 states</div></div></div>
       <div class="proj-body">
         <div class="proj-pso-col">
@@ -3366,11 +3563,11 @@ body.sp-open { overflow: hidden; }
         </div>
         <div class="proj-metric-col"><div class="feat-metric">15 Days &rarr; &lt;0.5 Day</div><div class="feat-metric-label">Outcome Metric</div></div>
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">15 Days &rarr; &lt;0.5 Day</div><div class="proj-outcome-sub">Schedule III &middot; 21 branches &middot; 15 states</div><p class="proj-outcome-desc">Financial data consolidation across 21 branches in 15 states, Schedule III financial statement automation, notes to accounts support, Excel/VBA/Power Query automation, and improved MIS visibility for leadership.</p></div></div>
     </div>
 
-    <div class="proj-card featured" data-sector="product" data-cat="product" data-aos="fade-up" data-aos-delay="80" onclick="toggleProj(this)">
+    <div class="proj-card featured" data-sector="product" data-cat="product" data-aos="fade-up" data-aos-delay="80">
       <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-workflow"></use></svg></div><div class="proj-meta"><div class="proj-title">ERP Product Discovery &amp; Functional Design</div><div class="proj-sector">ERP/product transformation &middot; Functional design</div></div></div>
       <div class="proj-body">
         <div class="proj-pso-col">
@@ -3380,14 +3577,14 @@ body.sp-open { overflow: hidden; }
         </div>
         <div class="proj-metric-col"><div class="feat-metric">Idea &rarr; MVP</div><div class="feat-metric-label">Outcome Metric</div></div>
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Product-ready Workflows</div><div class="proj-outcome-sub">ERP/product transformation &middot; Functional design</div><p class="proj-outcome-desc">Functionally led finance and operations product discovery by preparing white papers, BRDs, PRDs, solution architecture, process flows, POCs, MVP requirements, and developer coordination inputs.</p></div></div>
     </div>
   </div>
 
   <div class="proj-grid">
 
-    <div class="proj-card" data-sector="product" data-cat="product" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
+    <div class="proj-card" data-sector="product" data-cat="product" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0">
       <div class="proj-header">
         <div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-package"></use></svg></div>
         <div class="proj-meta">
@@ -3402,11 +3599,11 @@ body.sp-open { overflow: hidden; }
           <div class="pso-row"><span class="pso-label pso-o">Outcome</span><p class="pso-txt">Working MVP in active development. Born from real client pain, not a hypothetical build.</p></div>
         </div>
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Working MVP</div><div class="proj-outcome-sub">SaaS &middot; P2P &middot; Vendor Management</div><p class="proj-outcome-desc">End-to-end P2P workflow covering vendor onboarding, lifecycle management, approvals, and payment tracking. Product journey: client diagnostic &rarr; pattern identification &rarr; white paper &rarr; BRD &rarr; PRD &rarr; user stories &rarr; wireframes &rarr; working MVP. Currently in active development.</p></div></div>
     </div>
 
-    <div class="proj-card" data-sector="product" data-cat="product" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="80" onclick="toggleProj(this)">
+    <div class="proj-card" data-sector="product" data-cat="product" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="80">
       <div class="proj-header">
         <div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-chart"></use></svg></div>
         <div class="proj-meta">
@@ -3421,11 +3618,11 @@ body.sp-open { overflow: hidden; }
           <div class="pso-row"><span class="pso-label pso-o">Outcome</span><p class="pso-txt">Working MVP demoed and tested. Addresses a gap no standard ERP covers for project-based revenue businesses.</p></div>
         </div>
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Working MVP</div><div class="proj-outcome-sub">SaaS &middot; Revenue Assurance &middot; EPC / O&amp;M</div><p class="proj-outcome-desc">Integrated revenue assurance platform: contract lifecycle, WBS, milestone tracking, multi-type billing (progress, milestone, fixed, T&amp;M), resource allocation, approval workflows, invoicing, payment tracking, and reconciliation, all in one place. Built from white paper to working prototype.</p></div></div>
     </div>
 
-    <div class="proj-card" data-sector="ai" data-cat="ai" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
+    <div class="proj-card" data-sector="ai" data-cat="ai" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0">
       <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-cpu"></use></svg></div><div class="proj-meta"><div class="proj-title">AI Assistants &amp; Consulting Workflows</div><div class="proj-sector">Custom AI assistants &middot; GPTs / Gems &middot; AI MoM</div></div></div>
       <div class="proj-body">
         <div class="">
@@ -3435,11 +3632,11 @@ body.sp-open { overflow: hidden; }
         </div>
         
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">AI-enabled Delivery</div><div class="proj-outcome-sub">Custom AI assistants &middot; GPTs / Gems &middot; AI MoM</div><p class="proj-outcome-desc">Custom AI assistants, GPTs / Gems, AI MoM Generator, ERP implementation support, wireframe generation, reconciliation support, delivery standardization, and faster consulting output.</p></div></div>
     </div>
 
-    <div class="proj-card" data-sector="erp" data-cat="erp" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
+    <div class="proj-card" data-sector="erp" data-cat="erp" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0">
       <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-gear"></use></svg></div><div class="proj-meta"><div class="proj-title">Finance &amp; Business Process Transformation</div><div class="proj-sector">AS-IS &middot; TO-BE &middot; SOPs &middot; Governance</div></div></div>
       <div class="proj-body">
         <div class="">
@@ -3449,11 +3646,11 @@ body.sp-open { overflow: hidden; }
         </div>
         
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Process Ownership</div><div class="proj-outcome-sub">AS-IS &middot; TO-BE &middot; SOPs &middot; Governance</div><p class="proj-outcome-desc">AS-IS diagnostics, TO-BE operating models, SOPs, approval workflows, escalation mechanisms, governance frameworks, PMO, Procurement Operations, Master Data Management, controls, and process ownership.</p></div></div>
     </div>
 
-    <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
+    <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0">
       <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-clipboard"></use></svg></div><div class="proj-meta"><div class="proj-title">Post-ERP Reconciliation &amp; Data Validation</div><div class="proj-sector">Post-ERP &middot; Reconciliation &middot; Reporting reliability</div></div></div>
       <div class="proj-body">
         <div class="">
@@ -3463,11 +3660,11 @@ body.sp-open { overflow: hidden; }
         </div>
         
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Post-ERP Reliability</div><div class="proj-outcome-sub">Post-ERP &middot; Reconciliation &middot; Reporting reliability</div><p class="proj-outcome-desc">Post-ERP data validation, reconciliation frameworks, financial data accuracy checks, detection of process or system inconsistencies, and reporting reliability after implementation.</p></div></div>
     </div>
 
-    <div class="proj-card" data-sector="reporting" data-cat="reporting" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
+    <div class="proj-card" data-sector="reporting" data-cat="reporting" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0">
       <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-chart"></use></svg></div><div class="proj-meta"><div class="proj-title">CXO MIS, Budgeting &amp; Variance Dashboards</div><div class="proj-sector">Power BI &middot; MIS &middot; Budgeting &middot; Variance Analysis</div></div></div>
       <div class="proj-body">
         <div class="">
@@ -3477,11 +3674,11 @@ body.sp-open { overflow: hidden; }
         </div>
         
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">CXO Reporting</div><div class="proj-outcome-sub">Power BI &middot; MIS &middot; Budgeting &middot; Variance Analysis</div><p class="proj-outcome-desc">Power BI dashboards, MIS reports, budget vs actuals, variance analysis, revenue and expense monitoring, vertical-wise performance, operational KPIs, business review metrics, and CXO decision-making.</p></div></div>
     </div>
 
-    <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
+    <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0">
       <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-database"></use></svg></div><div class="proj-meta"><div class="proj-title">Master Data Cleanup &amp; Governance</div><div class="proj-sector">MDM tool &middot; ERP migration readiness</div></div></div>
       <div class="proj-body">
         <div class="">
@@ -3491,11 +3688,11 @@ body.sp-open { overflow: hidden; }
         </div>
         
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">MDM Readiness</div><div class="proj-outcome-sub">MDM tool &middot; ERP migration readiness</div><p class="proj-outcome-desc">Master Data Management tool, master data assessments, vendor master cleanup, customer master cleanup, item master cleanup, finance master cleanup, ERP migration readiness, data quality, and ownership.</p></div></div>
     </div>
 
-    <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0" onclick="toggleProj(this)">
+    <div class="proj-card" data-sector="automation" data-cat="automation" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-max="4" data-aos="fade-up" data-aos-delay="0">
       <div class="proj-header"><div class="proj-icon-wrap" aria-hidden="true"><svg class="ic"><use href="#ic-bank"></use></svg></div><div class="proj-meta"><div class="proj-title">Credit Appraisal &amp; Business Finance Automation</div><div class="proj-sector">Corporate Banking &middot; IDFC FIRST Bank</div></div></div>
       <div class="proj-body">
         <div class="">
@@ -3505,7 +3702,7 @@ body.sp-open { overflow: hidden; }
         </div>
         
       </div>
-      <button class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
+      <button type="button" class="proj-expand-btn"><span>Full Detail</span><span class="arrow">&#9662;</span></button>
       <div class="proj-detail"><div class="proj-detail-inner"><div class="proj-outcome-metric">Credit Decision Support</div><div class="proj-outcome-sub">Corporate Banking &middot; IDFC FIRST Bank</div><p class="proj-outcome-desc">Corporate banking work covering credit analysis, financial modelling, working capital analysis, borrower risk assessment, covenant monitoring, scenario analysis, credit committee decision support, and analysis templates / automation.</p></div></div>
     </div>
   </div>
@@ -3524,6 +3721,10 @@ body.sp-open { overflow: hidden; }
       <p class="testi-text">
         I had the privilege of working with Kiran on multiple projects, and he is truly a <strong>standout leader</strong>. As a Manager, the level of composure and calmness he brings to the table is remarkable, especially during high-pressure deadlines. Beyond just managing tasks, he excels at building a supportive culture where new employees and articles feel at home from day one. He is the ultimate <strong>'go-to' person</strong>, ensuring the team stays focused and stress-free regardless of the workload.
       </p>
+      <div class="testi-context" aria-label="Feedback context">
+        <div class="testi-context-row"><span class="testi-context-label">Context</span><span>Multiple projects with a direct reporting relationship.</span></div>
+        <div class="testi-context-row"><span class="testi-context-label">Signals</span><span>Calm execution, supportive team culture, pressure handling, and dependable ownership.</span></div>
+      </div>
       <div class="testi-footer">
         <div class="testi-avatar">MJ</div>
         <div>
@@ -3538,6 +3739,10 @@ body.sp-open { overflow: hidden; }
       <p class="testi-text">
         Kiran is an <strong>exceptional professional and a wonderful mentor</strong>. He is calm under pressure, non-judgmental, and exceptionally solution-oriented. He has an incredible talent for simplifying the complex, teaching not just the 'how' but the 'why' behind every decision. What I admire most is his nurturing approach which empowers those around him by providing constructive, non-judgmental feedback that makes you want to reach your full potential. I learned a great deal from his teaching style and approach to problem-solving. <strong>Any team would be lucky to have him.</strong>
       </p>
+      <div class="testi-context" aria-label="Feedback context">
+        <div class="testi-context-row"><span class="testi-context-label">Context</span><span>Same-team working relationship across execution and learning situations.</span></div>
+        <div class="testi-context-row"><span class="testi-context-label">Signals</span><span>Mentoring, simplifying complex work, solution orientation, and constructive feedback.</span></div>
+      </div>
       <div class="testi-footer">
         <div class="testi-avatar">KS</div>
         <div>
@@ -3572,7 +3777,7 @@ body.sp-open { overflow: hidden; }
     </svg>
 
 
-    <div class="tl-entry" onclick="toggleTL(this)">
+    <div class="tl-entry">
       <div class="tl-node"><div class="tl-node-ring"></div></div>
       <div class="tl-card">
         <div class="tl-head">
@@ -3608,7 +3813,7 @@ body.sp-open { overflow: hidden; }
         </div>
       </div>
     </div>
-    <div class="tl-entry" onclick="toggleTL(this)">
+    <div class="tl-entry">
       <div class="tl-node"><div class="tl-node-ring"></div></div>
       <div class="tl-card">
         <div class="tl-head">
@@ -3635,7 +3840,7 @@ body.sp-open { overflow: hidden; }
         </div>
       </div>
     </div>
-    <div class="tl-entry" onclick="toggleTL(this)">
+    <div class="tl-entry">
       <div class="tl-node"><div class="tl-node-ring"></div></div>
       <div class="tl-card">
         <div class="tl-head">
@@ -3663,7 +3868,7 @@ body.sp-open { overflow: hidden; }
       </div>
     </div>
 
-    <div class="tl-entry" onclick="toggleTL(this)">
+    <div class="tl-entry">
       <div class="tl-node"></div>
       <div class="tl-card">
         <div class="tl-head">
@@ -3686,7 +3891,7 @@ body.sp-open { overflow: hidden; }
     </div>
 
     <!-- Student / CA Journey stage -->
-    <div class="tl-entry" onclick="toggleTL(this)">
+    <div class="tl-entry">
       <div class="tl-node"></div>
       <div class="tl-card">
         <div class="tl-head">
@@ -3713,7 +3918,7 @@ body.sp-open { overflow: hidden; }
   <div data-aos="fade-up">
     <div class="section-eyebrow gold">Beyond Work</div>
     <h2 class="section-title">The Person Behind the Profile</h2>
-    <p class="section-sub">Work tells you what I do. This tells you who I am.</p>
+    <p class="section-sub">Work tells you what I do. This shows the habits behind the work.</p>
   </div>
   <div class="beyond-grid" data-aos="fade-up" data-aos-delay="80">
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
@@ -3722,8 +3927,8 @@ body.sp-open { overflow: hidden; }
       <div class="beyond-title">Artist - Portraits &amp; Stippling</div>
       <div class="beyond-stat">100+ sketches &middot; WICASA winner</div>
       <p class="beyond-txt">Sold 100+ detailed human portrait sketches. Mastered stippling, a technique demanding extreme patience and precision. Won First Prize at the WICASA Art Competition, Chhatrapati Sambhajinagar.</p>
-      <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>Art taught me that the best outputs come from sustained, detail-oriented effort, a mindset I bring to every project. The same patience it takes to stipple 10,000 dots into a portrait is exactly what I bring to digging into the root cause of a broken finance process.</p></div>
+      <button type="button" class="beyond-read">Read More <span class="br-arrow">&#9662;</span></button>
+      <div class="beyond-extra"><p>Art taught me that strong outputs come from sustained, detail-oriented effort. The same patience helps when tracing the root cause of a broken finance process.</p></div>
     </div>
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
@@ -3731,8 +3936,8 @@ body.sp-open { overflow: hidden; }
       <div class="beyond-title">Self-Builder - Personal Finance App</div>
       <div class="beyond-stat">Built from scratch</div>
       <p class="beyond-txt">Built a personal finance health tracker app independently, not for work, just to learn and solve a personal need. Designed the data model, logic, and interface from scratch.</p>
-      <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>Also built internal automation tools and utilities now used across Contetra's delivery toolkit, because if there's a problem, the instinct is to build something. Not wait. Not delegate. Build.</p></div>
+      <button type="button" class="beyond-read">Read More <span class="br-arrow">&#9662;</span></button>
+      <div class="beyond-extra"><p>Also built internal automation tools and utilities now used across Contetra's delivery toolkit. When a problem repeats, I prefer to build a reusable system around it.</p></div>
     </div>
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
@@ -3740,8 +3945,8 @@ body.sp-open { overflow: hidden; }
       <div class="beyond-title">Genuinely Enjoys Teaching</div>
       <div class="beyond-stat">1,500+ professionals trained</div>
       <p class="beyond-txt">Has trained 1,500+ professionals in AI tools, Advanced Excel, and Power BI, across client organisations and internal teams. Started training people during articleship itself (100+ individuals) and never stopped.</p>
-      <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>Not because it was in the job description, but because explaining things clearly and watching people get it is genuinely satisfying. The kind of teacher who answers follow-up questions months later because the learning actually matters.</p></div>
+      <button type="button" class="beyond-read">Read More <span class="br-arrow">&#9662;</span></button>
+      <div class="beyond-extra"><p>I teach because explaining things clearly and watching people understand the logic is genuinely satisfying. I also keep answering follow-up questions later because the learning matters.</p></div>
     </div>
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
@@ -3749,8 +3954,8 @@ body.sp-open { overflow: hidden; }
       <div class="beyond-title">Achiever - Built on First Attempts</div>
       <div class="beyond-stat">CA Final &middot; 1st attempt</div>
       <p class="beyond-txt">CA Final in 1st attempt. 5th Rank in Chhatrapati Sambhajinagar. Star Performer during articleship. Promoted from Credit Analyst to ARM at IDFC FIRST Bank in April 2024. HSC: 93.08%.</p>
-      <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>There's a pattern: set a high bar, meet it on the first attempt, then raise it again. Not a once-off, but a consistent approach to every significant challenge. Exemption in Economic Laws in CA Final. 100/100 in Sanskrit in SSC. This isn't luck. It's method.</p></div>
+      <button type="button" class="beyond-read">Read More <span class="br-arrow">&#9662;</span></button>
+      <div class="beyond-extra"><p>There is a pattern: set a high bar, meet it, document the method, then raise it again. Exemption in Economic Laws in CA Final and 100/100 in Sanskrit in SSC point to consistency and preparation.</p></div>
     </div>
     <div class="beyond-card" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.08">
       <div class="beyond-glow"></div>
@@ -3758,8 +3963,8 @@ body.sp-open { overflow: hidden; }
       <div class="beyond-title">Competitive Athlete</div>
       <div class="beyond-stat">District level &middot; 3 sports</div>
       <p class="beyond-txt">District-level competitor in Yoga, Tennikoit, and Athletics. The discipline, consistency, and pressure management that competitive sport builds show up in every high-stakes project deadline.</p>
-      <button class="beyond-read" onclick="toggleBeyond(this)">Read More <span class="br-arrow">&#9662;</span></button>
-      <div class="beyond-extra"><p>Competing at district level requires showing up, doing the work, and performing under pressure, consistently. The same headspace helps you stay sharp at 11pm pre-go-live checks.</p></div>
+      <button type="button" class="beyond-read">Read More <span class="br-arrow">&#9662;</span></button>
+      <div class="beyond-extra"><p>Competing at district level requires showing up, doing the work, and performing under pressure consistently. The same discipline helps during late pre-go-live checks and high-stakes deadlines.</p></div>
     </div>
   </div>
 </section>
@@ -3777,12 +3982,13 @@ body.sp-open { overflow: hidden; }
       <iframe src="CA_Kiran_Bora.pdf#toolbar=0" id="resume-iframe" title="Kiran Bora Profile"
         onload="document.getElementById('resume-loader').style.display='none';document.getElementById('resume-fallback').style.display='none'"
         onerror="document.getElementById('resume-loader').style.display='none';document.getElementById('resume-fallback').style.display='flex'"></iframe>
-      <div class="resume-fallback" id="resume-fallback">
+    <div class="resume-fallback" id="resume-fallback">
         <p>PDF preview not available in your browser. Please download the profile directly.</p>
         <a href="CA_Kiran_Bora.pdf" download class="btn-gold">Download Profile PDF</a>
       </div>
     </div>
-    <a class="pdf-mobile-btn btn-gold" href="CA_Kiran_Bora.pdf#toolbar=0" target="_blank">Download Profile</a>
+    <p class="resume-mobile-note">Mobile browsers handle PDF previews differently. Open the profile in a new tab or download it directly.</p>
+    <a class="pdf-mobile-btn btn-gold" href="CA_Kiran_Bora.pdf#toolbar=0" target="_blank" rel="noopener noreferrer">View Profile PDF</a>
     <a href="CA_Kiran_Bora.pdf" download class="btn-gold">Download Profile PDF</a>
   </div>
 </section>
@@ -3797,7 +4003,7 @@ body.sp-open { overflow: hidden; }
     <p class="connect-statement">An idea worth building, a problem worth solving, or just something I can help with, <em>I'm always glad to connect</em>.</p>
     <p class="connect-sub">Whether it's a project to collaborate on, an idea to build, or just a question where I can help, feel free to reach out. Always happy to connect with people working at the intersection of finance, systems, and execution.</p>
     <div class="c-grid">
-      <a href="#" onclick="openEmail(event)" class="c-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <a href="mailto:cakiranbora@gmail.com" data-email-trigger="true" class="c-card" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
         <div class="c-icon contact-icon" aria-hidden="true"><svg class="ic"><use href="#ic-mail"></use></svg></div>
         <div class="c-info"><div class="c-label">Email</div><div class="c-val">cakiranbora@gmail.com</div></div>
       </a>
@@ -3820,12 +4026,15 @@ body.sp-open { overflow: hidden; }
     </div>
     <form class="contact-form" onsubmit="handleContactSubmit(event)">
       <div class="contact-form-row">
+        <label class="sr-only" for="contact-name">Name</label>
         <input class="contact-field" id="contact-name" name="name" type="text" autocomplete="name" placeholder="Name" required>
+        <label class="sr-only" for="contact-email">Email</label>
         <input class="contact-field" id="contact-email" name="email" type="email" autocomplete="email" placeholder="Email" required>
       </div>
+      <label class="sr-only" for="contact-message">Message</label>
       <textarea class="contact-field" id="contact-message" name="message" placeholder="Message" required></textarea>
       <button class="btn-gold" type="submit">Send Message &rarr;</button>
-      <div class="contact-note">Opens your email client with a prefilled message</div>
+      <div class="contact-note">Opens your email client with a prefilled message. If it does not open, use email or WhatsApp above.</div>
     </form>
   </div>
 </section>
@@ -3866,47 +4075,47 @@ body.sp-open { overflow: hidden; }
 </footer>
 
   <!-- SIDE PANEL -->
-  <div id="side-overlay" onclick="toggleSidePanel()"></div>
+  <div id="side-overlay"></div>
   <aside id="side-panel">
     <div class="sp-top">
-      <a class="nav-logo sp-logo" href="#hero" onclick="toggleSidePanel()">CA Kiran <span>Bora</span></a>
-      <button id="side-close" onclick="toggleSidePanel()">&times;</button>
+      <a class="nav-logo sp-logo" href="#hero">CA Kiran <span>Bora</span></a>
+      <button type="button" id="side-close">&times;</button>
     </div>
 
     <div class="sp-nav">
-      <a class="sp-link" href="#about" onclick="toggleSidePanel()">
+      <a class="sp-link" href="#about">
         <span class="sp-num">01</span><span class="sp-name">About</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
-      <a class="sp-link" href="#what" onclick="toggleSidePanel()">
+      <a class="sp-link" href="#what">
         <span class="sp-num">02</span><span class="sp-name">What I Do</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
-      <a class="sp-link" href="#tools" onclick="toggleSidePanel()">
+      <a class="sp-link" href="#tools">
         <span class="sp-num">03</span><span class="sp-name">Tools & Stack</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
-      <a class="sp-link" href="#impact" onclick="toggleSidePanel()">
+      <a class="sp-link" href="#impact">
         <span class="sp-num">04</span><span class="sp-name">Impact</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
-      <a class="sp-link" href="#testimonials" onclick="toggleSidePanel()">
+      <a class="sp-link" href="#testimonials">
         <span class="sp-num">05</span><span class="sp-name">Testimonials</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
-      <a class="sp-link" href="#career" onclick="toggleSidePanel()">
+      <a class="sp-link" href="#career">
         <span class="sp-num">06</span><span class="sp-name">Career</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
-      <a class="sp-link" href="#beyond" onclick="toggleSidePanel()">
+      <a class="sp-link" href="#beyond">
         <span class="sp-num">07</span><span class="sp-name">Beyond Work</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
-      <a class="sp-link" href="#resume" onclick="toggleSidePanel()">
+      <a class="sp-link" href="#resume">
         <span class="sp-num">08</span><span class="sp-name">Profile</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
-      <a class="sp-link sp-link-cta" href="#connect" onclick="toggleSidePanel()">
+      <a class="sp-link sp-link-cta" href="#connect">
         <span class="sp-num">09</span><span class="sp-name">Let's Connect &rarr;</span>
         <span class="sp-arrow">&rarr;</span>
       </a>
@@ -3917,17 +4126,17 @@ body.sp-open { overflow: hidden; }
     <div class="sp-theme-block">
       <div class="sp-theme-label">Theme</div>
       <div class="sp-theme-row">
-        <button class="sp-swatch" data-theme="midnight" onclick="setTheme('midnight')" title="Midnight"></button>
-        <button class="sp-swatch" data-theme="obsidian" onclick="setTheme('obsidian')" title="Obsidian"></button>
-        <button class="sp-swatch" data-theme="slate" onclick="setTheme('slate')" title="Slate"></button>
-        <button class="sp-swatch" data-theme="parchment" onclick="setTheme('parchment')" title="Parchment"></button>
-        <button class="sp-swatch" data-theme="arctic" onclick="setTheme('arctic')" title="Arctic"></button>
+        <button type="button" class="sp-swatch" data-theme="midnight" title="Midnight"></button>
+        <button type="button" class="sp-swatch" data-theme="obsidian" title="Obsidian"></button>
+        <button type="button" class="sp-swatch" data-theme="slate" title="Slate"></button>
+        <button type="button" class="sp-swatch" data-theme="parchment" title="Parchment"></button>
+        <button type="button" class="sp-swatch" data-theme="arctic" title="Arctic"></button>
       </div>
     </div>
 
     <div class="sp-footer-links">
       <a href="mailto:cakiranbora@gmail.com">cakiranbora@gmail.com</a>
-      <a href="https://linkedin.com/in/CAKiBo" target="_blank" rel="noopener">linkedin.com/in/CAKiBo</a>
+      <a href="https://linkedin.com/in/CAKiBo" target="_blank" rel="noopener noreferrer">linkedin.com/in/CAKiBo</a>
     </div>
   </aside>
 
@@ -3938,10 +4147,10 @@ body.sp-open { overflow: hidden; }
     <div class="cw-header">
       <div class="cw-avatar">K</div>
       <div class="cw-header-info">
-        <div class="cw-name">Evolve</div>
-        <div class="cw-status"><span class="cw-dot"></span>Online</div>
+        <div class="cw-name">Profile Guide</div>
+        <div class="cw-status"><span class="cw-dot"></span>Static guide</div>
       </div>
-      <button class="cw-close" onclick="toggleChat()">&times;</button>
+      <button type="button" class="cw-close">&times;</button>
     </div>
 
     
@@ -3954,9 +4163,10 @@ body.sp-open { overflow: hidden; }
 
     
     <div class="cw-input-row">
-      <textarea id="cw-input" class="cw-input" placeholder="Ask anything about Kiran..." rows="1"
+      <label class="sr-only" for="cw-input">Ask the profile guide about Kiran</label>
+      <textarea id="cw-input" class="cw-input" aria-label="Ask the profile guide about Kiran" placeholder="Ask anything about Kiran..." rows="1"
         onkeydown="handleChatKey(event)"></textarea>
-      <button class="cw-send" id="cw-send-btn" aria-label="Send message" title="Send message" onclick="sendMessage()">
+      <button type="button" class="cw-send" id="cw-send-btn" aria-label="Send message" title="Send message">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <line x1="22" y1="2" x2="11" y2="13"></line>
           <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -3967,14 +4177,13 @@ body.sp-open { overflow: hidden; }
   </div>
 
   
-  <button id="chat-toggle" onclick="toggleChat()">
+  <button type="button" id="chat-toggle">
     <span id="chat-toggle-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" focusable="false">
         <path d="M12 3.2c-4.8 0-8.8 3.3-8.8 7.4 0 2.3 1.3 4.4 3.3 5.7l-.7 3.1 3.4-1.7c.9.2 1.8.3 2.8.3 4.8 0 8.8-3.3 8.8-7.4S16.8 3.2 12 3.2Zm-3.4 8.2a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Zm3.4 0a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Zm3.4 0a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Z" fill="currentColor"/>
       </svg>
-      AI
     </span>
-    <span class="chat-toggle-label">Evolve</span>
+    <span class="chat-toggle-label">Profile Guide</span>
   </button>
 </div>
 
@@ -3988,7 +4197,7 @@ body.sp-open { overflow: hidden; }
   </svg>
 </a>
 
-<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&uarr;</button>
+<button type="button" id="btt" title="Back to top">&uarr;</button>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
@@ -4018,401 +4227,16 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.theme-opt').forEach(function(el) {
     el.classList.toggle('active', el.dataset.theme === saved);
   });
+  document.querySelectorAll('button:not([type])').forEach(function(btn) {
+    btn.setAttribute('type','button');
+  });
+  document.querySelectorAll('.pso-o').forEach(function(label) {
+    var row = label.closest('.pso-row');
+    if (row) row.classList.add('pso-outcome-row');
+  });
 });
 
-(function(){
-  const wrap = document.getElementById('three-canvas-wrap');
-  if(!wrap || typeof THREE === 'undefined') return;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
-  camera.position.set(0, 0, 7);
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setSize(wrap.clientWidth, wrap.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  wrap.appendChild(renderer.domElement);
-
-  const group = new THREE.Group();
-  scene.add(group);
-
-  const sphereGeo = new THREE.SphereGeometry(1.5, 48, 48);
-  const sphereMat = new THREE.MeshPhongMaterial({
-    color: 0x0a1628,
-    transparent: true,
-    opacity: 0.75,
-    shininess: 100,
-    specular: 0x2a7fd4
-  });
-  const globe = new THREE.Mesh(sphereGeo, sphereMat);
-  group.add(globe);
-
-  const atmosGeo = new THREE.SphereGeometry(1.65, 32, 32);
-  const atmosMat = new THREE.MeshBasicMaterial({
-    color: 0x1a5fa8,
-    transparent: true,
-    opacity: 0.06,
-    side: THREE.BackSide
-  });
-  group.add(new THREE.Mesh(atmosGeo, atmosMat));
-
-  const wireMat = new THREE.MeshBasicMaterial({
-    color: 0x1a3a5c,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.28
-  });
-  group.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.52, 2), wireMat));
-
-  const ring1Geo = new THREE.TorusGeometry(2.0, 0.006, 16, 100);
-  const ring1Mat = new THREE.MeshBasicMaterial({ color: 0xe8b84b, transparent: true, opacity: 0.5 });
-  const ring1 = new THREE.Mesh(ring1Geo, ring1Mat);
-  ring1.rotation.x = Math.PI / 2;
-  group.add(ring1);
-
-  const ring2Geo = new THREE.TorusGeometry(2.3, 0.004, 16, 100);
-  const ring2Mat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.3 });
-  const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
-  ring2.rotation.x = Math.PI / 3;
-  ring2.rotation.y = Math.PI / 6;
-  group.add(ring2);
-
-  const dotMat = new THREE.MeshBasicMaterial({ color: 0xe8b84b });
-  const orbitDots = [];
-  for(let i = 0; i < 6; i++){
-    const dot = new THREE.Mesh(new THREE.SphereGeometry(0.04, 8, 8), dotMat.clone());
-    const angle = (i / 6) * Math.PI * 2;
-    dot.position.set(Math.cos(angle) * 2, 0, Math.sin(angle) * 2);
-    dot.userData.orbitAngle = angle;
-    group.add(dot);
-    orbitDots.push(dot);
-  }
-
-  const nodeData = [
-    { label: "Founder's Office",        pos: [-0.3, 1.7, -1.8], color: 0xe8b84b },
-    { label: 'Strategy & Ops',          pos: [2.6, 0.8, 0.4],   color: 0x38bdf8 },
-    { label: 'PMO & Governance',        pos: [2.2, -1.1, 0.7],  color: 0x38bdf8 },
-    { label: 'Product Builder',         pos: [1.8, 0.2, 1.7],   color: 0xe8b84b },
-    { label: 'Finance Transformation',  pos: [0.4, 2.4, 0.5],   color: 0x38bdf8 },
-    { label: 'Business Operations',     pos: [-2.0, -0.8, 0.9], color: 0xe8b84b },
-    { label: 'CEO / CFO / COO',         pos: [-2.5, 0.9, 0.3],  color: 0x38bdf8 },
-    { label: 'ERP & Automation',        pos: [-1.6, 0.4, -1.5], color: 0xe8b84b }
-  ];
-
-  function makeLabelTexture(text, accentColor) {
-    const canvas = document.createElement('canvas');
-    canvas.width = 320; canvas.height = 72;
-    const ctx = canvas.getContext('2d');
-
-    // Background
-    ctx.fillStyle = 'rgba(5,10,20,0.9)';
-
-    const x=2, y=2, w=316, h=68, r=5;
-    ctx.beginPath();
-    ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
-    ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-    ctx.lineTo(x+w,y+h-r);
-    ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
-    ctx.lineTo(x+r,y+h);
-    ctx.quadraticCurveTo(x,y+h,x,y+h-r);
-    ctx.lineTo(x,y+r);
-    ctx.quadraticCurveTo(x,y,x+r,y);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.lineWidth = 1.5;
-    ctx.strokeStyle = accentColor === 0xe8b84b ? 'rgba(232,184,75,0.5)' : 'rgba(56,189,248,0.5)';
-    ctx.stroke();
-
-    const hexColor = accentColor === 0xe8b84b ? '#e8b84b' : '#38bdf8';
-    ctx.font = '600 20px sans-serif';
-    ctx.fillStyle = hexColor;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(text, 160, 36);
-
-    const tex = new THREE.CanvasTexture(canvas);
-    tex.minFilter = THREE.LinearFilter;
-    return tex;
-  }
-
-  const nodeMeshes = [];
-  const raycaster = new THREE.Raycaster();
-  const mouse = new THREE.Vector2(-999, -999);
-  let hoveredNode = null;
-  let tooltip = null;
-
-  tooltip = document.createElement('div');
-  tooltip.style.cssText = `
-    position:fixed;
-    padding:6px 14px;
-    background:rgba(5,10,20,0.92);
-    border:1px solid rgba(232,184,75,0.4);
-    color:#e8b84b;
-    font-family:'DM Sans',sans-serif;
-    font-size:0.72rem;
-    font-weight:600;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    pointer-events:none;
-    z-index:9990;
-    opacity:0;
-    transition:opacity 0.2s;
-    white-space:nowrap;
-    border-radius:3px;
-  `;
-  document.body.appendChild(tooltip);
-
-  nodeData.forEach((nd, i) => {
-    const nGroup = new THREE.Group();
-    nGroup.position.set(nd.pos[0], nd.pos[1], nd.pos[2]);
-    nGroup.userData = {
-      label: nd.label,
-      origPos: new THREE.Vector3(nd.pos[0], nd.pos[1], nd.pos[2]),
-      floatOffset: i * 0.72,
-      accentColor: nd.color,
-      isHovered: false,
-      isClicked: false,
-      clickPulse: 0
-    };
-    group.add(nGroup);
-
-    const nSphere = new THREE.Mesh(
-      new THREE.SphereGeometry(0.1, 16, 16),
-      new THREE.MeshBasicMaterial({ color: nd.color })
-    );
-    nGroup.add(nSphere);
-
-    const nGlow = new THREE.Mesh(
-      new THREE.SphereGeometry(0.22, 16, 16),
-      new THREE.MeshBasicMaterial({ color: nd.color, transparent: true, opacity: 0.12 })
-    );
-    nGroup.add(nGlow);
-
-    const labelTex = makeLabelTexture(nd.label, nd.color);
-    const labelMesh = new THREE.Mesh(
-      new THREE.PlaneGeometry(1.4, 0.32),
-      new THREE.MeshBasicMaterial({ map: labelTex, transparent: true, depthTest: false, side: THREE.DoubleSide })
-    );
-    labelMesh.position.y = 0.38;
-    nGroup.add(labelMesh);
-
-    const pts = [
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(nd.pos[0], nd.pos[1], nd.pos[2])
-    ];
-    const lineGeo = new THREE.BufferGeometry().setFromPoints(pts);
-    const lineMat = new THREE.LineBasicMaterial({
-      color: nd.color,
-      transparent: true,
-      opacity: 0.1
-    });
-    const lineMesh = new THREE.Line(lineGeo, lineMat);
-    group.add(lineMesh);
-
-    const tDot = new THREE.Mesh(
-      new THREE.SphereGeometry(0.038, 8, 8),
-      new THREE.MeshBasicMaterial({
-        color: nd.color === 0xe8b84b ? 0x38bdf8 : 0xe8b84b,
-        transparent: true,
-        opacity: 0.8
-      })
-    );
-    group.add(tDot);
-
-    nodeMeshes.push({
-      group: nGroup,
-      sphere: nSphere,
-      glow: nGlow,
-      label: labelMesh,
-      line: lineMesh,
-      lineMat: lineMat,
-      travelDot: tDot,
-      t: Math.random(),
-      speed: 0.0025 + Math.random() * 0.002,
-      end: new THREE.Vector3(nd.pos[0], nd.pos[1], nd.pos[2])
-    });
-  });
-
-  scene.add(new THREE.AmbientLight(0xffffff, 0.4));
-  const l1 = new THREE.PointLight(0x2a7fd4, 2, 12); l1.position.set(3, 3, 4); scene.add(l1);
-  const l2 = new THREE.PointLight(0xe8b84b, 1.5, 10); l2.position.set(-3, -2, 3); scene.add(l2);
-  const l3 = new THREE.PointLight(0x38bdf8, 1, 8); l3.position.set(0, 4, -2); scene.add(l3);
-
-  let rawMouseX = 0, rawMouseY = 0;
-  let mX = 0, mY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    rawMouseX = e.clientX;
-    rawMouseY = e.clientY;
-    mX = (e.clientX / window.innerWidth - 0.5) * 0.4;
-    mY = (e.clientY / window.innerHeight - 0.5) * 0.3;
-
-    // Update raycaster mouse coords (normalized to canvas)
-    const rect = wrap.getBoundingClientRect();
-    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-  });
-
-  wrap.addEventListener('click', () => {
-    if(hoveredNode) {
-      hoveredNode.userData.isClicked = true;
-      hoveredNode.userData.clickPulse = 1.0;
-    }
-  });
-
-  window.addEventListener('resize', () => {
-    if(!wrap.clientWidth) return;
-    camera.aspect = wrap.clientWidth / wrap.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(wrap.clientWidth, wrap.clientHeight);
-  });
-
-  let tX = 0, tY = 0, t = 0;
-  const clock = new THREE.Clock();
-  const origin = new THREE.Vector3(0, 0, 0);
-
-  const reduceGlobeMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let heroInView = true;
-  let globeFrame = null;
-  function requestGlobeFrame() {
-    if(!reduceGlobeMotion && !globeFrame) globeFrame = requestAnimationFrame(animate);
-  }
-  if(!reduceGlobeMotion && 'IntersectionObserver' in window) {
-    const heroEl = document.getElementById('hero');
-    new IntersectionObserver((entries) => {
-      heroInView = entries[0] && entries[0].isIntersecting;
-      if(heroInView) requestGlobeFrame();
-    }, { threshold: 0.05 }).observe(heroEl);
-  }
-
-  function animate() {
-    globeFrame = null;
-    if(!reduceGlobeMotion && !heroInView) return;
-    const elapsed = clock.getElapsedTime();
-    t += 0.005;
-    tX += (mX - tX) * 0.025;
-    tY += (mY - tY) * 0.025;
-
-    group.rotation.y = t + tX;
-    group.rotation.x = Math.sin(t * 0.4) * 0.15 + tY;
-
-    ring1.rotation.z += 0.0015;
-    ring2.rotation.z -= 0.001;
-
-    orbitDots.forEach((dot, i) => {
-      dot.userData.orbitAngle = (dot.userData.orbitAngle || (i/6)*Math.PI*2) + 0.008;
-      dot.position.set(
-        Math.cos(dot.userData.orbitAngle) * 2,
-        0,
-        Math.sin(dot.userData.orbitAngle) * 2
-      );
-    });
-
-    const breathScale = 1 + Math.sin(elapsed * 0.8) * 0.012;
-    globe.scale.set(breathScale, breathScale, breathScale);
-
-    atmosMat.opacity = 0.04 + Math.sin(elapsed * 0.9) * 0.025;
-
-    const nodeSpheresForRay = nodeMeshes.map(n => n.sphere);
-    raycaster.setFromCamera(mouse, camera);
-
-    const intersects = raycaster.intersectObjects(nodeSpheresForRay, false);
-
-    let newHovered = null;
-    if(intersects.length > 0) {
-
-      const hitSphere = intersects[0].object;
-      newHovered = nodeMeshes.find(n => n.sphere === hitSphere);
-    }
-
-    if(newHovered !== hoveredNode) {
-      if(newHovered) {
-        tooltip.textContent = newHovered.group.userData.label;
-        tooltip.style.opacity = '1';
-        wrap.style.cursor = 'pointer';
-      } else {
-        tooltip.style.opacity = '0';
-        wrap.style.cursor = 'default';
-      }
-      hoveredNode = newHovered;
-    }
-
-    if(hoveredNode && tooltip.style.opacity === '1') {
-      tooltip.style.left = (rawMouseX + 16) + 'px';
-      tooltip.style.top = (rawMouseY - 10) + 'px';
-    }
-
-    const isMobile = window.innerWidth < 768;
-
-    nodeMeshes.forEach((nd, i) => {
-      nd.group.visible = !isMobile;
-      nd.line.visible = !isMobile;
-      nd.travelDot.visible = !isMobile;
-
-      if(isMobile) return;
-
-      nd.group.position.y = nd.end.y + Math.sin(elapsed * 0.75 + nd.group.userData.floatOffset) * 0.09;
-
-      nd.label.quaternion.copy(camera.quaternion);
-
-      const parentQuat = new THREE.Quaternion();
-      group.getWorldQuaternion(parentQuat);
-      nd.label.quaternion.premultiply(parentQuat.invert());
-
-      const isHov = hoveredNode === nd;
-      const targetGlowOpacity = isHov ? 0.35 : 0.12;
-      nd.glow.material.opacity += (targetGlowOpacity - nd.glow.material.opacity) * 0.1;
-
-      const targetLineOpacity = isHov ? 0.45 : 0.1;
-      nd.lineMat.opacity += (targetLineOpacity - nd.lineMat.opacity) * 0.1;
-
-      nd.label.material.opacity = nd.label.material.opacity || 0.75;
-      const targetLabelOpacity = isHov ? 1.0 : 0.65;
-      nd.label.material.opacity += (targetLabelOpacity - nd.label.material.opacity) * 0.1;
-
-      if(nd.group.userData.clickPulse > 0) {
-        nd.group.userData.clickPulse -= 0.04;
-        const ps = 1 + nd.group.userData.clickPulse * 1.5;
-        nd.glow.scale.set(ps, ps, ps);
-      } else {
-        nd.glow.scale.set(1, 1, 1);
-        nd.group.userData.clickPulse = 0;
-      }
-
-      nd.t += nd.speed;
-      if(nd.t > 1) nd.t = 0;
-
-      const endCurrent = new THREE.Vector3(nd.end.x, nd.group.position.y, nd.end.z);
-      nd.travelDot.position.lerpVectors(origin, endCurrent, nd.t);
-
-      const posArr = nd.line.geometry.attributes.position.array;
-      posArr[4] = nd.group.position.y;
-      nd.line.geometry.attributes.position.needsUpdate = true;
-    });
-
-    const applyThemeToGlobe = () => {
-      const theme = document.documentElement.getAttribute('data-theme');
-      if(theme === 'parchment' || theme === 'arctic'){
-        sphereMat.color.setHex(0xe8eef5);
-        sphereMat.opacity = 0.5;
-        sphereMat.transparent = true;
-        atmosMat.color.setHex(0x1a3a6b);
-      } else {
-        sphereMat.color.setHex(0x0a1628);
-        sphereMat.opacity = 0.75;
-        sphereMat.transparent = true;
-        atmosMat.color.setHex(0x1a5fa8);
-      }
-    };
-    applyThemeToGlobe();
-
-    renderer.render(scene, camera);
-    requestGlobeFrame();
-  }
-
-  animate();
-
-})();
+/* Removed unused Three.js globe block: no #three-canvas-wrap markup and no Three.js runtime loaded. */
 
 if (window.AOS) {
   AOS.init({duration:650,easing:'ease-out-cubic',once:true,offset:50,disable:function(){return window.innerWidth<=768;}});
@@ -4594,9 +4418,9 @@ function toggleBeyond(btn){
 
 var PROXY_URL = 'YOUR_VERCEL_PROXY_URL_HERE';
 
-var KIRAN_SYSTEM_PROMPT = `You are Evolve, a highly intelligent digital assistant designed to represent CA Kiran Bora. Your name reflects Kiran's commitment to growth and digital evolution. You answer questions about CA Kiran Bora's professional profile on his portfolio website.
+var KIRAN_SYSTEM_PROMPT = `You are Profile Guide, a focused digital assistant designed to represent CA Kiran Bora. You answer questions about CA Kiran Bora's professional profile on his portfolio website.
 
-Speak in third person about Kiran. You are his AI assistant representing him - refer to him as "Kiran" or "he/his", never as "I" or "me". Keep it professional and warm.
+Speak in third person about Kiran. You represent his profile - refer to him as "Kiran" or "he/his", never as "I" or "me". Keep it professional and warm.
 Be concise - answers should be 2-4 sentences unless more detail is genuinely needed.
 Always stay on topic about Kiran's professional profile.
 If asked something unrelated, gently redirect to professional topics.
@@ -4726,7 +4550,7 @@ function showFAQMenu() {
     cat.questions.forEach(function(q) {
       var key = q.toLowerCase();
       if (FALLBACK_RESPONSES[key]) {
-        html += '<button class="cw-faq-btn" onclick="sendFAQ(\'' + q.replace(/'/g,"\\'") + '\')">' + q + '</button>';
+        html += '<button type="button" class="cw-faq-btn" data-faq="' + escapeHTML(q) + '">' + escapeHTML(q) + '</button>';
       }
     });
   });
@@ -4747,6 +4571,32 @@ function escapeHTML(text) {
   });
 }
 
+function sanitizeTrustedBotHTML(html) {
+  var template = document.createElement('template');
+  template.innerHTML = html;
+  var allowedTags = ['A','BR','STRONG','EM','B'];
+  template.content.querySelectorAll('*').forEach(function(node) {
+    if (allowedTags.indexOf(node.tagName) === -1) {
+      node.replaceWith(document.createTextNode(node.textContent || ''));
+      return;
+    }
+    Array.from(node.attributes).forEach(function(attr) {
+      var name = attr.name.toLowerCase();
+      var value = attr.value || '';
+      if (node.tagName === 'A' && name === 'href') {
+        if (!/^(https?:|mailto:|tel:)/i.test(value)) node.removeAttribute(attr.name);
+        return;
+      }
+      if (node.tagName === 'A' && (name === 'target' || name === 'rel')) return;
+      node.removeAttribute(attr.name);
+    });
+    if (node.tagName === 'A' && !node.getAttribute('rel')) {
+      node.setAttribute('rel','noopener noreferrer');
+    }
+  });
+  return template.innerHTML;
+}
+
 function sendFAQ(question) {
   hideFAQMenu();
   addUserMessage(question);
@@ -4755,21 +4605,33 @@ function sendFAQ(question) {
   showTyping();
   setTimeout(function() {
     hideTyping();
-    addBotMessage(response);
+    addBotMessage(response, true);
   }, 900);
 }
 
 function initChat() {
   chatInitialized = true;
-  addBotMessage("Hello! I'm <strong>Evolve</strong> - Kiran's AI assistant. Select a topic below or type your own question. Type <strong>menu</strong> anytime to bring the topics back.");
+  addBotMessage("Hello! I'm Kiran's <strong>Profile Guide</strong>. Select a topic below or type your own question. Type <strong>menu</strong> anytime to bring the topics back.", true);
   setTimeout(showFAQMenu, 300);
 }
 
-function addBotMessage(text) {
+function addBotMessage(text, allowTrustedHtml) {
   var msgs = document.getElementById('cw-messages');
   var div = document.createElement('div');
   div.className = 'cw-msg bot';
-  div.innerHTML = '<div class="cw-bubble">' + text.replace(/\n/g, '<br>') + '</div><div class="cw-time">' + getTime() + '</div>';
+  var bubble = document.createElement('div');
+  bubble.className = 'cw-bubble';
+  if (allowTrustedHtml) {
+    bubble.innerHTML = sanitizeTrustedBotHTML(String(text).replace(/\n/g, '<br>'));
+  } else {
+    bubble.textContent = String(text);
+    bubble.innerHTML = bubble.innerHTML.replace(/\n/g, '<br>');
+  }
+  var time = document.createElement('div');
+  time.className = 'cw-time';
+  time.textContent = getTime();
+  div.appendChild(bubble);
+  div.appendChild(time);
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
 }
@@ -4857,7 +4719,7 @@ function sendUserInput(text) {
       if (!response) {
         response = KIRAN_CONTACT_HTML;
       }
-      addBotMessage(response);
+      addBotMessage(response, true);
       chatHistory.push({ role: 'assistant', content: response });
       setLoading(false);
     }, 1200);
@@ -4927,34 +4789,142 @@ document.addEventListener('keydown', function(e) {
     if (chatOpen) toggleChat();
   }
 });
+
+document.addEventListener('click', function(e) {
+  var themeBtn = e.target.closest('.theme-opt[data-theme], .sp-swatch[data-theme]');
+  if (themeBtn) {
+    setTheme(themeBtn.dataset.theme);
+    return;
+  }
+
+  if (e.target.closest('#theme-toggle-btn')) {
+    toggleThemePanel();
+    return;
+  }
+
+  if (e.target.closest('#side-open, #side-close')) {
+    toggleSidePanel();
+    return;
+  }
+
+  if (e.target.id === 'side-overlay') {
+    toggleSidePanel();
+    return;
+  }
+
+  if (e.target.closest('#mobile-menu a, .sp-logo, .sp-link')) {
+    toggleSidePanel();
+    return;
+  }
+
+  if (e.target.closest('#about-rm')) {
+    toggleAbout();
+    return;
+  }
+
+  var svcBtn = e.target.closest('.svc-learn-btn');
+  if (svcBtn) {
+    toggleSvc(svcBtn);
+    return;
+  }
+
+  var filterBtn = e.target.closest('.pf-btn[data-filter]');
+  if (filterBtn) {
+    filterProj(filterBtn.dataset.filter, filterBtn);
+    return;
+  }
+
+  var projectCard = e.target.closest('#impact .proj-card');
+  if (projectCard) {
+    toggleProj(projectCard);
+    return;
+  }
+
+  var timelineEntry = e.target.closest('.tl-entry');
+  if (timelineEntry) {
+    toggleTL(timelineEntry);
+    return;
+  }
+
+  var beyondBtn = e.target.closest('.beyond-read');
+  if (beyondBtn) {
+    toggleBeyond(beyondBtn);
+    return;
+  }
+
+  var faqBtn = e.target.closest('.cw-faq-btn[data-faq]');
+  if (faqBtn) {
+    sendFAQ(faqBtn.dataset.faq);
+    return;
+  }
+
+  if (e.target.closest('#chat-toggle, .cw-close')) {
+    toggleChat();
+    return;
+  }
+
+  if (e.target.closest('#cw-send-btn')) {
+    sendMessage();
+    return;
+  }
+
+  if (e.target.closest('#btt')) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  if (e.target.closest('[data-email-trigger="true"]')) {
+    openEmail(e);
+    return;
+  }
+
+  if (e.target.id === 'em-overlay' || e.target.closest('.em-x')) {
+    closeEmail();
+    return;
+  }
+
+  if (e.target.closest('[data-email-close="true"]')) {
+    closeEmail();
+    return;
+  }
+
+  if (e.target.closest('[data-email-default="true"]')) {
+    openDefaultMail();
+    return;
+  }
+
+  if (e.target.closest('[data-email-copy="true"]')) {
+    copyEmail();
+  }
+});
 </script>
 
 <!-- EMAIL MODAL -->
-<div id="em-overlay" onclick="if(event.target===this)closeEmail()">
+<div id="em-overlay">
   <div id="em-modal" role="dialog" aria-modal="true">
     <div class="em-head">
       <div><div class="em-title">Open with...</div><div class="em-sub">Choose how to send your email</div></div>
-      <button class="em-x" onclick="closeEmail()" aria-label="Close">&#x2715;</button>
+      <button type="button" class="em-x" aria-label="Close">&#x2715;</button>
     </div>
     <div class="em-addr">cakiranbora@gmail.com</div>
     <div class="em-opts">
-      <a class="em-opt" href="https://mail.google.com/mail/?view=cm&to=cakiranbora@gmail.com" target="_blank" rel="noopener" onclick="closeEmail()">
+      <a class="em-opt" data-email-close="true" href="https://mail.google.com/mail/?view=cm&to=cakiranbora@gmail.com" target="_blank" rel="noopener noreferrer">
         <div class="em-opt-icon ic-gmail">
           <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M6 40h6V22.5L4 16v20c0 2.2 1.8 4 2 4z"/><path fill="#34A853" d="M36 40h6c2.2 0 4-1.8 4-4V16l-10 6.5V40z"/><path fill="#FBBC04" d="M36 8H12L4 16l20 13 20-13L36 8z"/><path fill="#4285F4" d="M12 8L4 16v.5L12 22.5l12-7.8 12 7.8 8-6V16L36 8H12z"/></svg>
         </div>
         <div><span class="em-opt-label">Gmail</span><span class="em-opt-desc">Open in Gmail (browser)</span></div>
       </a>
-      <a class="em-opt" href="https://outlook.live.com/mail/0/deeplink/compose?to=cakiranbora@gmail.com" target="_blank" rel="noopener" onclick="closeEmail()">
+      <a class="em-opt" data-email-close="true" href="https://outlook.live.com/mail/0/deeplink/compose?to=cakiranbora@gmail.com" target="_blank" rel="noopener noreferrer">
         <div class="em-opt-icon ic-outlook">
           <svg width="18" height="18" viewBox="0 0 48 48"><rect width="48" height="48" rx="4" fill="#0078D4"/><path d="M8 14l16 10 16-10V34H8V14z" fill="none" stroke="white" stroke-width="2.5"/><path d="M8 14l16 10 16-10" fill="none" stroke="white" stroke-width="2.5"/></svg>
         </div>
         <div><span class="em-opt-label">Outlook Web</span><span class="em-opt-desc">Open in Outlook (browser)</span></div>
       </a>
-      <button class="em-opt" onclick="openDefaultMail()">
+      <button type="button" class="em-opt" data-email-default="true">
         <div class="em-opt-icon ic-default">&#x1F4E7;</div>
         <div><span class="em-opt-label">Default Mail App</span><span class="em-opt-desc">Opens your device mail app</span></div>
       </button>
-      <button class="em-opt" onclick="copyEmail()">
+      <button type="button" class="em-opt" data-email-copy="true">
         <div class="em-opt-icon ic-copy">&#x1F4CB;</div>
         <div><span class="em-opt-label">Copy Email Address</span><span class="em-opt-desc">Copy to clipboard</span></div>
       </button>
