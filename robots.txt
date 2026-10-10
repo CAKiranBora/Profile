@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cakiranbora.github.io/Profile/sitemap.xml
