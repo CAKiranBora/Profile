@@ -708,7 +708,7 @@ section{padding:120px 6%}
 .section-eyebrow.gold{color:var(--gold2)}
 .section-eyebrow.gold::after{background:var(--gold2)}
 .section-eyebrow.center{justify-content:center}
-.section-eyebrow.center::after{display:none}
+.section-eyebrow.center::after{background:currentColor}
 .section-eyebrow.center::before{content:'';flex:0 0 36px;height:1px;background:currentColor}
 h1.section-title,h2.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);line-height:1.1;margin-bottom:1.2rem}
 .section-sub{font-size:.95rem;color:var(--gray);max-width:540px;line-height:1.85}
